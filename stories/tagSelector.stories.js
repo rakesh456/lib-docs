@@ -3,6 +3,7 @@ import { action } from '@storybook/addon-actions';
 import { tagSelector } from '@storybook/react/demo';
 import TagSelector from "./components/TagSelector/tag-selector";
 
+
 import {
     isUndefinedOrNull
 } from "./utils/utils";
@@ -40,18 +41,13 @@ function onBlurHandler() {
 
   }
 
-  function setJsonDataHandler(json)
-  {
-    
-  }
+
 
 let dataoptions=  '{"placeholder": "Select country", "maxItemCounter": 2, "showHelper": true, "canRemoveAll": true, "allowNewValue": true, "showHierarchy": false}';
 
 let options = JSON.parse(dataoptions);
 
-console.log(c.COUNTRIES)
 
-
-export const Demo = () => <TagSelector  options={options} onFocus={onFocusHandler} onBlur={onBlurHandler} onKeyDown={onKeyDownHandler} setJsonData={setJsonData(c.COUNTRIES)}></TagSelector>
+export const Demo = () => <TagSelector options={options} onFocus={onFocusHandler} onBlur={onBlurHandler} onKeyDown={onKeyDownHandler}></TagSelector>
 
 

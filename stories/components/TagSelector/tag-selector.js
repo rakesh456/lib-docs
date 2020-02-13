@@ -9,6 +9,7 @@ import {
   isValidJsonFormat
 } from "../../utils/tagselectorutils";
 import { CountryService } from "../../services/CountryService";
+import * as c from '../../utils/countries';
 
 class TagSelector extends React.PureComponent {
   constructor(props) {
@@ -44,6 +45,7 @@ class TagSelector extends React.PureComponent {
       style.top = "100%";
       style.zIndex = "1";
       this.setState({ style: style });
+      this.setJsonData(c.COUNTRIES)
     }
   }
 
