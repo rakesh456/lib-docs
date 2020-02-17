@@ -135,6 +135,7 @@ class DatePicker extends React.PureComponent {
     
     getEndDate() {
         const {upperLimit, displayFormat} = this.state.options;
+      
         if(isUndefinedOrNull(upperLimit)){
             return "";
         } else {
