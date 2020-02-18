@@ -63,51 +63,11 @@ react:[
 };
   
 
-//datepicker 1
-let dataoptions=  '{"displayFormat": "DD/MM/YYYY", "iconAlignment":"left", "showErrorMessage": true, "dateStringAlignment": "left", "lowerLimit": "08/08/2015", "upperLimit": "30/09/2022", "validationMessages": [{"inValidFormat": "Invalid DOB"}, { "outsideRange": ""}] , "isDisabled": false, "showButtons": true, "dateButtonPrimary": "", "showClearIcon": false, "manualEntry": true, "disabledList": ["01/12/2019", "15/10/2020", "01/11/2020", "20/11/2019"], "indicatorList": [{ "dates": ["01/10/2019","02/11/2019"], "color": "#333" }, { "dates": ["02/09/2019","01/08/2019"], "color": "#ff0000" }]}';
-
-let options = JSON.parse(dataoptions);
-options = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
-options = formatOptions(options);
-
-//datepicker for display financial year
-let paramFinancialYear =  '{"displayFormat": "DD/MM/YYYY", "iconAlignment":"left", "showErrorMessage": true, "dateStringAlignment": "left", "lowerLimit": "01/04/2020", "upperLimit": "31/03/2021", "validationMessages": [{"inValidFormat": "Invalid DOB"}, { "outsideRange": ""}] , "isDisabled": false, "showButtons": false, "dateButtonPrimary": "", "showClearIcon": false, "manualEntry": true, "disabledList": ["01/12/2019", "15/10/2020", "01/11/2020", "20/11/2019"], "indicatorList": [{ "dates": ["01/10/2019","02/11/2019"], "color": "#333" }, { "dates": ["02/09/2019","01/08/2019"], "color": "#ff0000" }]}';
-let optionsFinancialYear = JSON.parse(paramFinancialYear);
-optionsFinancialYear = (isUndefinedOrNull(optionsFinancialYear))? resetOptions({}) : resetOptions(optionsFinancialYear);
-optionsFinancialYear = formatOptions(optionsFinancialYear);
-
-//datepicker for display quarters
 
 
-//datepicker select month
-let paramMonths='{"displayFormat": "MM/YYYY", "iconAlignment":"Left", "dateStringAlignment": "Left", "lowerLimit": "11/2011", "upperLimit": "12/2014", "showErrorMessage": true, "isDisabled": false, "showButtons": false, "showClearIcon": false, "manualEntry": true, "disabledList": ["11/2011", "12/2011", "11/2013", "10/2024"]}';
-let optionsMonths = JSON.parse(paramMonths);
-optionsMonths = (isUndefinedOrNull(optionsMonths))? resetOptions({}) : resetOptions(optionsMonths);
-optionsMonths = formatOptions(optionsMonths);
-
-//datepicker select year
-let paramYears='{"displayFormat": "YYYY", "iconAlignment":"Left", "dateStringAlignment": "Left", "lowerLimit": "2007", "upperLimit": "2018", "showErrorMessage": true, "isDisabled": false, "showButtons": false, "showClearIcon": false, "manualEntry": true}';
-let optionsYears = JSON.parse(paramYears);
-optionsYears = (isUndefinedOrNull(optionsYears))? resetOptions({}) : resetOptions(optionsYears);
-optionsYears = formatOptions(optionsYears);
-
-//datepicker show buttons
-let paramButtons = '{"displayFormat": "DD/MM/YYYY", "iconAlignment":"left", "showErrorMessage": true, "dateStringAlignment": "left", "lowerLimit": "08/07/2017", "upperLimit": "30/12/2018", "validationMessages": [{"inValidFormat": "Invalid DOB"}, { "outsideRange": ""}] , "isDisabled": false, "showButtons": true, "dateButtonPrimary": "Ok", "showClearIcon": false, "manualEntry": true}';
-let optionsButtons = JSON.parse(paramButtons);
-optionsButtons = (isUndefinedOrNull(optionsButtons))? resetOptions({}) : resetOptions(optionsButtons);
-optionsButtons = formatOptions(optionsButtons);
-
-//datepicker disabled list
-let paramDL = '{"displayFormat": "MM/DD/YYYY", "iconAlignment":"Left", "dateStringAlignment": "Left", "lowerLimit": "11/25/2000", "upperLimit": "11/29/2001", "showErrorMessage": true, "validationMessages": [{"inValidFormat": "Invalid DOB"}, { "outsideRange": "Date is out of range"}] , "isDisabled": false, "showButtons": false, "showClearIcon": false, "manualEntry": true, "disabledList": ["11/25/2000", "11/29/2000", "11/13/2019", "11/14/2019"]}';
-let optionsDL = JSON.parse(paramDL);
-optionsDL = (isUndefinedOrNull(optionsDL))? resetOptions({}) : resetOptions(optionsDL);
-optionsDL = formatOptions(optionsDL);
 
 //datepicker indicator list
-let paramIL = '{"displayFormat": "DD/MM/YYYY", "iconAlignment":"left", "showErrorMessage": true, "dateStringAlignment": "left", "lowerLimit": "08/07/2017", "upperLimit": "30/12/2018", "validationMessages": [{"inValidFormat": "Invalid DOB"}, { "outsideRange": ""}] , "isDisabled": false, "showButtons": false, "dateButtonPrimary": "Ok", "showClearIcon": false, "manualEntry": true, "disabledList": ["08/07/2017", "09/07/2017", "01/11/2020", "20/11/2019"], "indicatorList": [{ "dates": ["01/10/2019","02/11/2019"], "color": "#333" }, { "dates": ["02/09/2019","01/08/2019"], "color": "#ff0000" }]}';
-let optionsIL = JSON.parse(paramIL);
-optionsIL = (isUndefinedOrNull(optionsIL))? resetOptions({}) : resetOptions(optionsIL);
-optionsIL = formatOptions(optionsIL);
+
 
 
 
@@ -159,6 +119,11 @@ return <div style={{ height: "20vh", display: "flex", alignItems: "center", just
 }
 
 export const selectYear = () =>{
+  let paramYears='{"displayFormat": "YYYY"}';
+let optionsYears = JSON.parse(paramYears);
+optionsYears = (isUndefinedOrNull(optionsYears))? resetOptions({}) : resetOptions(optionsYears);
+optionsYears = formatOptions(optionsYears);
+
   return <div style={{ height: "20vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
       <div><h5>Select Year</h5>
 <DatePicker options={optionsYears}></DatePicker>
@@ -193,9 +158,17 @@ optionsDL = formatOptions(optionsDL);
 }
   
 export const indicatorList = () =>{
+  let paramIL = '{ "indicatorList": [{ "dates": ["01/10/2018","02/11/2017"], "color": "#333" }, { "dates": ["02/09/2019","01/08/2019"], "color": "#ff0000" }]}';
+  let optionsIL = JSON.parse(paramIL);
+  optionsIL = (isUndefinedOrNull(optionsIL))? resetOptions({}) : resetOptions(optionsIL);
+  optionsIL = formatOptions(optionsIL); 
   return <div style={{ height: "20vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
-     <div><h5>Enabled List</h5>
+     <div><h5>Indicator List</h5>
 <DatePicker options={optionsIL}></DatePicker>
 </div>
 </div>
 }
+
+
+
+
