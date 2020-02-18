@@ -15,7 +15,7 @@ import {
 
 
   export default {
-  title: 'Date Picker/Default',
+  title: 'Date Picker',
   component: datePicker,
   parameters: {
     html:["<html>",
@@ -77,10 +77,7 @@ optionsFinancialYear = (isUndefinedOrNull(optionsFinancialYear))? resetOptions({
 optionsFinancialYear = formatOptions(optionsFinancialYear);
 
 //datepicker for display quarters
-let paramQuarters =  '{"displayFormat": "QQ/YYYY", "iconAlignment":"Left", "dateStringAlignment": "Left", "lowerLimit": "Q2/2011", "upperLimit1": "Q3/2015", "showErrorMessage": true, "isDisabled": false, "showButtons": false, "showClearIcon": false, "manualEntry": true, "disabledList": ["Q2/2011", "Q3/2011"]}';
-let optionsQuarters = JSON.parse(paramQuarters);
-optionsQuarters = (isUndefinedOrNull(optionsQuarters))? resetOptions({}) : resetOptions(optionsQuarters);
-optionsQuarters = formatOptions(optionsQuarters);
+
 
 //datepicker select month
 let paramMonths='{"displayFormat": "MM/YYYY", "iconAlignment":"Left", "dateStringAlignment": "Left", "lowerLimit": "11/2011", "upperLimit": "12/2014", "showErrorMessage": true, "isDisabled": false, "showButtons": false, "showClearIcon": false, "manualEntry": true, "disabledList": ["11/2011", "12/2011", "11/2013", "10/2024"]}';
@@ -115,50 +112,67 @@ optionsIL = formatOptions(optionsIL);
 
 
 export const Default = () =>{
+let dataOptions =  '{}';
+let options     = JSON.parse(dataOptions);
+options         = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
+options         = formatOptions(options);
+  
 return  <div  style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
-  <div><h5>Date Picker</h5>
-  <div><DatePicker options={options}></DatePicker></div>
-  </div>
+  <div><h5>Default Date Picker</h5>
+  <div><DatePicker options={options}></DatePicker></div>  </div>
 
 </div> 
 }
 
-export const DisplayFinancialYear = () =>{
-  return <div  style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
- {/*  <p>Display financial year</p> */}
- <div><h5>Display financial year</h5>
-  <DatePicker options={optionsFinancialYear} ></DatePicker>
-  </div>
-  </div>
-}
+// export const DisplayFinancialYear = () =>{
+//   return <div  style={{ height: "20vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+//   <div><h5>Display Fnancial Year</h5>
+//   <DatePicker options={optionsFinancialYear} ></DatePicker>
+//   </div>
+//   </div>
+// }
 
 export const selectQuarter = () =>{
-  return <div style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
-      <div><h5>Select quarters</h5>
-<DatePicker options={optionsQuarters}></DatePicker>
-</div>
-</div>
+let paramQuarters   = '{"displayFormat": "QQ/YYYY"}';
+let optionsQuarters = JSON.parse(paramQuarters);
+optionsQuarters     = (isUndefinedOrNull(optionsQuarters))? resetOptions({}) : resetOptions(optionsQuarters);
+optionsQuarters     = formatOptions(optionsQuarters);
+  
+return <div style={{ height: "20vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div><h5>Select Quarter</h5>
+          <DatePicker options={optionsQuarters}></DatePicker>
+        </div>
+      </div>
 }
 
 export const selectMonth = () =>{
-  return <div style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
-      <div><h5>Select month</h5>
-<DatePicker options={optionsMonths}></DatePicker>
-</div>
-</div>
+let paramMonths   ='{"displayFormat": "MM/YYYY"}';
+let optionsMonths = JSON.parse(paramMonths);
+optionsMonths     = (isUndefinedOrNull(optionsMonths))? resetOptions({}) : resetOptions(optionsMonths);
+optionsMonths     = formatOptions(optionsMonths);
+
+return <div style={{ height: "20vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div><h5>Select Month</h5>
+        <DatePicker options={optionsMonths}></DatePicker>
+        </div>
+       </div>
 }
 
 export const selectYear = () =>{
-  return <div style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
-      <div><h5>Select year</h5>
+  return <div style={{ height: "20vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+      <div><h5>Select Year</h5>
 <DatePicker options={optionsYears}></DatePicker>
 </div>
 </div>
 }
 
 export const showButtons = () =>{
-  return <div style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
-     <div><h5>Display buttons</h5>
+let paramButtons = '{"showButtons": true, "dateButtonPrimary": "My Button"}';
+let optionsButtons = JSON.parse(paramButtons);
+optionsButtons = (isUndefinedOrNull(optionsButtons))? resetOptions({}) : resetOptions(optionsButtons);
+
+return <div style={{ height: "20vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+     <div><h5>Show Buttons</h5>
 <DatePicker options={optionsButtons}></DatePicker>
 </div>
 </div>
@@ -166,7 +180,12 @@ export const showButtons = () =>{
  
 
 export const disabledList = () =>{
-  return <div style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+let paramDL = '{"disabledList": ["11/25/2000", "11/29/2000", "11/13/2019", "11/14/2019"]}';
+let optionsDL = JSON.parse(paramDL);
+optionsDL = (isUndefinedOrNull(optionsDL))? resetOptions({}) : resetOptions(optionsDL);
+optionsDL = formatOptions(optionsDL);
+  
+  return <div style={{ height: "20vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
      <div><h5>Disabled List</h5>
 <DatePicker options={optionsDL}></DatePicker>
 </div>
@@ -174,7 +193,7 @@ export const disabledList = () =>{
 }
   
 export const indicatorList = () =>{
-  return <div style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+  return <div style={{ height: "20vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
      <div><h5>Enabled List</h5>
 <DatePicker options={optionsIL}></DatePicker>
 </div>
