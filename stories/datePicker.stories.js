@@ -93,14 +93,14 @@ return  <div  style={{ height: "100vh", display: "flex", alignItems: "center", j
 // }
 
 export const selectQuarter = () =>{
-let paramQuarters   = '{"displayFormat": "QQ/YYYY"}';
-let optionsQuarters = JSON.parse(paramQuarters);
-optionsQuarters     = (isUndefinedOrNull(optionsQuarters))? resetOptions({}) : resetOptions(optionsQuarters);
-optionsQuarters     = formatOptions(optionsQuarters);
+  let paramQuarters   = '{"displayFormat": "QQ/YYYY"}';
+  let optionsQuarters = JSON.parse(paramQuarters);
+  optionsQuarters     = (isUndefinedOrNull(optionsQuarters))? resetOptions({}) : resetOptions(optionsQuarters);
+  optionsQuarters     = formatOptions(optionsQuarters);
   
 return <div style={{ height: "20vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
         <div><h5>Select Quarter</h5>
-          <DatePicker options={optionsQuarters}></DatePicker>
+          <DatePicker id="quarterDatepicker" options={optionsQuarters}></DatePicker>
         </div>
       </div>
 }
