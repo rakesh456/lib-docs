@@ -1,7 +1,6 @@
-#wrapper{
-    margin-left:auto;
-    margin-right:auto;
-    height:auto; 
-    width:auto;
-    color: red;
+.div-demo{
+     height: 50vh;
+     display: flex;
+     align-items: left;
+     justify-content: left;
 }

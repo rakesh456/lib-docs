@@ -9,7 +9,6 @@ import {
   isValidJsonFormat
 } from "../../utils/tagselectorutils";
 import { CountryService } from "../../services/CountryService";
-import * as c from '../../utils/countries';
 
 class TagSelector extends React.PureComponent {
   constructor(props) {
@@ -45,7 +44,13 @@ class TagSelector extends React.PureComponent {
       style.top = "100%";
       style.zIndex = "1";
       this.setState({ style: style });
-      this.setJsonData(c.COUNTRIES)
+    }
+
+    let {showHierarchy, data} = this.props.options;
+    if(data && data.length > 0){
+      this.setState({
+        listItems: sortListingByType(showHierarchy, data)
+      });
     }
   }
 
@@ -165,9 +170,7 @@ class TagSelector extends React.PureComponent {
     this.setState({
       shouldListOpen: true
     });
-    console.log(this.state.shouldListOpen)
     this.props.onFocus();
-    console.log(this.state.searchValue)
     this.updateFilterItems(this.state.searchValue);
   };
 
@@ -385,7 +388,6 @@ class TagSelector extends React.PureComponent {
 
   closeTagSelector = e => {
     let shouldListOpen = true;
-    console.log("in close tag")
     if (
       e.target &&
       e.target.classList &&
@@ -559,7 +561,6 @@ class TagSelector extends React.PureComponent {
       listItems,
       filteredlistItems,
       noDataFound,
-      selectedItems,
       currentItemIndex,
       currentHierarchyItemIndex,
       hierarchySelectedItem

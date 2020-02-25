@@ -9,6 +9,7 @@ import {
   resetOptions,
   formatOptions
 } from "./utils/calendar";
+import './style.css'
 
   export default {
   title: 'Date Picker',
@@ -21,6 +22,7 @@ import {
     "</head>",
     "<body>",
     "<h2>Date Picker</h2>",
+    " ",
     '<date-picker id="datepicker" data-options=\'{"displayFormat": "DD/MM/YYYY", "iconAlignment":"left", "showErrorMessage": true, "dateStringAlignment": "left", "lowerLimit": "08/08/2015", "upperLimit": "30/09/2022", "validationMessages": [{"inValidFormat": "Invalid DOB"}, { "outsideRange": ""}] , "isDisabled": false, "showButtons": true, "dateButtonPrimary": "", "showClearIcon": false, "manualEntry": true, "disabledList": ["01/12/2019", "15/10/2020", "01/11/2020", "20/11/2019"], "indicatorList": [{ "dates": ["01/10/2019","02/11/2019"], "color": "#333" }, { "dates": ["02/09/2019","01/08/2019"], "color": "#ff0000" }]}\'></date-picker>',
     " ",
     "<script src='bundle.js'></script>",
@@ -33,9 +35,10 @@ react:[
   "import DatePicker from './components/Datepicker/index'",
   "import  './components/Datepicker/date-picker.scss';",
   " ",
-  'let dataoptions =  \'{"displayFormat": "DD/MM/YYYY", "iconAlignment":"left", "showErrorMessage": true, "dateStringAlignment": "left", "lowerLimit": "08/08/2015", "upperLimit": "30/09/2022", "validationMessages": [{"inValidFormat": "Invalid DOB"}, { "outsideRange": ""}] , "isDisabled": false, "showButtons": true, "dateButtonPrimary": "", "showClearIcon": false, "manualEntry": true, "disabledList": ["01/12/2019", "15/10/2020", "01/11/2020", "20/11/2019"], "indicatorList": [{ "dates": ["01/10/2019","02/11/2019"], "color": "#333" }, { "dates": ["02/09/2019","01/08/2019"], "color": "#ff0000" }]}\';',
+  'let dataoptions =  {\'displayFormat\': \'DD/MM/YYYY\', \'iconAlignment\':\'left\', \'showErrorMessage\': true, \'dateStringAlignment\': \'left\', \'lowerLimit\': \'08/08/2015\', \'upperLimit\': \'30/09/2022\', \'validationMessages\': [{\'inValidFormat\': \'Invalid DOB\'}, { \'outsideRange\': \'\'}] , \'isDisabled\': false, \'showButtons\': true, \'dateButtonPrimary\': \'\', \'showClearIcon\': false, \'manualEntry\': true, \'disabledList\': [\'01/12/2019\', \'15/10/2020\', \'01/11/2020\', \'20/11/2019\'], \'indicatorList\': [{ \'dates\': [\'01/10/2019\',\'02/11/2019\'], \'color\': \'red\' }, { \'dates\': [\'02/09/2019\',\'01/08/2019\'], \'color\': \'blue\' }]}\';',
   " ",
-  "let options = JSON.parse(dataoptions);",
+  "options     = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options)",
+  "options     = formatOptions(options);",
   " ",
   "function onFocusHandler() {}",
   "function onBlurHandler() {}",
@@ -50,103 +53,125 @@ react:[
   "}",
   " ",
   "export default App;"
-]},        
+]},
+        
 };
 
 export const Default = () =>{
-  let dataOptions =  '{}';
-  let options     = JSON.parse(dataOptions);
+  let options =  {};
   options         = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
   options         = formatOptions(options);
   
-return  <div  style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+return  <div className="div-demo">
           <div>
-            <h5>Default Date Picker</h5>
+            <h4>Default Date Picker</h4>
+            <p><small>data-options = '{"{}"}'</small></p>
+
             <DatePicker options={options}></DatePicker>
           </div>
         </div> 
 }
 
+
 export const selectQuarter = () =>{
-  let paramQuarters   = '{"displayFormat": "QQ/YYYY"}';
-  let optionsQuarters = JSON.parse(paramQuarters);
-  optionsQuarters     = (isUndefinedOrNull(optionsQuarters))? resetOptions({}) : resetOptions(optionsQuarters);
-  optionsQuarters     = formatOptions(optionsQuarters);
+  let options   = {'displayFormat': 'QQ/YYYY'};
+  options     = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
+  options     = formatOptions(options);
   
-return <div style={{ height: "20vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+return <div className="div-demo">
           <div>
-            <h5>Select Quarter</h5>
-            <DatePicker id="quarterDatepicker" options={optionsQuarters}></DatePicker>
+            <h4>Select Quarter</h4>
+            <p><small>data-options = '{"{\"displayFormat\": \"QQ/YYYY\"}"}'</small></p>
+
+            <DatePicker id="quarterDatepicker" options={options}></DatePicker>
           </div>
       </div>
 }
 
-export const selectMonth = () =>{
-  let paramMonths   ='{"displayFormat": "MM/YYYY"}';
-  let optionsMonths = JSON.parse(paramMonths);
-  optionsMonths     = (isUndefinedOrNull(optionsMonths))? resetOptions({}) : resetOptions(optionsMonths);
-  optionsMonths     = formatOptions(optionsMonths);
 
-return <div style={{ height: "20vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+export const selectMonth = () =>{
+  let options   = {'displayFormat': 'MM/YYYY'};
+  options     = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
+  options     = formatOptions(options);
+
+return <div className="div-demo">
           <div>
-            <h5>Select Month</h5>
-            <DatePicker options={optionsMonths}></DatePicker>
+            <h4>Select Month</h4>
+            <p><small>data-options = '{"{\"displayFormat\": \"MM/YYYY\"}"}'</small></p>
+
+            <DatePicker options={options}></DatePicker>
           </div>
        </div>
 }
 
 export const selectYear = () =>{
-  let paramYears='{"displayFormat": "YYYY"}';
-  let optionsYears = JSON.parse(paramYears);
-  optionsYears = (isUndefinedOrNull(optionsYears))? resetOptions({}) : resetOptions(optionsYears);
-  optionsYears = formatOptions(optionsYears);
+  let options= {'displayFormat': 'YYYY'}
+  options = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
+  options = formatOptions(options);
 
-  return <div style={{ height: "20vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+  return <div className="div-demo">
             <div>
-              <h5>Select Year</h5>
-              <DatePicker options={optionsYears}></DatePicker>
+              <h4>Select Year</h4>
+              <p><small>data-options = '{"{\"displayFormat\": \"YYYY\"}"}'</small></p>
+
+              <DatePicker options={options}></DatePicker>
             </div>
          </div>
 }
 
 export const showButtons = () =>{
-let paramButtons = '{"showButtons": true, "dateButtonPrimary": "My Button"}';
-let optionsButtons = JSON.parse(paramButtons);
-optionsButtons = (isUndefinedOrNull(optionsButtons))? resetOptions({}) : resetOptions(optionsButtons);
+let options = {'showButtons': true, 'dateButtonPrimary': 'My Button'};
+options = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
 
-return <div style={{ height: "20vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+return <div className="div-demo">
          <div>
-           <h5>Show Buttons</h5>
-           <DatePicker options={optionsButtons}></DatePicker>
+           <h4>Show Buttons</h4>
+           <p><small>data-options = '{"{\"showButtons\": true, \"dateButtonPrimary\": \"My Button\"}"}'</small></p>
+
+           <DatePicker options={options}></DatePicker>
          </div>
        </div>
 }
  
 
 export const disabledList = () =>{
-  let paramDL = '{"disabledList": ["11/25/2000", "11/29/2000", "11/13/2019", "11/14/2019"]}';
-  let optionsDL = JSON.parse(paramDL);
-  optionsDL = (isUndefinedOrNull(optionsDL))? resetOptions({}) : resetOptions(optionsDL);
-  optionsDL = formatOptions(optionsDL);
+  let currentMonth = new Date().getMonth() + 1;
+  let currentYear = new Date().getFullYear();
+  let date1 = "0"+currentMonth+"/"+"01"+"/"+currentYear;
+  let date2 = "0"+currentMonth+"/"+"08"+"/"+currentYear;
+  let date3 = "0"+currentMonth+"/"+"15"+"/"+currentYear;
+  let date4 = "0"+currentMonth+"/"+"22"+"/"+currentYear;
+
+  let options = {'disabledList': [date1,date2,date3,date4]};
+  options = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
+  options = formatOptions(options);
   
-  return <div style={{ height: "20vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+  return <div className="div-demo">
             <div>
-                <h5>Disabled List</h5>
-                <DatePicker options={optionsDL}></DatePicker>
+                <h4>Disabled List</h4>
+                <p><small>data-options = '&#123;disabledList": ["{date1}", "{date2}", "{date3}", "{date4}"]&#125;'</small></p>
+
+                <DatePicker options={options}></DatePicker>
             </div>
          </div>
 }
   
 export const indicatorList = () =>{
-  let paramIL = '{"indicatorList": [{ "dates": ["01/10/2019","02/11/2019"], "color": "#333" }, { "dates": ["02/09/2019","01/08/2019"], "color": "#ff0000" }]}';
-  let optionsIL = JSON.parse(paramIL);
-  optionsIL = (isUndefinedOrNull(optionsIL))? resetOptions({}) : resetOptions(optionsIL);
-  optionsIL = formatOptions(optionsIL);
+  let currentMonth = new Date().getMonth() + 1;
+  let currentYear = new Date().getFullYear();
+  let date1 = "0"+currentMonth+"/"+"10"+"/"+currentYear;
+  let date2 = "0"+currentMonth+"/"+"20"+"/"+currentYear;
+  let options = {'indicatorList': [{ 'dates': [date1], 'color': 'red' },{ 'dates': [date2], 'color': 'blue' }]};
+  options = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
+  options = formatOptions(options);
 
-  return <div style={{ height: "20vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+  return <div className="div-demo">
             <div>
-              <h5>Enabled List</h5>
-              <DatePicker options={optionsIL}></DatePicker>
+              <h4>Indicator List</h4>
+              <p><small>data-options = ' &#123;"indicatorList": [ &#123;"dates": ["{date1}"], "color": "red" },  &#123; "dates": ["{date2}"], "color": "blue" }] &#125;'</small></p>
+
+              <DatePicker options={options}></DatePicker>
             </div>
          </div>
 }
+
