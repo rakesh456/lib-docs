@@ -2,5 +2,11 @@
      height: 50vh;
      display: flex;
      align-items: left;
+     //word-wrap: break-word;
      justify-content: left;
 }
+
+.ediv{
+     word-wrap: break-word;
+}
+
