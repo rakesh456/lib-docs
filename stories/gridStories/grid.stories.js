@@ -2,7 +2,7 @@ import React from 'react';
 import { grid } from '@storybook/react/demo';
 import FxGrid from "../components/grid/fx-grid";
 import '../components/grid/fx-grid.scss';
-import imageUrl from '../assets/Capture.PNG';
+import imageUrl from '../assets/Capture.png';
 import groupColumnUrl from '../assets/groupColumn.PNG';
 import sortColumnUrl from '../assets/sortColumn.PNG';
 import showHideColumnUrl from '../assets/showHideColumns.png';
