@@ -12,6 +12,13 @@ import cellUrl from '../assets/cell.png';
 import aggregateRowUrl from '../assets/aggregaterow.png';
 import stickyHeaderUrl from '../assets/stickyHeader.png';
 import stripedPatternUrl from '../assets/stripedPattern.png';
+import exportOptionsUrl from '../assets/exportOptions.png';
+import frontBackPaginationUrl from '../assets/frontBackPagination.png';
+import nestedPaginationUrl from '../assets/nestedPagination.png';
+import rowDetailingUrl from '../assets/rowDetailing.png';
+import lockedColumnsUrl from '../assets/lockedColumns.png';
+import resizableColumnsUrl from '../assets/resizableColumns.png';
+import reorderColumnsUrl from '../assets/reorderColumns.png';
 export default {
     title: 'Grid',
      component: grid,
@@ -115,6 +122,7 @@ export const searchAcrossGrid = () =>
 {
    return <div>
         <h4>Search Across Grid</h4>
+        <p><small>data-options='&#123; "globalSearch":true &#125;'</small></p>
         <img src={imageUrl} className="grid-img"></img>
     </div>
 
@@ -124,18 +132,21 @@ export const groupColumn = () =>
 {
 return <div>
         <h4>Group columns</h4>
+        <p><small>data-options='&#123; "otherGridOptions": &#123; "groupable": true, "expandField": true  &#125;,"dataState": &#123;  "group": [] &#125;  &#125;'</small></p>
         <img src={groupColumnUrl} className="grid-img"></img>
     </div>
 }
 export const sortColumn = () =>{
 return <div>
         <h4>Sort column</h4>
+        <p><small>data-options='&#123; "sortable": &#123; "allowed": true,"mode":"single","allowUnsort":true &#125;  &#125;'</small></p>
         <img src={sortColumnUrl} className="grid-img"></img>
     </div>
 } 
 export const showOrHideMoreColumns = () =>{
 return <div>
         <h4>Show/Hide more Columns</h4>
+        <p><small>data-options='&#123; "filterOptions": &#123;"filterable": false, "filterMode": "menu"&#125; &#125;'</small></p>
         <img src={showHideColumnUrl} className="grid-img"></img>
     </div>
 } 
@@ -148,6 +159,7 @@ return <div>
 export const pagination = () =>{
 return <div>
         <h4>Pagination</h4>
+        <p><small>data-options= '&#123; "pageable": &#123; "buttonCount": 7, "type":"numeric", "info":true, "pageSizes":true, "previousNext":true &#125; &#125;'</small></p>
         <img src={paginationUrl} className="grid-img"></img>
     </div>
 }
@@ -167,6 +179,7 @@ export const aggregateRow = () =>{
 export const stripedPattern = () =>{
     return <div>
         <h4>Striped pattern</h4>
+        <p><small>data-options='&#123; "style": &#123; "stripedPattern":true &#125; &#125;'</small></p>
         <img src={stripedPatternUrl} className="grid-img"></img>
     </div>
 } 
@@ -174,5 +187,65 @@ export const stickyHeader = () =>{
     return <div>
         <h4>Sticky Header</h4>
         <img src={stickyHeaderUrl} className="grid-img"></img>
+    </div>
+} 
+export const exportOptions = () =>{
+    return <div>
+        <h4>Export Options</h4>
+        <p><small>'&#123; "exportOptions": &#123; "toExcel": true, "toPDF": true, "allPages": true &#125; &#125;'</small></p>
+        <img src={exportOptionsUrl} className="grid-img"></img>
+    </div>
+} 
+export const frontendOrBackendPagination = () =>{
+    return <div>
+        <h4>Frontend/Backend Pagination</h4>
+        <p><small>data-options = '&#123; "loadOnce": true &#125;'</small></p>
+        <img src={frontBackPaginationUrl} className="grid-img"></img>
+    </div>
+} 
+
+export const nestedPagination = () =>{
+    return <div>
+        <h4>Nested Pagination</h4>
+        <p><small>data-options = '&#123;  "advanced": &#123;"masterDetail":"columnName"&#125; &#125;'</small></p>
+        <img src={nestedPaginationUrl} className="grid-img"></img>
+    </div>
+} 
+
+
+export const rowDetailingOnExpanding = () =>{
+    return <div>
+        <h4>Row Detailing on Expanding</h4>
+        <p><small>data-options = '&#123;  "advanced": &#123;"detailRows":&#123;"type": "column","columns":[&#123;"label":"labelValue","field":"fieldName"&#125;,&#123;"label":"labelValue","field":"fieldName"&#125;]&#125; &#125; &#125;'</small></p>
+        <img src={rowDetailingUrl} className="grid-img"></img>
+    </div>
+} 
+
+
+
+export const lockedColumns = () =>{
+    return <div>
+        <h4>Locked Columns</h4>
+        <p><small>data-options = '&#123; "lockedColumns":["columnName1","columnName2"] &#125;'</small></p>
+        <img src={lockedColumnsUrl} className="grid-img"></img>
+    </div>
+} 
+
+
+export const resizableColumns = () =>{
+    return <div>
+        <h4>Resizable Columns</h4>
+        <p><small>data-options = '&#123; "otherGridOptions":&#123;"resizable":true&#125; &#125;'</small></p>
+        <img src={resizableColumnsUrl} className="grid-img"></img>
+    </div>
+} 
+
+
+
+export const reorderColumns = () =>{
+    return <div>
+        <h4>Reorder Columns</h4>
+        <p><small>data-options = '&#123; "otherGridOptions":&#123;"reorderable":true&#125; &#125;'</small></p>
+        <img src={reorderColumnsUrl} className="grid-img"></img>
     </div>
 } 
