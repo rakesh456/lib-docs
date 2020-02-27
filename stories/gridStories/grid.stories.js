@@ -5,6 +5,13 @@ import '../components/grid/fx-grid.scss';
 import imageUrl from '../assets/Capture.PNG';
 import groupColumnUrl from '../assets/groupColumn.PNG';
 import sortColumnUrl from '../assets/sortColumn.PNG';
+import showHideColumnUrl from '../assets/showHideColumns.png';
+import selectUnselectUrl from '../assets/selectUnselect.png';
+import paginationUrl from '../assets/pagination.png';
+import cellUrl from '../assets/cell.png';
+import aggregateRowUrl from '../assets/aggregaterow.png';
+import stickyHeaderUrl from '../assets/stickyHeader.png';
+import stripedPatternUrl from '../assets/stripedPattern.png';
 export default {
     title: 'Grid',
      component: grid,
@@ -129,11 +136,43 @@ return <div>
 export const showOrHideMoreColumns = () =>{
 return <div>
         <h4>Show/Hide more Columns</h4>
+        <img src={showHideColumnUrl}></img>
     </div>
 } 
-export const selectAndUnselect = () => <h4>Select and Unselect</h4>
-export const pagination = () => <h4>Pagination</h4>
-export const cellWithAnyUiComponents = () => <h4>Cell with Any UI components</h4>
-export const aggregateRow = () => <h4>Aggregate Row</h4>
-export const stripedPattern = () => <h4>Stripped pattern</h4>
-export const stickyHeader = () => <h4>Sticky Header</h4>
+export const selectAndUnselect = () =>{
+return <div>
+        <h4>Select and Unselect</h4>
+        <img src={selectUnselectUrl}></img>
+    </div>
+} 
+export const pagination = () =>{
+return <div>
+        <h4>Pagination</h4>
+        <img src={paginationUrl}></img>
+    </div>
+}
+export const cellWithAnyUiComponents = () =>
+{
+    return <div>
+        <h4>Cell with Any UI components</h4>
+        <img src={cellUrl}></img>
+    </div>
+} 
+export const aggregateRow = () =>{
+    return <div>
+         <h4>Aggregate Row</h4>
+         <img src={aggregateRowUrl}></img>
+    </div>
+}
+export const stripedPattern = () =>{
+    return <div>
+        <h4>Striped pattern</h4>
+        <img src={stripedPatternUrl}></img>
+    </div>
+} 
+export const stickyHeader = () =>{
+    return <div>
+        <h4>Sticky Header</h4>
+        <img src={stickyHeaderUrl}></img>
+    </div>
+} 
