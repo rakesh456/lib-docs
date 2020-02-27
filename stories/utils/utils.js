@@ -18,7 +18,22 @@ export function isUndefinedOrNull(obj) {
 export function isObject(obj) {
     return (typeof obj === 'object' && obj !== null);
 }
-
+export function isNumber(variable) {
+    return typeof variable === 'number';
+}
+export function isBoolean(variable) {
+    return typeof variable === "boolean";
+}
+export function isValidUIElement(htmlElement) {
+    return (htmlElement.elementType === 'input' && INPUT_TYPE.indexOf(htmlElement.type) !== -1);
+}
+export const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+});
+export function isEmpty(obj) {
+    return Object.keys(obj).length === 0;
+}
 // Funtion to check string is blank, undefined or null
 export function isBlank(string) {
     return (typeof string === "undefined" || string === null || string === '') ? true : false;
@@ -221,3 +236,15 @@ export const sortBy = fn => (a, b) => {
     const fb = fn(b)
     return -(fa < fb) || +(fa > fb)
 }
+
+
+export const locales = [
+    {
+        language: 'en-US',
+        locale: 'en'
+    },
+    {
+        language: 'es-ES',
+        locale: 'es'
+    }
+]
