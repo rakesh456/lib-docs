@@ -115,7 +115,7 @@ export const searchAcrossGrid = () =>
 {
    return <div>
         <h4>Search Across Grid</h4>
-        <img src={imageUrl} style={{"height":"100%","width":"100%"}}></img>
+        <img src={imageUrl} className="grid-img"></img>
     </div>
 
 }
@@ -124,55 +124,55 @@ export const groupColumn = () =>
 {
 return <div>
         <h4>Group columns</h4>
-        <img src={groupColumnUrl} style={{"height":"100%","width":"100%"}}></img>
+        <img src={groupColumnUrl} className="grid-img"></img>
     </div>
 }
 export const sortColumn = () =>{
 return <div>
         <h4>Sort column</h4>
-        <img src={sortColumnUrl} style={{"height":"100%","width":"100%"}}></img>
+        <img src={sortColumnUrl} className="grid-img"></img>
     </div>
 } 
 export const showOrHideMoreColumns = () =>{
 return <div>
         <h4>Show/Hide more Columns</h4>
-        <img src={showHideColumnUrl} style={{"height":"100%","width":"100%"}}></img>
+        <img src={showHideColumnUrl} className="grid-img"></img>
     </div>
 } 
 export const selectAndUnselect = () =>{
 return <div>
         <h4>Select and Unselect</h4>
-        <img src={selectUnselectUrl} style={{"height":"100%","width":"100%"}}></img>
+        <img src={selectUnselectUrl} className="grid-img"></img>
     </div>
 } 
 export const pagination = () =>{
 return <div>
         <h4>Pagination</h4>
-        <img src={paginationUrl} style={{"height":"100%","width":"100%"}}></img>
+        <img src={paginationUrl} className="grid-img"></img>
     </div>
 }
-export const cellWithAnyUiComponents = () =>
+export const cellWithAnyUIComponents = () =>
 {
     return <div>
         <h4>Cell with Any UI components</h4>
-        <img src={cellUrl} style={{"height":"100%","width":"100%"}}></img>
+        <img className="grid-img" src={cellUrl}></img>
     </div>
 } 
 export const aggregateRow = () =>{
     return <div>
          <h4>Aggregate Row</h4>
-         <img src={aggregateRowUrl} style={{"height":"100%","width":"100%"}}></img>
+         <img src={aggregateRowUrl} className="grid-img"></img>
     </div>
 }
 export const stripedPattern = () =>{
     return <div>
         <h4>Striped pattern</h4>
-        <img src={stripedPatternUrl} style={{"height":"100%","width":"100%"}}></img>
+        <img src={stripedPatternUrl} className="grid-img"></img>
     </div>
 } 
 export const stickyHeader = () =>{
     return <div>
         <h4>Sticky Header</h4>
-        <img src={stickyHeaderUrl} style={{"height":"100%","width":"100%"}}></img>
+        <img src={stickyHeaderUrl} className="grid-img"></img>
     </div>
 } 
