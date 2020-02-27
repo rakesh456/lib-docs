@@ -4,7 +4,7 @@ import FxGrid from "../components/grid/fx-grid";
 import '../components/grid/fx-grid.scss';
 import imageUrl from '../assets/Capture.PNG';
 import groupColumnUrl from '../assets/groupColumn.PNG';
-
+import sortColumnUrl from '../assets/sortColumn.PNG';
 export default {
     title: 'Grid',
      component: grid,
@@ -114,13 +114,23 @@ export const searchAcrossGrid = () =>
 }
 
 export const groupColumn = () => 
-{return <div>
+{
+return <div>
         <h4>Group columns</h4>
         <img src={groupColumnUrl}></img>
     </div>
 }
-export const sortColumn = () => <h4>Sort column</h4>
-export const showOrHideMoreColumns = () => <h4>Show/Hide more Columns</h4>
+export const sortColumn = () =>{
+return <div>
+        <h4>Sort column</h4>
+        <img src={sortColumnUrl}></img>
+    </div>
+} 
+export const showOrHideMoreColumns = () =>{
+return <div>
+        <h4>Show/Hide more Columns</h4>
+    </div>
+} 
 export const selectAndUnselect = () => <h4>Select and Unselect</h4>
 export const pagination = () => <h4>Pagination</h4>
 export const cellWithAnyUiComponents = () => <h4>Cell with Any UI components</h4>
