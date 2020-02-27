@@ -2,7 +2,8 @@ import React from 'react';
 import { grid } from '@storybook/react/demo';
 import FxGrid from "../components/grid/fx-grid";
 import '../components/grid/fx-grid.scss';
-
+import imageUrl from '../assets/Capture.PNG';
+import groupColumnUrl from '../assets/groupColumn.PNG';
 
 export default {
     title: 'Grid',
@@ -102,3 +103,27 @@ export const demo = () => {
 ]}
 return <FxGrid options={options}></FxGrid>
 }
+
+export const searchAcrossGrid = () => 
+{
+   return <div>
+        <h4>Search Across Grid</h4>
+        <img src={imageUrl}></img>
+    </div>
+
+}
+
+export const groupColumn = () => 
+{return <div>
+        <h4>Group columns</h4>
+        <img src={groupColumnUrl}></img>
+    </div>
+}
+export const sortColumn = () => <h4>Sort column</h4>
+export const showOrHideMoreColumns = () => <h4>Show/Hide more Columns</h4>
+export const selectAndUnselect = () => <h4>Select and Unselect</h4>
+export const pagination = () => <h4>Pagination</h4>
+export const cellWithAnyUiComponents = () => <h4>Cell with Any UI components</h4>
+export const aggregateRow = () => <h4>Aggregate Row</h4>
+export const stripedPattern = () => <h4>Stripped pattern</h4>
+export const stickyHeader = () => <h4>Sticky Header</h4>
