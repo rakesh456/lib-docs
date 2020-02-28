@@ -1,25 +1,40 @@
 import React from 'react';
 import { grid } from '@storybook/react/demo';
-import FxGrid from "../components/grid/fx-grid";
-import '../components/grid/fx-grid.scss';
-import imageUrl from '../assets/Capture.png';
-import groupColumnUrl from '../assets/groupColumn.PNG';
-import sortColumnUrl from '../assets/sortColumn.PNG';
-import showHideColumnUrl from '../assets/showHideColumns.png';
-import selectUnselectUrl from '../assets/selectUnselect.png';
-import paginationUrl from '../assets/pagination.png';
-import cellUrl from '../assets/cell.png';
-import aggregateRowUrl from '../assets/aggregaterow.png';
-import stickyHeaderUrl from '../assets/stickyHeader.png';
-import stripedPatternUrl from '../assets/stripedPattern.png';
-import exportOptionsUrl from '../assets/exportOptions.png';
-import frontBackPaginationUrl from '../assets/frontBackPagination.png';
-import nestedPaginationUrl from '../assets/nestedPagination.png';
-import rowDetailingUrl from '../assets/rowDetailing.png';
-import lockedColumnsUrl from '../assets/lockedColumns.png';
-import resizableColumnsUrl from '../assets/resizableColumns.png';
-import reorderColumnsUrl from '../assets/reorderColumns.png';
-import infiniteScrollUrl from '../assets/infiniteScroll.png';
+import FxGrid from "../../components/grid/fx-grid";
+import '../../components/grid/fx-grid.scss';
+import imageUrl from '../../assets/Capture.png';
+import groupColumnUrl from '../../assets/groupColumn.PNG';
+import sortColumnUrl from '../../assets/sortColumn.PNG';
+import showHideColumnUrl from '../../assets/showHideColumns.png';
+import selectUnselectUrl from '../../assets/selectUnselect.png';
+import paginationUrl from '../../assets/pagination.png';
+import cellUrl from '../../assets/cell.png';
+import aggregateRowUrl from '../../assets/aggregaterow.png';
+import stickyHeaderUrl from '../../assets/stickyHeader.png';
+import stripedPatternUrl from '../../assets/stripedPattern.png';
+import exportOptionsUrl from '../../assets/exportOptions.png';
+import frontBackPaginationUrl from '../../assets/frontBackPagination.png';
+import nestedPaginationUrl from '../../assets/nestedPagination.png';
+import rowDetailingUrl from '../../assets/rowDetailing.png';
+import lockedColumnsUrl from '../../assets/lockedColumns.png';
+import resizableColumnsUrl from '../../assets/resizableColumns.png';
+import reorderColumnsUrl from '../../assets/reorderColumns.png';
+import infiniteScrollUrl from '../../assets/infiniteScroll.png';
+import rowSelectedUrl from '../../assets/rowSelected.png';
+import reorderRowUrl from '../../assets/reorderRow.png';
+import rowStylingUrl from '../../assets/rowStyling.png';
+import filterMenuUrl from '../../assets/filterMenu.png';
+import filterSingleUrl from '../../assets/filterSingle.png';
+import filterMultipleUrl from '../../assets/filterMultiple.png';
+import filterSearchUrl from '../../assets/filterSearch.png';
+import clearFilterUrl from '../../assets/clearFilter.png';
+import cellLevelUrl from '../../assets/cellLevel.png';
+import multiColumnUrl from '../../assets/multiColumn.png';
+import addRowUrl from '../../assets/addRow.png';
+import editcellUrl from '../../assets/editCell.png';
+import externalFormUrl from '../../assets/externalForm.png';
+import inCellUrl from '../../assets/inCell.png';
+import disableCellUrl from '../../assets/disableCell.png';
 export default {
     title: 'Grid',
      component: grid,
@@ -118,6 +133,11 @@ export const demo = () => {
 ]}
 return <FxGrid options={options}></FxGrid>
 }
+export const addNewRow = () =>{
+    return <div>
+         <img src={addRowUrl} className="grid-img"></img>
+    </div>
+}
 export const aggregateRow = () =>{
     return <div>
          <img src={aggregateRowUrl} className="grid-img"></img>
@@ -130,10 +150,66 @@ export const cellWithAnyUIComponents = () =>
         <img className="grid-img" src={cellUrl}></img>
     </div>
 }
+export const cellLevelToolTip = () =>
+{
+    return <div>
+        <img className="grid-img" src={cellLevelUrl}></img>
+    </div>
+}
+export const clearFilter = () =>
+{
+    return <div>
+        <img className="grid-img" src={clearFilterUrl}></img>
+    </div>
+}
+export const disableCellEditing = () =>
+{
+    return <div>
+        <img className="grid-img" src={disableCellUrl}></img>
+    </div>
+}
+export const customizedRowStyling = () =>
+{
+    return <div>
+        <img className="grid-img" src={rowStylingUrl}></img>
+    </div>
+}
+export const editInCell = () =>
+{
+    return <div>
+        <img className="grid-img" src={editcellUrl}></img>
+    </div>
+}
+export const externalForm = () =>
+{
+    return <div>
+        <img className="grid-img" src={externalFormUrl}></img>
+    </div>
+}
 export const exportOptions = () =>{
     return <div>
         <p><small>data-options = '&#123; "exportOptions": &#123; "toExcel": true, "toPDF": true, "allPages": true &#125; &#125;'</small></p>
         <img src={exportOptionsUrl} className="grid-img"></img>
+    </div>
+} 
+export const filterAsMenuOption = () =>{
+    return <div>
+        <img src={filterMenuUrl} className="grid-img"></img>
+    </div>
+} 
+export const filterOptionsWithSingleMenu = () =>{
+    return <div>
+        <img src={filterSingleUrl} className="grid-img"></img>
+    </div>
+} 
+export const filterOptionWithMultipleValues = () =>{
+    return <div>
+        <img src={filterMultipleUrl} className="grid-img"></img>
+    </div>
+} 
+export const filterOptionWithSearch = () =>{
+    return <div>
+        <img src={filterSearchUrl} className="grid-img"></img>
     </div>
 } 
 export const frontendOrBackendPagination = () =>{
@@ -149,6 +225,12 @@ return <div>
         <img src={groupColumnUrl} className="grid-img"></img>
     </div>
 }
+export const inCellEditingOfAllCells = () => 
+{
+return <div>
+        <img src={inCellUrl} className="grid-img"></img>
+    </div>
+}
 export const infinteScroll = () => 
 {
 return <div>
@@ -160,6 +242,11 @@ export const lockedColumns = () =>{
     return <div>
         <p><small>data-options = '&#123; "lockedColumns":["Header6"] &#125;'</small></p>
         <img src={lockedColumnsUrl} className="grid-img"></img>
+    </div>
+} 
+export const multiColumnHeaders = () =>{
+    return <div>
+        <img src={multiColumnUrl} className="grid-img"></img>
     </div>
 } 
 export const nestedGrid = () =>{
@@ -181,6 +268,17 @@ export const rowDetailingOnExpanding = () =>{
         <img src={rowDetailingUrl} className="grid-img"></img>
     </div>
 } 
+export const rowSelected = () =>{
+    return <div>
+        <p><small>data-options = '&#123; "selectedRowPrimaryKey": Value &#125;'</small></p>
+        <img src={rowSelectedUrl} className="grid-img"></img>
+    </div>
+} 
+export const reorderRow = () =>{
+    return <div>
+        <img src={reorderRowUrl} className="grid-img"></img>
+    </div>
+} 
 export const resizableColumns = () =>{
     return <div>
         <p><small>data-options = '&#123; "otherGridOptions":&#123;"resizable":true&#125; &#125;'</small></p>
@@ -192,11 +290,11 @@ export const reorderColumns = () =>{
         <p><small>data-options = '&#123; "otherGridOptions":&#123;"reorderable":true&#125; &#125;'</small></p>
         <img src={reorderColumnsUrl} className="grid-img"></img>
     </div>
-} 
+}
 export const searchAcrossGrid = () => 
 {
    return <div>
-        <p><small>data-options = '&#123; "globalSearch":true &#125;'</small></p>
+        <p><small>data-options = '&#123; "globalSearch":true &#125; "data-options='&#123; "dataOperations: &#123; "dataUrl:"https:&#47;&#47;demos.telerik.com&#47;kendo-ui&#47;service-v4&#47;odata/Products?$count=true&", &#125;,"showColumns":[&#123; "field: "Header1", "title": "Header1","filter": "numeric", "width": "100px","locked": true &#125;, &#123;"field: "Header2","title": "Header2","filter": "numeric","width": "100px", "locked": true  &#125;,&#123;"field: "Header3","title": "Header3", "filter": "numeric", "width": "100px","locked": true  &#125;, &#123;"field: "Header4","title": "Header4","filter": "numeric","width": "100px","locked": true &#125;,&#123; "field: "Header5","title": "Header5","filter": "numeric","width": "100px","locked": true &#125;,&#123;"field: "Header6","title": "Header6","filter": "numeric","width": "100px","locked": true&#125; ]&#125;'"'</small></p>
         <img src={imageUrl} className="grid-img"></img>
     </div>
 

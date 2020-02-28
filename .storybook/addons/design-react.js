@@ -26,8 +26,8 @@ const Content = () => {
     <Fragment>
       {results.length ? (
         <ol>
-          {results.map((i,index) => (
-             (index===17)?<Lil>{i}</Lil>: <Li>{i}</Li>
+          {results.map((i) => (
+             <Li>{i}</Li>
           ))}
         </ol>
       ) : null}

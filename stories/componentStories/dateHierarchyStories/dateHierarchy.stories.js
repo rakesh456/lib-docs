@@ -1,12 +1,12 @@
 import React from 'react';
 import { dateHierarchy } from '@storybook/react/demo';
-import '../components/DateHierarchy/date-hierarchy.scss';
-import DateHierarchy from '../components/DateHierarchy/datehierarchyView';
-import '../style.css';
-import { isUndefinedOrNull } from "../utils/utils";
+import '../../components/DateHierarchy/date-hierarchy.scss';
+import DateHierarchy from '../../components/DateHierarchy/datehierarchyView';
+import '../../style.css';
+import { isUndefinedOrNull } from "../../utils/utils";
 import {
   resetDateHierarchyOptions
-} from "../utils/datehierarchyutils";
+} from "../../utils/datehierarchyutils";
 
 export default {
     title: 'Date Hierarchy',

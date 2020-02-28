@@ -1,15 +1,15 @@
 import React from 'react';
 import { tagSelector } from '@storybook/react/demo';
-import TagSelector from "../components/TagSelector/tag-selector";
-import '../components/TagSelector/tag-selector.scss';
+import TagSelector from "../../components/TagSelector/tag-selector";
+import '../../components/TagSelector/tag-selector.scss';
 import {
   isUndefinedOrNull
-} from "../utils/utils";
+} from "../../utils/utils";
 import {
   resetTagSelectorOptions
-} from "../utils/tagselectorutils";
-import * as c from '../utils/cities';
-import * as co from '../utils/countries';
+} from "../../utils/tagselectorutils";
+import * as c from '../../utils/cities';
+import * as co from '../../utils/countries';
 export default {
    title: 'Tag Selector',
     component: tagSelector,

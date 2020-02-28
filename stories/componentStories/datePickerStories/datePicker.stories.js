@@ -1,15 +1,15 @@
 import React from 'react';
 import { datePicker } from '@storybook/react/demo';
-import DatePicker from '../components/Datepicker';
-import '../components/Datepicker/date-picker.scss';
+import DatePicker from '../../components/Datepicker';
+import '../../components/Datepicker/date-picker.scss';
 import {
   isUndefinedOrNull
-} from "../utils/utils";
+} from "../../utils/utils";
 import {
   resetOptions,
   formatOptions
-} from "../utils/calendar";
-import '../style.css'
+} from "../../utils/calendar";
+import '../../style.css'
 
   export default {
   title: 'Date Picker',
