@@ -294,10 +294,13 @@ export const reorderColumns = () =>{
 export const searchAcrossGrid = () => 
 {
    return <div>
-        <p><small>data-options = '&#123; "globalSearch":true &#125; "data-options='&#123; "dataOperations: &#123; "dataUrl:"https:&#47;&#47;demos.telerik.com&#47;kendo-ui&#47;service-v4&#47;odata/Products?$count=true&", &#125;,"showColumns":[&#123; "field: "Header1", "title": "Header1","filter": "numeric", "width": "100px","locked": true &#125;, &#123;"field: "Header2","title": "Header2","filter": "numeric","width": "100px", "locked": true  &#125;,&#123;"field: "Header3","title": "Header3", "filter": "numeric", "width": "100px","locked": true  &#125;, &#123;"field: "Header4","title": "Header4","filter": "numeric","width": "100px","locked": true &#125;,&#123; "field: "Header5","title": "Header5","filter": "numeric","width": "100px","locked": true &#125;,&#123;"field: "Header6","title": "Header6","filter": "numeric","width": "100px","locked": true&#125; ]&#125;'"'</small></p>
+        <p><small>data-options = '&#123; "globalSearch":true, "dataOperations: &#123; "dataUrl:"https:&#47;&#47;demos.telerik.com&#47;kendo-ui&#47;service-v4&#47;odata/Products?$count=true&", &#125;,"showColumns":[&#123; "field: "Header1", "title": "Header1","filter": "numeric", "width": "100px","locked": true &#125;, &#123;"field: "Header2","title": "Header2","filter": "numeric","width": "100px", "locked": true  &#125;,&#123;"field: "Header3","title": "Header3", "filter": "numeric", "width": "100px","locked": true  &#125;, &#123;"field: "Header4","title": "Header4","filter": "numeric","width": "100px","locked": true &#125;,&#123; "field: "Header5","title": "Header5","filter": "numeric","width": "100px","locked": true &#125;,&#123;"field: "Header6","title": "Header6","filter": "numeric","width": "100px","locked": true&#125; ] &#125;'</small></p>
         <img src={imageUrl} className="grid-img"></img>
     </div>
 
+}
+searchAcrossGrid.stories = {
+    name: 'Generic',
 }
 export const selectAndUnselect = () =>{
     return <div>
