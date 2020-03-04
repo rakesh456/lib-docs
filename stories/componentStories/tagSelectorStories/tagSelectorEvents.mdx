@@ -1,11 +1,125 @@
 
- 
-|Sr. No.|Events|Comments|Examples|
-|--- |--- |--- |--- |
-|1|blur| Script to be run when an element loses focus|&lt;script&gt;<br/>function onBlurHandler(){<br/>alert(' onBlurHandler called ');<br/>}<br/>&lt;/script&gt;<br/><br/>&lt;tag-selector onBlur="onBlurHandler\(\)"&gt;|
-|2|focus|Script to be run when an element gets focus|&lt;script&gt;<br/>function onFocusHandler(){<br/>alert(' onFocusHandler called ');<br/>}<br/>&lt;/script&gt;<br/><br/>&lt;tag-selector onFocus="onFocusHandler\(\)"&gt;|
-|3|input|Script to be run when an element gets user input|&lt;script&gt;<br/>function onInputHandler(){<br/>alert(' onInputHandler called ');<br/>}<br/>&lt;/script&gt;<br/><br/>&lt;tag-selector onInput="onInputHandler\(\)"&gt;|
-|4|change|Script to be run when change has occurred to the control|&lt;script&gt;<br/>function onChangeHandler(){<br/>alert(' onChangeHandler called ');<br/>}<br/>&lt;/script&gt;<br/><br/>&lt;tag-selector onChange="onChangeHandler\(\)"&gt;|
-|5|keyup|script to be run when user releases a key|&lt;script&gt;<br/>function onKeyupHandler(){<br/>alert(' onKeyupHandler called ');<br/>}<br/>&lt;/script&gt;<br/><br/>&lt;tag-selector onKeyUp="onKeyupHandler\(\)"&gt;|
-|6|keydown|script to be run when user presses a key|&lt;script&gt;<br/>function onKeydownHandler(){<br/>alert(' onKeydownHandler called ');<br/>}<br/>&lt;/script&gt;<br/><br/>&lt;tag-selector onFocus="onKeydownHandler\(\)"&gt;|
 
+<table>
+<thead>
+<tr>
+<th>Sr. No.</th>
+<th>Events</th>
+<th>Comments</th>
+<th width="500px">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>blur</td>
+<td>Script to be run when an element loses focus</td>
+<td>
+
+```javascript
+<script>
+function onBlurHandler(){
+    alert(' onBlurHandler called ');
+}
+</script>
+
+<tag-selector onBlur="onBlurHandler()"></tag-selector>
+```
+
+</td>
+</tr>
+<tr>
+<td>2</td>
+<td>focus</td>
+<td>Script to be run when an element gets focus</td>
+<td>
+
+
+```javascript
+<script>
+function onFocusHandler(){
+    alert(' onFocusHandler called ');
+}
+</script>
+
+<tag-selector onFocus="onFocusHandler()"></tag-selector>
+```
+
+</td>
+</tr>
+<tr>
+<td>3</td>
+<td>input</td>
+<td>Script to be run when an element gets user input</td>
+<td>
+
+
+```javascript
+<script>
+function onInputHandler(){
+    alert(' onInputHandler called ');
+}
+</script>
+
+<tag-selector onInput="onInputHandler()"></tag-selector>
+```
+
+</td>
+</tr>
+<tr>
+<td>4</td>
+<td>change</td>
+<td>Script to be run when change has occurred to the control</td>
+<td>
+
+
+```javascript
+<script>
+function onChangeHandler(){
+    alert(' onChangeHandler called ');
+}
+</script>
+
+<tag-selector onChange="onChangeHandler()"></tag-selector>
+```
+
+</td>
+</tr>
+<tr>
+<td>5</td>
+<td>keyup</td>
+<td>script to be run when user releases a key</td>
+<td>
+
+```javascript
+<script>
+function onKeyupHandler(){
+    alert(' onKeyupHandler called ');
+}
+</script>
+
+<tag-selector onKeyup="onKeyupHandler()"></tag-selector>
+```
+
+</td>
+</tr>
+<tr>
+<td>6</td>
+<td>keydown</td>
+<td>script to be run when user presses a key</td>
+<td>
+
+```javascript
+<script>
+function onKeydownHandler(){
+    alert(' onKeydownHandler called ');
+}
+</script>
+
+<tag-selector onKeydown="onKeydownHandler()"></tag-selector>
+```
+
+</td>
+</tr>
+</tbody>
+</table>

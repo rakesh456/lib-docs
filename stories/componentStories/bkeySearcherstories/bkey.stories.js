@@ -21,8 +21,6 @@ function onRemoveItemHandler()
 export const Default = () => {
     let options = {
         "dataUrl": "https://demos.telerik.com/kendo-ui/service-v4/odata/Products?$count=true&",
-       
-        
         "primaryKey": "ProductID",
         "showColumns": [
           {
@@ -37,21 +35,24 @@ export const Default = () => {
           }
         ]
       }
-      return <div>
-          <p><small>data-options = '&#123;  "dataUrl": "https://demos.telerik.com/kendo-ui/service-v4/odata/Products?$count=true&",
-   "primaryKey": "ProductID",
-   "showColumns": [
-    &#123;
-       "field": "ProductID",
-       "title": "ProductID",
-       "filter": "numeric"
-       &#125;,
-     &#123;
-       "field": "ProductName",
-       "title": "Product Name",
-       "filter": "text"
-       &#125;
-   ] &#125;'</small></p>
-           <Bkey options={options} onAddItem={onAddItemHandler} onRemoveItem={onRemoveItemHandler}></Bkey>         
+      return <div className="row">
+     
+         
+           <div className="column"><Bkey options={options} onAddItem={onAddItemHandler} onRemoveItem={onRemoveItemHandler}></Bkey>     </div> 
+           <div className="column"> <pre>{`data-options = '{ "dataUrl": "https://demos.telerik.com/kendo-ui/
+                 service-v4/odata/Products?$count=true&",
+                "primaryKey": "ProductID",
+                "showColumns": [
+                  {
+                    "field": "ProductID",
+                    "title": "ProductID",
+                    "filter": "numeric"
+                  },
+                  {;
+                    "field": "ProductName",
+                    "title": "Product Name",
+                    "filter": "text"
+                  }
+                ] }'`}</pre></div>   
       </div>
   }  

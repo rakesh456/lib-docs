@@ -1,10 +1,108 @@
 
- 
-|Sr. No.|Events|Comments|Examples|
-|--- |--- |--- |--- |
-|1|blur| Script to be run when an element loses focus|&lt;script&gt;<br/>function onBlurHandler(){<br/>alert(' onBlurHandler called ');<br/>}<br/>&lt;/script&gt;<br/><br/>&lt;date-hierarchy onBlur="onBlurHandler\(\)"&gt;|
-|2|focus|Script to be run when an element gets focus|&lt;script&gt;<br/>function onFocusHandler(){<br/>alert(' onFocusHandler called ');<br/>}<br/>&lt;/script&gt;<br/><br/>&lt;date-hierarchy onFocus="onFocusHandler\(\)"&gt;|
-|3|select|Script to be run when user selects a value|&lt;script&gt;<br/>function onSelectHandler(){<br/>alert(' onSelectHandler called ');<br/>}<br/>&lt;/script&gt;<br/><br/>&lt;date-hierarchy onSelect="onSelectHandler\(\)"&gt;|
-|4|input|Script to be run when an element gets user input|&lt;script&gt;<br/>function onInputHandler(){<br/>alert(' onInputHandler called ');<br/>}<br/>&lt;/script&gt;<br/><br/>&lt;date-hierarchy onInput="onInputHandler\(\)"&gt;|
-|5|change|Script to be run when change has occurred to the control|&lt;script&gt;<br/>function onChangeHandler(){<br/>alert(' onChangeHandler called ');<br/>}<br/>&lt;/script&gt;<br/><br/>&lt;date-hierarchy onChange="onChangeHandler\(\)"&gt;|
 
+<table>
+<thead>
+<tr>
+<th>Sr. No.</th>
+<th>Events</th>
+<th>Comments</th>
+<th width="500px">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>blur</td>
+<td>Script to be run when an element loses focus</td>
+<td>
+
+```javascript
+<script>
+function onBlurHandler(){
+    alert(' onBlurHandler called ');
+}
+</script>
+
+<date-hierarchy onBlur="onBlurHandler()"></date-hierarchy>
+```
+
+</td>
+</tr>
+<tr>
+<td>2</td>
+<td>focus</td>
+<td>Script to be run when an element gets focus</td>
+<td>
+
+
+```javascript
+<script>
+function onFocusHandler(){
+    alert(' onFocusHandler called ');
+}
+</script>
+
+<date-hierarchy onFocus="onFocusHandler()"></date-hierarchy>
+```
+
+</td>
+</tr>
+<tr>
+<td>3</td>
+<td>select</td>
+<td>Script to be run when user selects a value</td>
+<td>
+
+
+```javascript
+<script>
+function onSelectHandler(){
+    alert(' onSelectHandler called ');
+}
+</script>
+
+<date-hierarchy onSelect="onSelectHandler()"></date-hierarchy>
+```
+
+</td>
+</tr>
+<tr>
+<td>4</td>
+<td>input</td>
+<td>Script to be run when an element gets user input</td>
+<td>
+
+
+```javascript
+<script>
+function onInputHandler(){
+    alert(' onInputHandler called ');
+}
+</script>
+
+<date-hierarchy onInput="onInputHandler()"></date-hierarchy>
+```
+
+</td>
+</tr>
+<tr>
+<td>5</td>
+<td>change</td>
+<td>Script to be run when change has occurred to the control</td>
+<td>
+
+
+```javascript
+<script>
+function onChangeHandler(){
+    alert(' onChangeHandler called ');
+}
+</script>
+
+<date-hierarchy onChange="onChangeHandler()"></date-hierarchy>
+```
+
+</td>
+</tr>
+</tbody>
+</table>

@@ -1,6 +1,43 @@
+<table>
+<tr>
+<th>Sr. No.</th>
+<th>Events</th>
+<th>Comments</th>
+<th width="550px">Examples</th>
+</tr>
 
- 
-|Sr. No.|Events|Comments|Examples|
-|--- |--- |--- |--- |
-|1|addItem||&lt;script&gt;<br/>function onAddItemHandler(){<br/>alert(' onAddItemHandler called ');<br/>}<br/>&lt;/script&gt;<br/><br/>&lt;bkey-searcher onAddItem="onAddItemHandler\(\)"&gt;|
-|2|removeItem||&lt;script&gt;<br/>function onRemoveItemHandler(){<br/>alert(' onRemoveItemHandler called ');<br/>}<br/>&lt;/script&gt;<br/><br/>&lt;bkey-searcher onRemoveItem="onRemoveItemHandler\(\)"&gt;|
+<tr>
+<td>1</td>
+<td>addItem</td>
+<td>Script to be called on click of add item</td>
+<td>
+
+```javascript
+<script>
+function onAddItemHandler(){
+    alert(' onAddItemHandler called ')
+}
+</script>
+<bkey-searcher onAddItem="onAddItemHandler()"></bkey-searcher>
+```
+
+</td>
+</tr>
+<tr>
+<td>2</td>
+<td>removeItem</td>
+<td>Script to be called on click of remove item</td>
+<td>
+
+```javascript
+<script>
+function onRemoveItemHandler(){
+    alert(' onRemoveItemHandler called ')
+}</script>
+<bkey-searcher onRemoveItem="onRemoveItemHandler()"></bkey-searcher>
+```
+
+</td>
+</tr>
+
+</table>

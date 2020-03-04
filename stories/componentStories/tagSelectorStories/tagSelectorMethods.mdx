@@ -1,12 +1,123 @@
+<table>
+<thead>
+<tr>
+<th>Sr. No.</th>
+<th>Methods</th>
+<th>Comments</th>
+<th width="530px">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>appendNewElement</td>
+<td>Append new element to the list</td>
+<td>
 
- 
-|Sr. No.|Methods|Comments|Examples|
-|--- |--- |--- |--- |
-|1|appendNewElement|Append new element to the list|var element = document.getElementById("idOfElement");<br/>element.appendNewElement({ "key": "Test", "value": "BPO" });|
-|2|getSelectedValues|Get all the selected values|var element = document.getElementById("idOfElement");<br/>alert(element.getSelectedValues());|
-|3|getSelectedCounter|Get count of selected elements|var element = document.getElementById("idOfElement");<br/>alert(element.getSelectedCounter());|
-|4|getNewlyAdded|Get list of newly added elements into the list|var element = document.getElementById("idOfElement");<br/>alert(element.getNewlyAdded());|
-|5|setSelectedItems|Sets the selected elements|var element = document.getElementById("idOfElement");<br/>element.setSelectedItems([{ "value": "Albania", "key": "AL" }, { "value": "Turkey", "key": "TR" }]);|
-|6|setJsonData|Sets the Json data to be displayed as a list|var element = document.getElementById("idOfElement");<br/>element.setJsonData([{ "value": "Albania", "key": "AL" }, { "value": "Turkey", "key": "TR" }]);|
-|7|remove|Remove list of selected elements|var element = document.getElementById("idOfElement");<br/>element.remove({ "key": "AL", "value": "Albania" });|
-|8|refresh|Get the tag selector to its initial form|var element = document.getElementById("idOfElement");<br/>element.refresh();|
+```javascript
+var element = document.getElementById("idOfElement");
+element.appendNewElement({ "key": "Test", "value": "BPO" });
+```
+
+</td>
+</tr>
+<tr>
+<td>2</td>
+<td>getSelectedValues</td>
+<td>Get all the selected values</td>
+<td>
+
+
+```javascript
+var element = document.getElementById("idOfElement");
+alert(element.getSelectedValues());
+```
+
+</td>
+</tr>
+<tr>
+<td>3</td>
+<td>getSelectedCounter</td>
+<td>Get count of selected elements</td>
+<td>
+
+
+```javascript
+var element = document.getElementById("idOfElement");
+alert(element.getSelectedCounter());
+```
+
+</td>
+</tr>
+<tr>
+<td>4</td>
+<td>getNewlyAdded</td>
+<td>Get list of newly added elements into the list</td>
+<td>
+
+
+```javascript
+var element = document.getElementById("idOfElement");
+alert(element.getNewlyAdded());
+```
+
+</td>
+</tr>
+<tr>
+<td>5</td>
+<td>setSelectedItems</td>
+<td>Sets the selected elements</td>
+<td>
+
+
+```javascript
+var element = document.getElementById("idOfElement");
+element.setSelectedItems([{ "value": "Albania", "key": "AL" }, { "value": "Turkey", "key": "TR" }]);
+```
+
+</td>
+</tr>
+<tr>
+<td>6</td>
+<td>setJsonData</td>
+<td>Sets the Json data to be displayed as a list</td>
+<td>
+
+
+```javascript
+var element = document.getElementById("idOfElement");
+element.setJsonData([{ "value": "Albania", "key": "AL" }, { "value": "Turkey", "key": "TR" }]);
+```
+
+</td>
+</tr>
+<tr>
+<td>7</td>
+<td>remove</td>
+<td>Remove list of selected elements</td>
+<td>
+
+
+```javascript
+var element = document.getElementById("idOfElement");
+element.remove({ "key": "AL", "value": "Albania" });
+```
+
+</td>
+</tr>
+<tr>
+<td>8</td>
+<td>refresh</td>
+<td>Get the tag selector to its initial form</td>
+<td>
+
+
+```javascript
+var element = document.getElementById("idOfElement");
+element.refresh();
+```
+
+</td>
+</tr>
+</tbody>
+</table>

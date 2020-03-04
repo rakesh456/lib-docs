@@ -16,3 +16,16 @@
      border:1px #DCDCDC solid;
 }
 
+
+   
+   .column {
+     float: left;
+     width: 50%;
+   }
+   
+   /* Clear floats after the columns */
+   .row:after {
+     content: "";
+     display: table;
+     clear: both;
+   }

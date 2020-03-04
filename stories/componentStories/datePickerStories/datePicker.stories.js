@@ -77,12 +77,12 @@ export const selectQuarter = () =>{
   let options   = {'displayFormat': 'QQ/YYYY'};
   options     = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
   options     = formatOptions(options);
+ 
   
 return <div className="div-demo">
           <div>
             <h4>Select Quarter</h4>
             <p><small>data-options = '{"{\"displayFormat\": \"QQ/YYYY\"}"}'</small></p>
-
             <DatePicker id="quarterDatepicker" options={options}></DatePicker>
           </div>
       </div>
