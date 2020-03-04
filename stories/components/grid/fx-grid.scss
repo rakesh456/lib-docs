@@ -20,6 +20,10 @@
     cursor: pointer;
   }
   
+  .k-grid tbody > .k-alt { 
+    background-color: rgba(0,0,0,0.05);
+  }
+
   .VS-Grid-Export-Dropdown {
     background-color: #4CAF50;
     color: white;
@@ -30,6 +34,7 @@
   }
   
   .VS-Grid-Selection-Dropdown,
+  .VS-Grid-Export-Buttons,
   .VS-dropdown {
     position: relative;
     display: inline-block;

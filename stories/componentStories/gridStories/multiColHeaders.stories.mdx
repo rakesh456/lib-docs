@@ -7,7 +7,48 @@ import '../../style.css';
 
 <Meta title="Grid/Column Level Configuration/Multi column headers" component={grid} />
 
- data-options = '{"showColumns":[{"field": "ProductID", "title": "ProductID","filter": "numeric","parentName": "prodinfo","locked": true},{"name": "prodinfo","title": "Production Info","isParent": true }, {"field": "Discontinued","title": "Discontinued","filter": "boolean","parentName": "prodinfo","width": "100px" }]"}'
+ data-options = '{
+"showColumns":[
+      {
+        "field": "Header2A",
+        "title": "Header 2A",
+        "filter": "numeric",
+        "parentName": "Header2",
+      },
+      {
+        "name": "Header2",
+        "title": "Header 2",
+        "isParent": true
+      },
+      {
+        "field": "Header2B",
+        "title": "Header 2B",
+        "filter": "numeric",
+        "parentName": "Header2"
+      },
+     {
+        "field": "Header3",
+        "title": "Header 3",
+        "filter": "numeric",
+        "parentName": "Header2",
+        "isParent": true
+      },
+     {
+        "field": "Header3A",
+        "title": "Header 3A",
+        "filter": "numeric",
+        "parentName": "Header3",
+      },
+     {
+        "field": "Header3B",
+        "title": "Header 3B",
+        "filter": "numeric",
+        "parentName": "Header3"
+      },
+     {
+        "field": "Header3C",
+        "title": "Header 3C",
+        "filter": "numeric",
+        "parentName": "Header3"
+      }]"}'
 <img src={imgUrl} className="grid-img"/>
-
-

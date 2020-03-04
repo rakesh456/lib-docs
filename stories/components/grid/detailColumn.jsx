@@ -15,22 +15,45 @@ export function detailColumn({ options }) {
                 take: event.page.take
             });
         }
+
+        renderDetail = (column, index, dataItem) => {
+            return (
+                <div key={index}>
+                    {
+                        (column && column.label && column.field)? <p><strong>{column.label}:</strong>{dataItem[column.field]}</p> : ''
+                    }
+                </div>
+            )
+        }
+
         render() {
             const dataItem = this.props.dataItem;
+            let detailsColumns = (options && options.advanced && options.advanced.detailRows)? options.advanced.detailRows.columns : [];
+            let nestedGridData = (options && options.advanced && options.advanced.masterDetail)? dataItem[options.advanced.masterDetail] : [];
+
             return (
-                <div>{
-                    <section className="VS-ROW-Detailing">
-                        <p><strong>ReorderLevel:</strong></p>
-                    </section>
+                <div>
+                    {
+                        (detailsColumns && detailsColumns.length > 0)?
+                        <section className="VS-ROW-Detailing">
+                            {
+                                detailsColumns.map((column, index) => this.renderDetail(column, index, dataItem))
+                            }
+                        </section>
+                        : ''
                     }
-                    <Grid className="VS-nestedGrid" data={dataItem[options.advanced.masterDetail].slice(this.state.skip, this.state.take + this.state.skip)}
-                        pageCount={this.state.pageable.buttonCount}
-                        skip={this.state.skip}
-                        take={this.state.take}
-                        total={options.advanced.masterDetail.length}
-                        pageable={this.state.pageable}
-                        onPageChange={this.pageChange}>
-                    </Grid>
+
+                    {
+                        (nestedGridData && nestedGridData.length > 0)?
+                        <Grid className="VS-nestedGrid" data={nestedGridData.slice(this.state.skip, this.state.take + this.state.skip)}
+                            pageCount={this.state.pageable.buttonCount}
+                            skip={this.state.skip}
+                            take={this.state.take}
+                            total={nestedGridData.length}
+                            pageable={this.state.pageable}
+                            onPageChange={this.pageChange}>
+                        </Grid> : ''
+                    }
                 </div>
             );
 

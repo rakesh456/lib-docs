@@ -133,41 +133,6 @@ export class DialogContainer extends React.Component {
 			>
 				<FormGenerator options={this.state.formJson} />
 
-				{/* <form onSubmit={this.handleSubmit}>
-                    <div style={{ marginBottom: '1rem' }}>
-                        <label>
-                            Product Name<br />
-                            <Input
-                                type="text"
-                                name="ProductName"
-                                value={this.state.externalEditItem.ProductName || ''}
-                                onChange={this.onDialogInputChange}
-                            />
-                        </label>
-                    </div>
-                    <div style={{ marginBottom: '1rem' }}>
-                        <label>
-                            Units In Stock<br />
-                            <NumericTextBox
-                                name="UnitsInStock"
-                                value={this.state.externalEditItem.UnitsInStock || 0}
-                                onChange={this.onDialogInputChange}
-                            />
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            <input
-                                type="checkbox"
-                                name="Discontinued"
-                                checked={this.state.externalEditItem.Discontinued || false}
-                                onChange={this.onDialogInputChange}
-                            />
-                            Discontinued product
-                    </label>
-                    </div>
-                </form> */}
-
 				<DialogActionsBar>
 					<button
 						className="k-button VS-FormCancelButton"

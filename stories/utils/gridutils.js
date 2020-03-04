@@ -1,4 +1,4 @@
-export const DEFAULT_OPTIONS = { "expandField": true, "reorderable": false, "resizable": false, "groupable": false, "sortable": false, "loadOnce": false, "allEditable": true, "rowInEditMode": false, "externalEditMode": false, "allowNewRow": false, "infiniteScroll": true };
+export const DEFAULT_OPTIONS = { "expandField": true, "reorderable": false, "resizable": false, "groupable": false, "sortable": false, "loadOnce": false, "allEditable": true, "rowInEditMode": false, "externalEditMode": false, "allowNewRow": false, "infiniteScroll": true, "cellToolTip": false };
 
 export const DEFAULT_FILTER_OPTIONS = { "filterable": false, "filterMode": "menu", "isMultiValueFilter": false };
 
@@ -27,9 +27,9 @@ export const DEFAULT_SORTABLE = {
 };
 
 export const DEFAULT_STYLE = {
-    "height": "600px",
-    "customizedRow": null
-
+    "gridStyle": {"height": "450px"},
+    "customizedRow": null,
+    "stripedPattern": true
 };
 
 export const DEFAULT_FILTER_OPERATORS = {

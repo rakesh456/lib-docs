@@ -4,7 +4,7 @@ import {Loader} from './loader.jsx';
 
 export class DataLoader extends React.Component {
     
-    baseUrl = this.props.options.dataUrl;
+    baseUrl = this.props.dataUrl;
     init = { method: 'GET', accept: 'application/json', headers: {} };
 
     lastSuccess = '';

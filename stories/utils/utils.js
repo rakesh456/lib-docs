@@ -27,6 +27,9 @@ export function isBoolean(variable) {
 export function isValidUIElement(htmlElement) {
     return (htmlElement.elementType === 'input' && INPUT_TYPE.indexOf(htmlElement.type) !== -1);
 }
+export const isHTML = (str) => {
+    return /<([A-Za-z][A-Za-z0-9]*)\b[^>]*>(.*?)<\/\1>/.test(str);
+}
 export const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',

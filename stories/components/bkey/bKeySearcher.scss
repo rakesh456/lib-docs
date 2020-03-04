@@ -1,0 +1,49 @@
+
+.VS-SelectedDiv{
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  width: 400px;
+  height: 20px;
+  padding: 10px 0px 5px;
+  text-align: center;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.VS-FilterButtons button{
+  display: block;
+  padding: 3px;
+  width: 100%;
+  margin-bottom: 2px;
+  border: 0px;
+  background-color: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.VS-Bkey-Searcher .k-grid{
+  min-height: 350px;
+  min-width: 350px;
+}
+
+.k-grid td{
+    justify-content:space-around;
+}
+
+.link-button {
+    background-color: transparent;
+    border: none; 
+    cursor: pointer;
+    display: inline;
+    margin: 0;
+    padding: 0;
+  }
+  
+.link-button:hover,
+.link-button:focus {
+  text-decoration: none;
+} 
+
+.k-link{
+  padding: 10px;
+}
