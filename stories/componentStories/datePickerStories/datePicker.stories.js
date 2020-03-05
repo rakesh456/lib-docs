@@ -58,14 +58,24 @@ react:[
 };
 
 export const Default = () =>{
-  let options =  {};
+  let currentMonth = new Date().getMonth() + 1;
+  let currentYear = new Date().getFullYear();
+  let date1 = "0"+currentMonth+"/"+"01"+"/"+currentYear;
+  let date2 = "0"+currentMonth+"/"+"08"+"/"+currentYear;
+  let date3 = "0"+currentMonth+"/"+"15"+"/"+currentYear;
+  let date4 = "0"+currentMonth+"/"+"22"+"/"+currentYear;
+  let date1_indicator = "0"+currentMonth+"/"+"10"+"/"+currentYear;
+  let date2_indicator = "0"+currentMonth+"/"+"20"+"/"+currentYear;
+
+  let options =  {'disabledList': [date1,date2,date3,date4],'indicatorList': [{ 'dates': [date1_indicator], 'color': 'red' },{ 'dates': [date2_indicator], 'color': 'blue' }]};
   options         = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
   options         = formatOptions(options);
   
 return  <div className="div-demo">
           <div>
             <h4>Default Date Picker</h4>
-            <p><small>data-options = '{"{}"}'</small></p>
+            <p><small>Date picker with disabled dates and indicators</small></p>
+            <p><small>data-options = '&#123;disabledList": ["{date1}", "{date2}", "{date3}", "{date4}"],"indicatorList": [ &#123;"dates": ["{date1_indicator}"], "color": "red" },  &#123; "dates": ["{date2_indicator}"], "color": "blue" }]&#125;'</small></p>
 
             <DatePicker options={options}></DatePicker>
           </div>
@@ -133,7 +143,7 @@ return <div className="div-demo">
        </div>
 }
  
-
+/* 
 export const disabledList = () =>{
   let currentMonth = new Date().getMonth() + 1;
   let currentYear = new Date().getFullYear();
@@ -175,3 +185,4 @@ export const indicatorList = () =>{
          </div>
 }
 
+ */

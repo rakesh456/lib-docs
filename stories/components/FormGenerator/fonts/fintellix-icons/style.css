@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'fintellix-icons';
-  /* src:  url('fonts/fintellix-icons.eot?dq1z94');
+  src:  url('fonts/fintellix-icons.eot?dq1z94');
   src:  url('fonts/fintellix-icons.eot?dq1z94#iefix') format('embedded-opentype'),
     url('fonts/fintellix-icons.ttf?dq1z94') format('truetype'),
     url('fonts/fintellix-icons.woff?dq1z94') format('woff'),
-    url('fonts/fintellix-icons.svg?dq1z94#fintellix-icons') format('svg'); */
+    url('fonts/fintellix-icons.svg?dq1z94#fintellix-icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;

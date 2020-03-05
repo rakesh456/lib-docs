@@ -228,6 +228,7 @@ tag-selector{
 }
 
 .VS-AutocompleteItems li{
+    box-sizing: content-box;
     padding: 8px 0px 8px 10px;
     margin-bottom: 1px;
     color: $secondary-two-dark;

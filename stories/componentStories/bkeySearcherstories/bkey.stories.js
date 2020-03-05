@@ -3,8 +3,6 @@ import { bkeySearcher } from '@storybook/react/demo';
 import '../../components/bkey/bKeySearcher.scss';
 import Bkey from '../../components/bkey/bkey-searcher';
 import '../../style.css';
-
-
 export default {
     title: 'Bkey Searcher',
      component: bkeySearcher,
@@ -36,10 +34,8 @@ export const Default = () => {
         ]
       }
       return <div className="row">
-     
-         
-           <div className="column"><Bkey options={options} onAddItem={onAddItemHandler} onRemoveItem={onRemoveItemHandler}></Bkey>     </div> 
-           <div className="column"> <pre>{`data-options = '{ "dataUrl": "https://demos.telerik.com/kendo-ui/
+             <div className="column"><Bkey options={options} onAddItem={onAddItemHandler} onRemoveItem={onRemoveItemHandler}></Bkey>     </div> 
+             <div className="column"> <pre>{`data-options = '{ "dataUrl": "https://demos.telerik.com/kendo-ui/
                  service-v4/odata/Products?$count=true&",
                 "primaryKey": "ProductID",
                 "showColumns": [
@@ -54,5 +50,5 @@ export const Default = () => {
                     "filter": "text"
                   }
                 ] }'`}</pre></div>   
-      </div>
+            </div>
   }  

@@ -68,7 +68,7 @@ function onKeyDownHandler() { }
 let options=  {};
 options = (isUndefinedOrNull(options)) ? resetTagSelectorOptions({}) : resetTagSelectorOptions(options); 
 
-  return <div className="div-demo">
+  return <div>
             <div>
               <h4>Default</h4>
               <p><small>data-options =  &#123;  &#125;</small></p>
@@ -108,7 +108,7 @@ export const withoutHierarchy = () => {
     let options= { 'data':[{ "Bihar": [{ "key": "Arwal", "value": "Arwal" },{ "key": "Nawada", "value": "Nawada" },{ "key": "Gopalganj", "value": "Gopalganj" }] }, { "Andhra Pradesh": [{ "key": "Adoni", "value": "Adoni" },{ "key": "Bapatla", "value": "Bapatla" }, { "key": "Anantapur", "value": "Anantapur" } ]}, ], 'showHierarchy': true};
     options = (isUndefinedOrNull(options)) ? resetTagSelectorOptions({}) : resetTagSelectorOptions(options);
  
-    return <div class="div-demo">
+    return <div>
               <div>
                   <h4>With hierarchy</h4>
                   <p><small>data-options = &#123; 'showHierarchy':true , "data": [&#123; "value": "Javascript", "key": "Javascript" &#125;, &#123;"value": "CSS", "key": "CSS" &#125;, &#123; "value": "JQuery", "key": "JQuery" &#125;, &#123; "value": "Angular", "key": "Angular" &#125;, &#123; "value": "MonogDB", "key": "MonogDB" &#125;,&#123; "value": "NodeJs", "key": "NodeJs" &#125;&#125;</small></p>
@@ -127,7 +127,7 @@ export const withoutHierarchy = () => {
       let options=   {"maxItemCounter":3,"canRemoveAll":true, "data": [{ "value": "Javascript", "key": "Javascript" }, { "value": "CSS", "key": "CSS" }, { "value": "JQuery", "key": "JQuery" }, { "value": "Angular", "key": "Angular" }, { "value": "MonogDB", "key": "MonogDB" },{ "value": "NodeJs", "key": "NodeJs" }]};
       options = (isUndefinedOrNull(options)) ? resetTagSelectorOptions({}) : resetTagSelectorOptions(options);
      
-        return <div className="div-demo">
+        return <div>
                   <div>
                     <h4>Max item counter</h4>
                     <p><small>data-options = &#123; 'maxItemCounter':3 , "data": [&#123; "value": "Javascript", "key": "Javascript" &#125;, &#123;"value": "CSS", "key": "CSS" &#125;, &#123; "value": "JQuery", "key": "JQuery" &#125;, &#123; "value": "Angular", "key": "Angular" &#125;, &#123; "value": "MonogDB", "key": "MonogDB" &#125;,&#123; "value": "NodeJs", "key": "NodeJs" &#125; &#125;</small></p>
@@ -146,7 +146,7 @@ export const withoutHierarchy = () => {
       let options=   {"allowNewValue":true, "data": [{ "value": "Javascript", "key": "Javascript" }, { "value": "CSS", "key": "CSS" }, { "value": "JQuery", "key": "JQuery" }, { "value": "Angular", "key": "Angular" }, { "value": "MonogDB", "key": "MonogDB" },{ "value": "NodeJs", "key": "NodeJs" }]};
       options = (isUndefinedOrNull(options)) ? resetTagSelectorOptions({}) : resetTagSelectorOptions(options);
      
-        return <div class="div-demo">
+        return <div>
                   <div>
                     <h4>Allow new value</h4>
                     <p><small>data-options = &#123; 'allowNewValue':true , "data": [&#123; "value": "Javascript", "key": "Javascript" &#125;, &#123;"value": "CSS", "key": "CSS" &#125;, &#123; "value": "JQuery", "key": "JQuery" &#125;, &#123; "value": "Angular", "key": "Angular" &#125;, &#123; "value": "MonogDB", "key": "MonogDB" &#125;,&#123; "value": "NodeJs", "key": "NodeJs" &#125; &#125;</small></p>
@@ -166,7 +166,7 @@ export const withoutHierarchy = () => {
       let options=   {"showHelper":true, "data": [{ "value": "Javascript", "key": "Javascript" }, { "value": "CSS", "key": "CSS" }, { "value": "JQuery", "key": "JQuery" }, { "value": "Angular", "key": "Angular" }, { "value": "MonogDB", "key": "MonogDB" },{ "value": "NodeJs", "key": "NodeJs" }]};
       options = (isUndefinedOrNull(options)) ? resetTagSelectorOptions({}) : resetTagSelectorOptions(options);
      
-        return <div class="div-demo">
+        return <div>
                   <div>
                     <h4>Allow new value</h4>
                     <p><small>data-options = &#123; 'showHelper':true , "data": [&#123; "value": "JV", "key": "Javascript" &#125;, &#123;"value": "CSS", "key": "CSS" &#125;, &#123; "value": "JQuery", "key": "JQuery" &#125;, &#123; "value": "Angular", "key": "Angular" &#125;, &#123; "value": "MonogDB", "key": "MonogDB" &#125;,&#123; "value": "NodeJs", "key": "NodeJs" &#125; &#125;</small></p>
