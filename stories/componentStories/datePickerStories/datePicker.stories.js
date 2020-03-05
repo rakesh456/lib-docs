@@ -151,18 +151,27 @@ return <div className="div-demo">
  
 
 export const disabledList = () =>{
-  let month = CURRENT_MONTH.toString();
+  let month =  CURRENT_MONTH.toString()
   let year = CURRENT_YEAR.toString();
-  let quarter = (Math.ceil(CURRENT_MONTH / 3));
-  let q = quarter + 1;
-  let Quarter = "Q"+q+"/"+year;
+  let quarter =  (Math.ceil(CURRENT_MONTH / 3)); 
   let Year = CURRENT_YEAR + 1;
   Year = Year.toString();
   let m =CURRENT_MONTH + 1;
-  
-  console.log(Year)
-  let date1,date2,date3,date4,Month;
-  if(month<10)
+  let date1,date2,date3,date4,Month,Quarter,q;
+  if(quarter===4)
+  {
+    q = 1
+    year = CURRENT_YEAR + 1
+    year = year.toString()
+    Quarter = "Q"+q+"/"+year; 
+  }
+  else
+  {
+    q = quarter + 1
+    Quarter = "Q"+q+"/"+year;
+  }
+
+  if(CURRENT_MONTH<10)
   {
   Month = "0"+m+"/"+year;
   date1 = "0"+month+"/"+"01"+"/"+year;
@@ -172,12 +181,20 @@ export const disabledList = () =>{
   }
   else
   {
-  Month = month+"/"+year;
+    if(CURRENT_MONTH===12)
+    {
+      m = "01"
+      year = CURRENT_YEAR + 1
+      year = year.toString()
+      Month = m+"/"+year;
+    }
+ 
   date1 = month+"/"+"01"+"/"+year;
   date2 = month+"/"+"08"+"/"+year;
   date3 = month+"/"+"15"+"/"+year;
   date4 = month+"/"+"22"+"/"+year;
   }
+  
   let options1 = {'disabledList': [date1,date2,date3,date4]};
   let options2 = {'displayFormat': 'QQ/YYYY','disabledList': [Quarter]};
   let options3 = {'displayFormat': 'MM/YYYY','disabledList': [Month]};
