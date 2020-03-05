@@ -74,7 +74,7 @@ export const Default = () =>{
 return  <div className="div-demo">
           <div>
             <h4>Default Date Picker</h4>
-            <p><small>Date picker with disabled dates and indicators</small></p>
+            <p><small>Date picker with disabled dates and indicators.</small></p>
             <p><small>data-options = '&#123;disabledList": ["{date1}", "{date2}", "{date3}", "{date4}"],"indicatorList": [ &#123;"dates": ["{date1_indicator}"], "color": "red" },  &#123; "dates": ["{date2_indicator}"], "color": "blue" }]&#125;'</small></p>
 
             <DatePicker options={options}></DatePicker>
