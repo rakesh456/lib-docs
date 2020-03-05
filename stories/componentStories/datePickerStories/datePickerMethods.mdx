@@ -4,12 +4,16 @@
 <tr>
 <th>Sr. No.</th>
 <th>Methods</th>
+<th>Inputs</th>
+<th>Return</th>
 <th>Comments</th>
 <th width="500px">Examples</th>
 </tr>
 <tr>
 <td>1</td>
 <td>getValue</td>
+<td></td>
+<td>Date</td>
 <td>Get the selected date</td>
 <td>
 
@@ -21,34 +25,10 @@ alert(element.getValue());
 </td>
 </tr>
 <tr>
-<td>2</td>
-<td>getStartDate</td>
-<td>Get assigned start date</td>
-<td>
-
-```javascript
-var element = document.getElementById("idOfElement");
-alert(element.getStartDate())
-```
-
-</td>
-</tr>
-<tr>
-<td>3</td>
-<td>getEndDate</td>
-<td>Get assigned end date</td>
-<td>
-
-```javascript
-var element = document.getElementById("idOfElement");
-alert(element.getEndDate())
-```
-
-</td>
-</tr>
-<tr>
 <td>4</td>
 <td>refresh</td>
+<td> - </td>
+<td> - </td>
 <td>Get the datepicker back to its initial form</td>
 <td>
 
@@ -61,6 +41,8 @@ var element = document.getElementById("idOfElement");element.refresh()
 <tr>
 <td>5</td>
 <td>setValue</td>
+<td>Date</td>
+<td></td>
 <td>Set date in the datepicker</td>
 <td>
 
@@ -74,12 +56,14 @@ element.setValue('12/02/2019')
 <tr>
 <td>6</td>
 <td>setDataOption</td>
+<td>Object containing data options</td>
+<td></td>
 <td>Updates data options</td>
 <td>
 
 ```javascript
 var element = document.getElementById("idOfElement");
-element.setDataOption("lowerlimit","01/02/2015")
+element.setDataOption({"lowerlimit","01/02/2015"})
 ```
 
 </td>

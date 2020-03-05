@@ -95,6 +95,7 @@ export const selectQuarter = () =>{
 return <div className="div-demo">
           <div>
             <h4>Select Quarter</h4>
+            <p><small>Quarter picker</small></p>
             <p><small>data-options = '{"{\"displayFormat\": \"QQ/YYYY\"}"}'</small></p>
             <DatePicker id="quarterDatepicker" options={options}></DatePicker>
           </div>
@@ -110,6 +111,7 @@ export const selectMonth = () =>{
 return <div className="div-demo">
           <div>
             <h4>Select Month</h4>
+            <p><small>Month picker</small></p>
             <p><small>data-options = '{"{\"displayFormat\": \"MM/YYYY\"}"}'</small></p>
 
             <DatePicker options={options}></DatePicker>
@@ -125,6 +127,7 @@ export const selectYear = () =>{
   return <div className="div-demo">
             <div>
               <h4>Select Year</h4>
+              <p><small>Year picker</small></p>
               <p><small>data-options = '{"{\"displayFormat\": \"YYYY\"}"}'</small></p>
 
               <DatePicker options={options}></DatePicker>
@@ -138,6 +141,7 @@ options = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options)
 return <div className="div-demo">
          <div>
            <h4>Show Buttons</h4>
+           <p><small>Displays buttons</small></p>
            <p><small>data-options = '{"{\"showButtons\": true, \"dateButtonPrimary\": \"My Button\"}"}'</small></p>
 
            <DatePicker options={options}></DatePicker>
@@ -148,25 +152,31 @@ return <div className="div-demo">
 
 export const disabledList = () =>{
   let month = CURRENT_MONTH.toString();
-  let Year = CURRENT_YEAR.toString();
-  let quarter = (Math.ceil(month / 3));
-  let Quarter = "Q"+quarter+"/"+Year;
+  let year = CURRENT_YEAR.toString();
+  let quarter = (Math.ceil(CURRENT_MONTH / 3));
+  let q = quarter + 1;
+  let Quarter = "Q"+q+"/"+year;
+  let Year = CURRENT_YEAR + 1;
+  Year = Year.toString();
+  let m =CURRENT_MONTH + 1;
+  
+  console.log(Year)
   let date1,date2,date3,date4,Month;
   if(month<10)
   {
-  Month = "0"+month+"/"+Year;
-  date1 = "0"+month+"/"+"01"+"/"+Year;
-  date2 = "0"+month+"/"+"08"+"/"+Year;
-  date3 = "0"+month+"/"+"15"+"/"+Year;
-  date4 = "0"+month+"/"+"22"+"/"+Year;
+  Month = "0"+m+"/"+year;
+  date1 = "0"+month+"/"+"01"+"/"+year;
+  date2 = "0"+month+"/"+"08"+"/"+year;
+  date3 = "0"+month+"/"+"15"+"/"+year;
+  date4 = "0"+month+"/"+"22"+"/"+year;
   }
   else
   {
-  Month = month+"/"+Year;
-  date1 = month+"/"+"01"+"/"+Year;
-  date2 = month+"/"+"08"+"/"+Year;
-  date3 = month+"/"+"15"+"/"+Year;
-  date4 = month+"/"+"22"+"/"+Year;
+  Month = month+"/"+year;
+  date1 = month+"/"+"01"+"/"+year;
+  date2 = month+"/"+"08"+"/"+year;
+  date3 = month+"/"+"15"+"/"+year;
+  date4 = month+"/"+"22"+"/"+year;
   }
   let options1 = {'disabledList': [date1,date2,date3,date4]};
   let options2 = {'displayFormat': 'QQ/YYYY','disabledList': [Quarter]};
@@ -183,7 +193,7 @@ export const disabledList = () =>{
   return <div className="div-demo">
             <div>
                 <h4>Disabled List</h4>
-                <p><small>Date picker with disabled dates and indicator</small></p>
+                <p><small>Date picker with disabled dates</small></p>
                 <p><small>data-options = '&#123;disabledList": ["{date1}", "{date2}", "{date3}", "{date4}"]&#125;'</small></p>
                 <DatePicker options={options1}></DatePicker>
                 <br/>
@@ -225,6 +235,7 @@ export const indicatorList = () =>{
   return <div className="div-demo">
             <div>
               <h4>Indicator List</h4>
+              <p><small>Displays indicators for the given list</small></p>
               <p><small>data-options = ' &#123;"indicatorList": [ &#123;"dates": ["{date1}"], "color": "red" },  &#123; "dates": ["{date2}"], "color": "blue" }] &#125;'</small></p>
 
               <DatePicker options={options}></DatePicker>
