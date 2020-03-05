@@ -4,16 +4,19 @@
 <tr>
 <th>Sr. No.</th>
 <th>Methods</th>
-<th>Inputs</th>
-<th>Return</th>
-<th>Comments</th>
-<th width="500px">Examples</th>
+<th width="100px">Inputs</th>
+<th width="100px">Return</th>
+<th width="150px">Comments</th>
+<th width="450px">Examples</th>
 </tr>
 <tr>
 <td>1</td>
 <td>getValue</td>
-<td></td>
-<td>Date</td>
+<td> none </td>
+<td>
+Date value<br/>Type: String
+
+</td>
 <td>Get the selected date</td>
 <td>
 
@@ -27,8 +30,8 @@ alert(element.getValue());
 <tr>
 <td>4</td>
 <td>refresh</td>
-<td> - </td>
-<td> - </td>
+<td> none </td>
+<td> none </td>
 <td>Get the datepicker back to its initial form</td>
 <td>
 
@@ -41,8 +44,8 @@ var element = document.getElementById("idOfElement");element.refresh()
 <tr>
 <td>5</td>
 <td>setValue</td>
-<td>Date</td>
-<td></td>
+<td>Date value<br/>Type: String</td>
+<td>undefined</td>
 <td>Set date in the datepicker</td>
 <td>
 
@@ -54,16 +57,31 @@ element.setValue('12/02/2019')
 </td>
 </tr>
 <tr>
-<td>6</td>
+<td>5</td>
 <td>setDataOption</td>
 <td>Object containing data options</td>
-<td></td>
+<td>undefined</td>
 <td>Updates data options</td>
 <td>
 
 ```javascript
 var element = document.getElementById("idOfElement");
 element.setDataOption({"lowerlimit","01/02/2015"})
+```
+
+</td>
+</tr>
+<tr>
+<td>5</td>
+<td>getDataOption</td>
+<td>none</td>
+<td>Object containing data options</td>
+<td>Gets data option values</td>
+<td>
+
+```javascript
+var element = document.getElementById("idOfElement");
+alert(element.getDataOption());
 ```
 
 </td>
