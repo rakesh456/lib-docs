@@ -3,6 +3,8 @@
 <tr>
 <th>Sr. No.</th>
 <th>Methods</th>
+<th width="100px">Inputs</th>
+<th width="100px">Return</th>
 <th>Comments</th>
 <th width="530px">Examples</th>
 </tr>
@@ -11,6 +13,8 @@
 <tr>
 <td>1</td>
 <td>appendNewElement</td>
+<td>Object containing key and value</td>
+<td>undefined</td>
 <td>Append new element to the list</td>
 <td>
 
@@ -24,6 +28,8 @@ element.appendNewElement({ "key": "Test", "value": "BPO" });
 <tr>
 <td>2</td>
 <td>getSelectedValues</td>
+<td>none</td>
+<td>Object containing selected value and key</td>
 <td>Get all the selected values</td>
 <td>
 
@@ -38,6 +44,8 @@ alert(element.getSelectedValues());
 <tr>
 <td>3</td>
 <td>getSelectedCounter</td>
+<td></td>
+<td>Data type: number</td>
 <td>Get count of selected elements</td>
 <td>
 
@@ -52,6 +60,8 @@ alert(element.getSelectedCounter());
 <tr>
 <td>4</td>
 <td>getNewlyAdded</td>
+<td>none</td>
+<td>Objet containing newly added values</td>
 <td>Get list of newly added elements into the list</td>
 <td>
 
@@ -66,6 +76,8 @@ alert(element.getNewlyAdded());
 <tr>
 <td>5</td>
 <td>setSelectedItems</td>
+<td>Object containing values to be selected</td>
+<td>undefined</td>
 <td>Sets the selected elements</td>
 <td>
 
@@ -80,6 +92,8 @@ element.setSelectedItems([{ "value": "Albania", "key": "AL" }, { "value": "Turke
 <tr>
 <td>6</td>
 <td>setJsonData</td>
+<td>Object containing values and key</td>
+<td>undefined</td>
 <td>Sets the Json data to be displayed as a list</td>
 <td>
 
@@ -94,6 +108,8 @@ element.setJsonData([{ "value": "Albania", "key": "AL" }, { "value": "Turkey", "
 <tr>
 <td>7</td>
 <td>remove</td>
+<td>none</td>
+<td>none</td>
 <td>Remove list of selected elements</td>
 <td>
 
@@ -108,6 +124,8 @@ element.remove({ "key": "AL", "value": "Albania" });
 <tr>
 <td>8</td>
 <td>refresh</td>
+<td>none</td>
+<td>none</td>
 <td>Get the tag selector to its initial form</td>
 <td>
 

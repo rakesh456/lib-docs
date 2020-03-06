@@ -1,6 +1,8 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { datePicker } from '@storybook/react/demo';
 import DatePicker from '../../components/Datepicker';
+import {getSelectedValue} from '../../components/Datepicker/datepickerrender';
 import '../../components/Datepicker/date-picker.scss';
 import {
   isUndefinedOrNull
@@ -59,7 +61,6 @@ react:[
         
 };
 
-
 export const Default = () =>{
   let currentMonth = new Date().getMonth() + 1;
   let currentYear = new Date().getFullYear();
@@ -69,18 +70,29 @@ export const Default = () =>{
   let date4 = "0"+currentMonth+"/"+"22"+"/"+currentYear;
   let date1_indicator = "0"+currentMonth+"/"+"10"+"/"+currentYear;
   let date2_indicator = "0"+currentMonth+"/"+"20"+"/"+currentYear;
+/*  <div id="note"></div>
+let comp =   <DatePicker options={options}></DatePicker>
+
+let myComponentInstance = ReactDOM.render(
+ comp, document.getElementById("note")
+)
+
+document.getElementById("s").getValue = function () {
+return myComponentInstance.getSelectedValue();
+} */
 
   let options =  {};
   options         = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
   options         = formatOptions(options);
-  
+
+
 return  <div className="div-demo">
           <div>
             <h4>Default Date Picker</h4>
             <p><small>Date picker</small></p>
             <p><small>data-options = '&#123; &#125;'</small></p>
-
             <DatePicker options={options}></DatePicker>
+            <div id="s"></div>
           </div>
         </div> 
 }
