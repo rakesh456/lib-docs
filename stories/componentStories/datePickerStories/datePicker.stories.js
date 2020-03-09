@@ -70,16 +70,6 @@ export const Default = () =>{
   let date4 = "0"+currentMonth+"/"+"22"+"/"+currentYear;
   let date1_indicator = "0"+currentMonth+"/"+"10"+"/"+currentYear;
   let date2_indicator = "0"+currentMonth+"/"+"20"+"/"+currentYear;
-/*  <div id="note"></div>
-let comp =   <DatePicker options={options}></DatePicker>
-
-let myComponentInstance = ReactDOM.render(
- comp, document.getElementById("note")
-)
-
-document.getElementById("s").getValue = function () {
-return myComponentInstance.getSelectedValue();
-} */
 
   let options =  {};
   options         = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
@@ -100,8 +90,8 @@ return  <div className="div-demo">
 
 export const selectQuarter = () =>{
   let options   = {'displayFormat': 'QQ/YYYY'};
-  options     = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
-  options     = formatOptions(options);
+  options       = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
+  options       = formatOptions(options);
  
   
 return <div className="div-demo">
@@ -117,8 +107,8 @@ return <div className="div-demo">
 
 export const selectMonth = () =>{
   let options   = {'displayFormat': 'MM/YYYY'};
-  options     = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
-  options     = formatOptions(options);
+  options       = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
+  options       = formatOptions(options);
 
 return <div className="div-demo">
           <div>
@@ -132,9 +122,9 @@ return <div className="div-demo">
 }
 
 export const selectYear = () =>{
-  let options= {'displayFormat': 'YYYY'}
-  options = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
-  options = formatOptions(options);
+  let options = {'displayFormat': 'YYYY'}
+  options     = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
+  options     = formatOptions(options);
 
   return <div className="div-demo">
             <div>
@@ -148,8 +138,8 @@ export const selectYear = () =>{
 }
 
 export const showButtons = () =>{
-let options = {'showButtons': true, 'dateButtonPrimary': 'My Button'};
-options = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
+let options  = {'showButtons': true, 'dateButtonPrimary': 'My Button'};
+options      = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
 return <div className="div-demo">
          <div>
            <h4>Show Buttons</h4>
@@ -163,12 +153,12 @@ return <div className="div-demo">
  
 
 export const disabledList = () =>{
-  let month =  CURRENT_MONTH.toString()
-  let year = CURRENT_YEAR.toString();
+  let month   =  CURRENT_MONTH.toString()
+  let year    = CURRENT_YEAR.toString();
   let quarter =  (Math.ceil(CURRENT_MONTH / 3)); 
-  let Year = CURRENT_YEAR + 1;
-  Year = Year.toString();
-  let m =CURRENT_MONTH + 1;
+  let Year    = CURRENT_YEAR + 1;
+  Year        = Year.toString();
+  let m       = CURRENT_MONTH + 1;
   let date1,date2,date3,date4,Month,Quarter,q;
   if(quarter===4)
   {
@@ -254,12 +244,12 @@ export const disabledList = () =>{
   
 export const indicatorList = () =>{
   let currentMonth = new Date().getMonth() + 1;
-  let currentYear = new Date().getFullYear();
-  let date1 = "0"+currentMonth+"/"+"10"+"/"+currentYear;
-  let date2 = "0"+currentMonth+"/"+"20"+"/"+currentYear;
-  let options = {'indicatorList': [{ 'dates': [date1], 'color': 'red' },{ 'dates': [date2], 'color': 'blue' }]};
-  options = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
-  options = formatOptions(options);
+  let currentYear  = new Date().getFullYear();
+  let date1        = "0"+currentMonth+"/"+"10"+"/"+currentYear;
+  let date2        = "0"+currentMonth+"/"+"20"+"/"+currentYear;
+  let options      = {'indicatorList': [{ 'dates': [date1], 'color': 'red' },{ 'dates': [date2], 'color': 'blue' }]};
+  options          = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
+  options          = formatOptions(options);
 
   return <div className="div-demo">
             <div>

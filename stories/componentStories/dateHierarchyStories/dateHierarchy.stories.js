@@ -60,12 +60,12 @@ export default {
 
         export const  Default  = () => {
         let options = {}
-        options = (isUndefinedOrNull(options)) ? resetDateHierarchyOptions({}) : resetDateHierarchyOptions(options);
+        options     = (isUndefinedOrNull(options)) ? resetDateHierarchyOptions({}) : resetDateHierarchyOptions(options);
           return  <div className="div-demo">
                           <div>
                             <h4>Default</h4>
                             <p><small>data-options = &#123;  &#125;</small></p>
-                          
+                            <p><small>Year and Month are always shown. Quarters and Weeks can be configured to be shown/hidden.</small></p>
                             <DateHierarchy options={options} ></DateHierarchy>
               
                         </div>
@@ -75,7 +75,7 @@ export default {
 
           export const  disabledList  = () => {
           let options = {"lowerLimit": "2000", "upperLimit": "2020", "showQuarters": true, "showWeeks": true, "height":"300","disabledList":["01/01/2000","q4/2000","w1/05/2000", "08/01/2000", "2002","01/2001"]}
-          options = (isUndefinedOrNull(options)) ? resetDateHierarchyOptions({}) : resetDateHierarchyOptions(options);
+          options     = (isUndefinedOrNull(options)) ? resetDateHierarchyOptions({}) : resetDateHierarchyOptions(options);
           
             return  <div className="div-demo">
                             <div>
@@ -91,7 +91,7 @@ export default {
 
           export const showQuarters  = () => {
             let options = { "showQuarters": true }
-            options = (isUndefinedOrNull(options)) ? resetDateHierarchyOptions({}) : resetDateHierarchyOptions(options);
+            options     = (isUndefinedOrNull(options)) ? resetDateHierarchyOptions({}) : resetDateHierarchyOptions(options);
             
               return  <div className="div-demo">
                               <div>
@@ -106,7 +106,7 @@ export default {
 
             export const  showWeeks  = () => {
               let options = {"showQuarters":false,"showWeeks": true}
-              options = (isUndefinedOrNull(options)) ? resetDateHierarchyOptions({}) : resetDateHierarchyOptions(options);
+              options     = (isUndefinedOrNull(options)) ? resetDateHierarchyOptions({}) : resetDateHierarchyOptions(options);
               
                 return  <div className="div-demo">
                                 <div>
@@ -120,7 +120,7 @@ export default {
               }
               export const  showWeeksAndShowQuarters  = () => {
                 let options = { "showQuarters": true, "showWeeks": true}
-                options = (isUndefinedOrNull(options)) ? resetDateHierarchyOptions({}) : resetDateHierarchyOptions(options);
+                options     = (isUndefinedOrNull(options)) ? resetDateHierarchyOptions({}) : resetDateHierarchyOptions(options);
                 
                   return  <div className="div-demo">
                                   <div>
