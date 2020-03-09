@@ -65,7 +65,7 @@ export default {
                           <div>
                             <h4>Default</h4>
                             <p><small>data-options = &#123;  &#125;</small></p>
-                            <p><small>Year and Month are always shown. Quarters and Weeks can be configured to be shown/hidden.</small></p>
+                            <p><small> Year, month and dates are always shown. Quarters and weeks can be configured to be shown/hidden. By default showQuarter is true and showWeeks is false.</small></p>
                             <DateHierarchy options={options} ></DateHierarchy>
               
                         </div>
