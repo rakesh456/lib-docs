@@ -20,6 +20,7 @@ import {
     getConvertedDate
 } from "../../utils/calendar";
 
+import './date-picker.scss';
 
 function trigger(elem, name, e) {
      // eslint-disable-next-line
@@ -38,9 +39,9 @@ function datepickerRender(el) {
     }
 
     function callOnSelectedEvent(_date, el) {
-        let ev = new CustomEvent("change");
-        trigger(el, 'onChange', ev);
-        el.dispatchEvent(ev);
+        // let ev = new CustomEvent("change");
+        // trigger(el, 'onChange', ev);
+        // el.dispatchEvent(ev);
     }
     
     function onFocusHandler() {
@@ -71,6 +72,10 @@ function datepickerRender(el) {
     el.getValue = function () {
         return myComponentInstance.getSelectedValue();
     }
+    
+    el.getDataOptions = function (options) {
+        return myComponentInstance.getDataOptions(options);
+    }
 
     el.setValue = function (date) {
         checkValueByDisplayFormat(date, options, (_date, isInvalidDate, isInvalidRangeDate) => {
@@ -87,7 +92,7 @@ function datepickerRender(el) {
         myComponentInstance.refresh();
     }
     
-    el.setDataOption = function (updatedOptions) {
+    el.setDataOptions = function (updatedOptions) {
         let newOptions = {...options};
         let key;
         let isChanged = false;
@@ -146,13 +151,6 @@ function datepickerRender(el) {
     el.reload = function () {
     }
 
-    el.getStartDate = function () {
-        return myComponentInstance.getStartDate();
-    }
-    
-    el.getEndDate = function () {
-        return myComponentInstance.getEndDate();
-    }
 
     el.addEventListener('mousedown', (e) => { 
         if(e.target.tagName !== 'INPUT'){

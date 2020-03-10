@@ -2,7 +2,7 @@
      height: 50vh;
      display: flex;
      align-items: left;
-     //word-wrap: break-word;
+     
      justify-content: left;
 }
 
@@ -29,3 +29,13 @@
      display: table;
      clear: both;
    }
+
+   .p-margin{
+        margin-bottom:50px;
+   }
+   
+   .div-right{
+        margin-right: 20px;
+   }
+   
+   /* Create four equal columns that floats next to each other */

@@ -134,5 +134,50 @@ export default {
                 }
 
                
+                export const  examples  = () => {
+                  let options_1 = { "showQuarters": true, "showWeeks": true,"lowerLimit": "2000", "upperLimit": "2025","height":550, "disabledList":["01/01/2001","02/04/2001","09/05/2001", "8/01/2001", "11/11/2004", "11/2001", "02/2002"]}
+                  options_1     = (isUndefinedOrNull(options_1)) ? resetDateHierarchyOptions({}) : resetDateHierarchyOptions(options_1);
 
+                  let options_2 = { "showQuarters": false, "showWeeks": true,"lowerLimit": "2000", "upperLimit": "2025","height":600, "disabledList":["01/01/2001","02/04/2001","09/05/2001", "8/01/2001", "11/11/2004", "11/2001", "02/2002"]}
+                  options_2     = (isUndefinedOrNull(options_2)) ? resetDateHierarchyOptions({}) : resetDateHierarchyOptions(options_2);
+
+                  let options_3 = { "showQuarters": true, "showWeeks": false,"lowerLimit": "2000", "upperLimit": "2025","height":200, "disabledList":["01/01/2001","02/04/2001","09/05/2001", "8/01/2001", "11/11/2004", "11/2001", "02/2002"]}
+                  options_3     = (isUndefinedOrNull(options_3)) ? resetDateHierarchyOptions({}) : resetDateHierarchyOptions(options_3);
+
+                  let options_4 = { "showQuarters":false, "showWeeks":false,"lowerLimit": "2000", "upperLimit": "2025","height":500, "disabledList":["01/01/2001","02/04/2001","09/05/2001", "8/01/2001", "11/11/2004", "11/2001", "02/2002"]}
+                  options_4     = (isUndefinedOrNull(options_4)) ? resetDateHierarchyOptions({}) : resetDateHierarchyOptions(options_4);
+                  
+                    return  <div> <p><small>data-options = &#123; "lowerLimit": "2000", "upperLimit": "2025", "disabledList":["01/01/2001","02/04/2001","09/05/2001", "8/01/2001", "11/11/2004", "11/2001", "02/2002"] &#125;</small></p>
+                    <div className="div-demo">
+                      
+                                    <div>
+                                      <h4>ShowQuarters = true & showWeeks = true & height = 550px</h4>
+                                     
+                                      <DateHierarchy options={options_1} ></DateHierarchy>
+                        
+                                  </div>
+                                  <div>
+                                      <h4>ShowQuarters = false & showWeeks = true & height = 600px</h4>
+                                     
+                                     
+                                      <DateHierarchy options={options_2} ></DateHierarchy>
+                        
+                                  </div>
+                                  <div>
+                                      <h4>ShowQuarters = true & showWeeks = false & height = 200px</h4>
+                                     
+                                     
+                                      <DateHierarchy options={options_3} ></DateHierarchy>
+                        
+                                  </div>
+                                  <div>
+                                      <h4>ShowQuarters = false & showWeeks = false & height = 500px</h4>
+                                     
+                                     
+                                      <DateHierarchy options={options_4} ></DateHierarchy>
+                        
+                                  </div>
+                                </div>
+                                </div>
+                  }
             

@@ -262,3 +262,119 @@ export const indicatorList = () =>{
          </div>
 }
 
+export const examples = () =>{
+  let lowerlmt = CURRENT_YEAR - 2;
+  let upperlmt = CURRENT_YEAR + 3;
+  
+  let lowerlmtYear = lowerlmt.toString();
+  let upperlmtYear = upperlmt.toString();
+  let lowerlmtMonth = "01"+"/"+lowerlmtYear;
+  let upperlmtMonth = "12"+"/"+upperlmtYear;
+  let currentMonth = CURRENT_MONTH;
+  let currentYear = CURRENT_YEAR;
+  let month   =  CURRENT_MONTH.toString();
+  let year=CURRENT_YEAR.toString();
+  let m       = CURRENT_MONTH + 1;
+  let date1,date2,date3,date4,date1_indicator,date2_indicator,Month,lowerlmtDate,upperlmtDate;
+  if(currentMonth<10){
+    lowerlmtDate = "01"+"/"+"0"+month+"/"+lowerlmt;
+    upperlmtDate = "30"+"/"+"0"+month+"/"+upperlmt;
+    Month = "0"+m+"/"+year;
+   date1 = "01"+"/"+"0"+currentMonth+"/"+currentYear;
+   date2 = "08"+"/"+"0"+currentMonth+"/"+currentYear;
+   date3 = "15"+"/"+"0"+currentMonth+"/"+currentYear;
+   date4 = "22"+"/"+"0"+currentMonth+"/"+currentYear;
+   date1_indicator = "10"+"/"+"0"+currentMonth+"/"+currentYear;
+   date2_indicator = "20"+"/"+"0"+currentMonth+"/"+currentYear;
+  }
+  else{
+   
+    if(CURRENT_MONTH===12)
+    {
+      m = "01"
+      year = CURRENT_YEAR + 1
+      year = year.toString()
+      Month = m+"/"+year;
+    }
+    lowerlmtDate = "01"+"/"+month+"/"+lowerlmt;
+    upperlmtDate = "30"+"/"+month+"/"+upperlmt;
+    date1 = "01"+"/"+currentMonth+"/"+currentYear;
+    date2 = "08"+"/"+currentMonth+"/"+currentYear;
+    date3 = "15"+"/"+currentMonth+"/"+currentYear;
+    date4 = "22"+"/"+currentMonth+"/"+currentYear;
+    date1_indicator = "10"+"/"+currentMonth+"/"+currentYear;
+    date2_indicator = "20"+"/"+currentMonth+"/"+currentYear;
+  }
+
+  let quarter = (Math.ceil(CURRENT_MONTH / 3)),q,Quarter;
+  let lowerlmtQuarter= "Q1"+"/"+lowerlmtYear;
+    let upperlmtQuarter= "Q4"+"/"+upperlmtYear;
+  if(quarter===4)
+  {
+    q = 1
+    year = CURRENT_YEAR + 1
+    year = year.toString()
+    Quarter = "Q"+q+"/"+year; 
+  }
+  else
+  {
+    q = quarter + 1
+    Quarter = "Q"+q+"/"+year;
+  }
+  
+
+  let options_1 = {"displayFormat": "DD/MM/YYYY", "iconAlignment":"left", "showErrorMessage": true, "dateStringAlignment": "left", "lowerLimit": lowerlmtDate, "upperLimit": upperlmtDate, "validationMessages": [{"inValidFormat": "Invalid DOB"}, { "outsideRange": ""}] , "isDisabled": false, "showButtons": false, "dateButtonPrimary": "Ok", "showClearIcon": false, "manualEntry": true, "disabledList": [date1, date2, date3, date4], "indicatorList": [{ "dates": [date1_indicator], "color": "#333" }, { "dates": [date2_indicator], "color": "#ff0000" }]}
+  options_1          = (isUndefinedOrNull(options_1))? resetOptions({}) : resetOptions(options_1);
+  options_1          = formatOptions(options_1);
+
+  let options_2 = {"displayFormat": "QQ/YYYY", "iconAlignment":"left", "showErrorMessage": true, "dateStringAlignment": "left", "lowerLimit": lowerlmtQuarter, "upperLimit": upperlmtQuarter, "validationMessages": [{"inValidFormat": "Invalid DOB"}, { "outsideRange": ""}] , "isDisabled": false, "showButtons": false, "dateButtonPrimary": "Ok", "showClearIcon": false, "manualEntry": true, "disabledList": [Quarter]}
+  options_2          = (isUndefinedOrNull(options_2))? resetOptions({}) : resetOptions(options_2);
+  options_2          = formatOptions(options_2);
+
+  let options_3 = {"displayFormat": "MM/YYYY", "iconAlignment":"left", "showErrorMessage": true, "dateStringAlignment": "left", "lowerLimit": lowerlmtMonth, "upperLimit": upperlmtMonth, "validationMessages": [{"inValidFormat": "Invalid DOB"}, { "outsideRange": ""}] , "isDisabled": false, "showButtons": false, "dateButtonPrimary": "Ok", "showClearIcon": false, "manualEntry": true, "disabledList": [Month]}
+  options_3          = (isUndefinedOrNull(options_3))? resetOptions({}) : resetOptions(options_3);
+  options_3          = formatOptions(options_3);
+
+  
+  let options_4 = {"displayFormat": "YYYY", "iconAlignment":"left", "showErrorMessage": true, "dateStringAlignment": "left", "lowerLimit": lowerlmtYear, "upperLimit": upperlmtYear, "validationMessages": [{"inValidFormat": "Invalid DOB"}, { "outsideRange": ""}] , "isDisabled": false, "showButtons": false, "dateButtonPrimary": "Ok", "showClearIcon": false, "manualEntry": true, "disabledList": [CURRENT_YEAR]}
+  options_4          = (isUndefinedOrNull(options_4))? resetOptions({}) : resetOptions(options_4);
+  options_4          = formatOptions(options_4);
+
+  return <div>
+            <p>Common data options:</p>
+            <p><small>{`data-options = {"iconAlignment":"left", "showErrorMessage": true, "dateStringAlignment": "left",  "validationMessages": [{"inValidFormat": "Invalid DOB"}, { "outsideRange": ""}] , "isDisabled": false, "showButtons": false, "dateButtonPrimary": "Ok", "showClearIcon": false, "manualEntry": true}`}</small></p>
+            <div className="row">
+             <div className="column">
+              <h4>Select Date : DD/MM/YYYY</h4>
+              
+              <p><small>additional data-options = '&#123;"displayFormat": "YYYY", "lowerLimit": "{lowerlmtDate}", "upperLimit": "{upperlmtDate}", "disabledList": ["{date1}","{date2}","{date3}","{date4}"], "indicatorList": [&#123; "dates": ["{date1_indicator}"], "color": "#333" &#125;, &#123; "dates": ["{date2_indicator}"], "color": "#ff0000" &#125;] &#125;'</small></p>
+
+              <DatePicker options={options_1}></DatePicker>
+            </div>
+            <div className="column">
+              <h4>Select Quarter : QQ/YYYY</h4>
+
+              <p className="p-margin"><small>additional data-options = '&#123;"displayFormat": "QQ/YYYY", "lowerLimit": "{lowerlmtQuarter}", "upperLimit": "{upperlmtQuarter}", "disabledList": ["{Quarter}"], &#125;'</small></p>
+
+              <DatePicker options={options_2}></DatePicker>
+            </div>
+            </div>
+            <div className="row">
+            <div className="column">
+              <h4>Select Month : MM/YYYY</h4>
+              
+              <p><small>additional data-options = '&#123;"displayFormat": "MM/YYYY", "lowerLimit": "{lowerlmtMonth}", "upperLimit": "{upperlmtMonth}", "disabledList": ["{Month}"] &#125;'</small></p>
+
+              <DatePicker options={options_3}></DatePicker>
+            </div>
+            <div className="column"> 
+              <h4>Select Year : YYYY</h4>
+              
+              <p><small>additional data-options = '&#123;"displayFormat": "YYYY","lowerLimit": "{lowerlmtYear}", "upperLimit": "{upperlmtYear}", "disabledList": ["{CURRENT_YEAR}"] &#125;'</small></p>
+
+              <DatePicker options={options_4}></DatePicker>
+            </div>
+            </div>
+         </div>
+}
+
