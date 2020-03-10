@@ -138,7 +138,7 @@ export const selectYear = () =>{
 }
 
 export const showButtons = () =>{
-let options  = {'showButtons': true, 'dateButtonPrimary': 'My Button'};
+let options  = {'showButtons': true, 'dateButtonPrimary': 'MY BUTTON'};
 options      = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
 return <div className="div-demo">
          <div>
