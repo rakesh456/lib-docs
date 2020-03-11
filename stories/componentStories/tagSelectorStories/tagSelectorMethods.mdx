@@ -29,7 +29,7 @@ element.appendNewElement({ "key": "Test", "value": "BPO" });
 <td>2</td>
 <td>getSelectedValues</td>
 <td>none</td>
-<td>Object containing selected value and key<br/>Type:Object</td>
+<td>Object containing selected value and key<br/>Type:Object []</td>
 <td>Get all the selected values</td>
 <td>
 
@@ -45,7 +45,7 @@ console.log(element.getSelectedValues());
 <td>3</td>
 <td>getSelectedCounter</td>
 <td>none</td>
-<td>Data type: number</td>
+<td>Number of selected items<br/>Type: Number</td>
 <td>Get count of selected elements</td>
 <td>
 
@@ -61,7 +61,7 @@ alert(element.getSelectedCounter());
 <td>4</td>
 <td>getNewlyAdded</td>
 <td>none</td>
-<td>Objet containing newly added values</td>
+<td>Object containing newly added values<br/>type: Object []</td>
 <td>Get list of newly added elements into the list</td>
 <td>
 
@@ -76,7 +76,7 @@ alert(element.getNewlyAdded());
 <tr>
 <td>5</td>
 <td>setSelectedItems</td>
-<td>Object containing values to be selected<br/>Type:Object</td>
+<td>Object containing values to be selected<br/>Type:Object []</td>
 <td>undefined</td>
 <td>Sets the selected elements</td>
 <td>
@@ -92,9 +92,9 @@ element.setSelectedItems([{ "value": "Albania", "key": "AL" }, { "value": "Turke
 <tr>
 <td>6</td>
 <td>setJsonData</td>
-<td>Object containing values and key<br/>Type:Object</td>
+<td>Object containing values and key<br/>Type:Object []</td>
 <td>undefined</td>
-<td>Sets the Json data to be displayed as a list</td>
+<td>Sets the Json data to be displayed as a list<br/></td>
 <td>
 
 
@@ -139,3 +139,5 @@ element.refresh();
 </tr>
 </tbody>
 </table>
+
+Note: getSelectedValues, getNewlyAdded, setJsonData, appendNewElement, setSelectedItems return/expect object as { "value": <ITEM_VALUE>, "key": <ITEM_KEY> }.

@@ -1,10 +1,10 @@
 
 |Sr. No.   |  Name | Purpose   | Possible Values  |Mandatory|
 |---|---|---|---|---|
-| 1  | allowNewValue  | Add new element which is not available in list. If no result found an option of “Add” button should appear. |true, false<br/><br/> Default: false |No|
-| 2  | canRemoveAll  | Removes all the tags selected.|true, false<br/><br/> Default: true<br/><br/> If true, user can remove selected item |No|
-| 3  | data | Add data to the list.|Default:[]<br/><br/>For Example:  [{ "value": "Javascript", "key": "Javascript" },{ "value": "NodeJs", "key": "NodeJs" }]|No|
-| 4  | maxItemCounter  | Displays value of selected tags for the given item counter.  |  Default: 0<br/><br/>For Example: 5 |No|
-| 5  |  placeholder | Displays text value that describes expected input.  | Default: "Search"<br/><br/>For Example: "Select country"|No|
+| 1  | allowNewValue  | Allow user to add new value to the list. |true, false<br/><br/> Default: false |No|
+| 2  | canRemoveAll  | Allow user to remove all tags.|true, false<br/><br/> Default: true<br/><br/> If true, user can remove selected item |No|
+| 3  | data | Add data to the list.|Array of values or array of key value pairs.<br/><br/>Default:[]<br/><br/>Examples:<br/>1)  [{ "value": "Javascript", "key": "Javascript" },{ "value": "NodeJs", "key": "NodeJs" }]<br/>2) [{ "value": "C++"},{ "value": "C"}]|No|
+| 4  | maxItemCounter  | Display max counter separately. Start grouping from maxItemcounter + 1 |0 to total Number of Items<br/><br/>  Default: 0<br/><br/>For Example: 5 |No|
+| 5  |  placeholder | Displays text value that describes expected input.  |Any string Default: "Search"<br/><br/>For Example: "Select country"|No|
 | 6  | showHierarchy  | Set of hierarchy among the list of values. If hierarchy is allowed set of nested values needs to be passed.|true, false<br/><br/> Default: false<br/><br/> If set to true, set of values as group needs to be passed.  |No|
 | 7  | showHelper |Each element will have a helper text. Elements can be searched by their name or helper text. |true, false<br/><br/> Default: false<br/><br/> If true, list help of values needs to passed for each element.<br/>Example:[{"key": "Afghanistan", "value": "AF"}, {"key": "Bhutan", "value": "BT"}] |No|

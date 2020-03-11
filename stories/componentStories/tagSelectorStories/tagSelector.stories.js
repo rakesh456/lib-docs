@@ -64,7 +64,7 @@ export const Default = () => {
 function onFocusHandler() { }
 
 
-let options =  {};
+let options = {};
 options     = (isUndefinedOrNull(options)) ? resetTagSelectorOptions({}) : resetTagSelectorOptions(options); 
 
   return <div>
@@ -126,8 +126,9 @@ export const withoutHierarchy = () => {
         return <div>
                   <div>
                     <h4>Max item counter</h4>
-                    <p><small>Start grouping after maxItemCounter value.</small></p>
-                    <p><small>data-options = &#123; 'maxItemCounter':3 , "data": [&#123; "value": "Javascript", "key": "Javascript" &#125;, &#123;"value": "CSS", "key": "CSS" &#125;, &#123; "value": "JQuery", "key": "JQuery" &#125;, &#123; "value": "Angular", "key": "Angular" &#125;, &#123; "value": "MonogDB", "key": "MonogDB" &#125;,&#123; "value": "NodeJs", "key": "NodeJs" &#125;] &#125;</small></p>
+                    <p><small>Start grouping after "maxItemCounter" value.</small></p>
+                    <p><small>data-options = &#123; 
+                      "maxItemCounter":3 , "data": [&#123; "value": "Javascript", "key": "Javascript" &#125;, &#123;"value": "CSS", "key": "CSS" &#125;, &#123; "value": "JQuery", "key": "JQuery" &#125;, &#123; "value": "Angular", "key": "Angular" &#125;, &#123; "value": "MonogDB", "key": "MonogDB" &#125;,&#123; "value": "NodeJs", "key": "NodeJs" &#125;] &#125;</small></p>
                    
                     <TagSelector  options={options} onFocus={onFocusHandler}></TagSelector>
       
@@ -145,7 +146,7 @@ export const withoutHierarchy = () => {
                   <div>
                     <h4>Allow new value</h4>
                     <p><small>Allow user to add new value.</small></p>
-                    <p><small>data-options = &#123; 'allowNewValue':true , "data": [&#123; "value": "Javascript", "key": "Javascript" &#125;, &#123;"value": "CSS", "key": "CSS" &#125;, &#123; "value": "JQuery", "key": "JQuery" &#125;, &#123; "value": "Angular", "key": "Angular" &#125;, &#123; "value": "MonogDB", "key": "MonogDB" &#125;,&#123; "value": "NodeJs", "key": "NodeJs" &#125;] &#125;</small></p>
+                    <p><small>data-options = &#123; "allowNewValue":true , "data": [&#123; "value": "Javascript", "key": "Javascript" &#125;, &#123;"value": "CSS", "key": "CSS" &#125;, &#123; "value": "JQuery", "key": "JQuery" &#125;, &#123; "value": "Angular", "key": "Angular" &#125;, &#123; "value": "MonogDB", "key": "MonogDB" &#125;,&#123; "value": "NodeJs", "key": "NodeJs" &#125;] &#125;</small></p>
                    
                     <TagSelector  options={options} onFocus={onFocusHandler}></TagSelector>
       
@@ -157,14 +158,14 @@ export const withoutHierarchy = () => {
     export const showHelper = () => {
       function onFocusHandler() { }
       
-      let options = {"showHelper":true, "data": [{ "value": "JS", "key": "Javascript" }, { "value": "CS", "key": "CSS" }, { "value": "JQ", "key": "JQuery" }, { "value": "ANG", "key": "Angular" }, { "value": "MDB", "key": "MonogDB" },{ "value": "NJs", "key": "NodeJs" }]};
+      let options = {"showHelper":true, "searchWithHelper":true, "data": [{ "value": "JS", "key": "Javascript" }, { "value": "CS", "key": "CSS" }, { "value": "JQ", "key": "JQuery" }, { "value": "ANG", "key": "Angular" }, { "value": "MDB", "key": "MongoDB" },{ "value": "NJs", "key": "NodeJs" }]};
       options     = (isUndefinedOrNull(options)) ? resetTagSelectorOptions({}) : resetTagSelectorOptions(options);
      
         return <div>
                   <div>
                     <h4>Show Helper</h4>
-                    <p><small>Show helper text with each item.</small></p>
-                    <p><small>{`data-options = {"showHelper":true, "data": [{ "value": "JS", "key": "Javascript" }, { "value": "CS", "key": "CSS" }, { "value": "JQ", "key": "JQuery" }, { "value": "ANG", "key": "Angular" }, { "value": "MDB", "key": "MonogDB" },{ "value": "NJs", "key": "NodeJs" }]}`}</small></p>
+                    <p><small>Show "key" as helper text with each item. Set "searchWithHelper" as true to search in helper text also.</small></p>
+                    <p><small>{`data-options = {"showHelper":true, "searchWithHelper":true, "data": [{ "value": "JS", "key": "Javascript" }, { "value": "CS", "key": "CSS" }, { "value": "JQ", "key": "JQuery" }, { "value": "ANG", "key": "Angular" }, { "value": "MDB", "key": "MongoDB" },{ "value": "NJs", "key": "NodeJs" }]}`}</small></p>
                    
                     <TagSelector  options={options} onFocus={onFocusHandler}></TagSelector>
       
@@ -176,7 +177,7 @@ export const withoutHierarchy = () => {
       function onFocusHandler() { }
      
       
-      let options_1 = {"placeholder":"Select countries", "data": [ {"key": "Afghanistan", "value": "AF"},  {"key": "Albania", "value": "AL"},  {"key": "Algeria", "value": "DZ"}, {"key": "Bahamas", "value": "BS"},{"key": "United Kingdom", "value": "GB"},  {"key": "United States", "value": "US"},{"key": "Vanuatu", "value": "VU"}, {"key": "Yemen", "value": "YE"},  {"key": "Zimbabwe", "value": "ZW"}],"showHelper":true,"maxItemCounter": 3, "searchWithHelper": true, "canRemoveAll": true, "allowNewValue": true, "showHierarchy": false};
+      let options_1 = {"placeholder":"Select countries", "data": [ {"key": "Afghanistan", "value": "AF"},  {"key": "Albania", "value": "AL"},  {"key": "Algeria", "value": "DZ"}, {"key": "Bahamas", "value": "BS"},{"key": "United Kingdom", "value": "GB"},  {"key": "United States", "value": "US"},{"key": "Vanuatu", "value": "VU"}, {"key": "Yemen", "value": "YE"},  {"key": "Zimbabwe", "value": "ZW"}],"showHelper":true,"maxItemCounter": 8, "searchWithHelper": true, "canRemoveAll": true, "allowNewValue": true, "showHierarchy": false};
       options_1    = (isUndefinedOrNull(options_1)) ? resetTagSelectorOptions({}) : resetTagSelectorOptions(options_1);
 
       
@@ -223,7 +224,7 @@ export const withoutHierarchy = () => {
                 </div>
                 <div>
                     <h4>Select States</h4>
-                    <p><small>{`data-options = "maxItemCounter": 2, "searchWithHelper": false, "canRemoveAll": false,"showHierarchy":true, "placeholder":"Select states", "data": [{
+                    <p><small>{`data-options = {"maxItemCounter": 2, "searchWithHelper": false, "canRemoveAll": false,"showHierarchy":true, "placeholder":"Select states", "data": [{
                           "Bihar": [
                               { "key": "Arwal", "value": "Arwal" },
                               { "key": "Nawada", "value": "Nawada" },

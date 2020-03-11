@@ -1,8 +1,9 @@
 |Sr. No.   |  Name | Purpose   | Possible Values  |Mandatory|
 |---|---|---|---|---|
-| 1  | lowerLimit  | Set lower date limit on the date hierarchy. | Start date in MM/DD/YYYY format.<br/><br/>Default: Current Year<br/><br/>Example: 12/03/2020, 02/23/2020  |No|
-| 2  | upperLimit  |Set upper date limit on date hierarchy. | End date in MM/DD/YYYY format.<br/><br/>Default: Current Year + 1<br/><br/>Example: 11/12/2021, 03/12/2022|No|
-| 3  | disabledList  |List of dates/months/years that are to be shown as disabled on the date hierarchy. | Default: Enable all<br/><br/>For example: ["01/01/2000","02/04/2000","w1/05/2000", "8/01/2000", "q1/2025"]|No|
-| 4  | height  |Set height of date hierarchy. |Default:200px<br/><br/>For Example: 500px|No|
+| 1  | lowerLimit  | Set lower date limit on the date hierarchy. | Year in YYYY format.<br/><br/>Default: Current Year<br/><br/>Example: 2005, 2010  |No|
+| 2  | upperLimit  |Set upper date limit on date hierarchy. | Year in YYYY format.<br/><br/>Default: Current Year + 1<br/><br/>Example:2015, 2019|No|
+| 3  | disabledList  |List of dates/weeks/months/quarters/years that are to be shown as disabled on the date hierarchy. |Array of values to be disabled<br/>w1/05/2005 - will disable 1st week of May 2005.<br/>q1/2025 - will disable 2025 quarter 1.<br/>02/2019 - will disable Feb 2019.<br/>2005 - will disable year 2005.<br/> <br/>Default: []<br/><br/>For example: ["01/01/2000","02/04/2000","w1/05/2000", "8/01/2000", "q1/2025", "02/2019", "2005"]|No|
+| 4  | height  |Set height of date hierarchy. |Heigh in pixels<br/><br/>Default:200px<br/><br/>For Example: 500px|No|
 | 5  | showQuarters  |Show quarters in the date hierarchy. |true and false <br/><br/>Default:true |No|
 | 6  | showWeeks  |Show weeks for each month in date hierarchy. |true and false <br/><br/>Default:false|No|
+
