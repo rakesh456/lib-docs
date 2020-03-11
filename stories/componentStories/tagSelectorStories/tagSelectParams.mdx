@@ -1,10 +1,10 @@
 
-|Sr. No.   |  Name | Purpose   | Possible Values  |
-|---|---|---|---|
-| 1  | allowHierarchy  | Set of hierarchy among the list of values. If hierarchy is allowed set of nested values needs to be passed| Default: False<br/><br/> If set to True set of values as group needs to be passed  |
-| 2  | allowNewValue  | Add new element which is not available in list. If no result found an option of “Add” button should appear. | Default: False |
-| 3  | canRemoveAll  | Removes all the tags selected|  Default: False<br/><br/> If True user can remove selected item |
-| 4  |data  | Add data to the list| Example:  [{ "value": "Javascript", "key": "Javascript" },{ "value": "NodeJs", "key": "NodeJs" }]|
-| 5  | maxItemCounter  | Displays value of selected tags for the given item counter  |  Default: 2 |
-| 6  |  placeholder | Displays text value that describes expected input  |  Example: "Select country" |
-| 7  | showHelper |Each element will have a helper text. Elements can be searched by their name or helper text. | Default: False<br/><br/> If True, list help of values needs to passed for each element.<br/>Example:[{"key": "Afghanistan", "value": "AF"}, {"key": "Bhutan", "value": "BT"}] |
+|Sr. No.   |  Name | Purpose   | Possible Values  |Mandatory|
+|---|---|---|---|---|
+| 1  | allowNewValue  | Add new element which is not available in list. If no result found an option of “Add” button should appear. |true, false<br/><br/> Default: false |No|
+| 2  | canRemoveAll  | Removes all the tags selected.|true, false<br/><br/> Default: true<br/><br/> If true, user can remove selected item |No|
+| 3  | data | Add data to the list.|Default:[]<br/><br/>For Example:  [{ "value": "Javascript", "key": "Javascript" },{ "value": "NodeJs", "key": "NodeJs" }]|No|
+| 4  | maxItemCounter  | Displays value of selected tags for the given item counter.  |  Default: 0<br/><br/>For Example: 5 |No|
+| 5  |  placeholder | Displays text value that describes expected input.  | Default: "Search"<br/><br/>For Example: "Select country"|No|
+| 6  | showHierarchy  | Set of hierarchy among the list of values. If hierarchy is allowed set of nested values needs to be passed.|true, false<br/><br/> Default: false<br/><br/> If set to true, set of values as group needs to be passed.  |No|
+| 7  | showHelper |Each element will have a helper text. Elements can be searched by their name or helper text. |true, false<br/><br/> Default: false<br/><br/> If true, list help of values needs to passed for each element.<br/>Example:[{"key": "Afghanistan", "value": "AF"}, {"key": "Bhutan", "value": "BT"}] |No|

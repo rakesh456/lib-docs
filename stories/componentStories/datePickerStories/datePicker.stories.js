@@ -79,7 +79,7 @@ export const Default = () =>{
 return  <div className="div-demo">
           <div>
             <h4>Default Date Picker</h4>
-            <p><small>Date picker</small></p>
+            <p><small>Date picker.</small></p>
             <p><small>data-options = '&#123; &#125;'</small></p>
             <DatePicker options={options}></DatePicker>
             <div id="s"></div>
@@ -97,7 +97,7 @@ export const selectQuarter = () =>{
 return <div className="div-demo">
           <div>
             <h4>Select Quarter</h4>
-            <p><small>Quarter picker</small></p>
+            <p><small>Quarter picker.</small></p>
             <p><small>data-options = '{"{\"displayFormat\": \"QQ/YYYY\"}"}'</small></p>
             <DatePicker id="quarterDatepicker" options={options}></DatePicker>
           </div>
@@ -113,7 +113,7 @@ export const selectMonth = () =>{
 return <div className="div-demo">
           <div>
             <h4>Select Month</h4>
-            <p><small>Month picker</small></p>
+            <p><small>Month picker.</small></p>
             <p><small>data-options = '{"{\"displayFormat\": \"MM/YYYY\"}"}'</small></p>
 
             <DatePicker options={options}></DatePicker>
@@ -129,7 +129,7 @@ export const selectYear = () =>{
   return <div className="div-demo">
             <div>
               <h4>Select Year</h4>
-              <p><small>Year picker</small></p>
+              <p><small>Year picker.</small></p>
               <p><small>data-options = '{"{\"displayFormat\": \"YYYY\"}"}'</small></p>
 
               <DatePicker options={options}></DatePicker>
@@ -143,7 +143,7 @@ options      = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(opt
 return <div className="div-demo">
          <div>
            <h4>Show Buttons</h4>
-           <p><small>Displays buttons</small></p>
+           <p><small>Displays buttons.</small></p>
            <p><small>data-options = '{"{\"showButtons\": true, \"dateButtonPrimary\": \"My Button\"}"}'</small></p>
 
            <DatePicker options={options}></DatePicker>
@@ -212,33 +212,22 @@ export const disabledList = () =>{
   return <div className="div-demo">
             <div>
                 <h4>Disabled List</h4>
-                <p><small>Date picker with disabled dates</small></p>
+                <p><small>Date picker with disabled dates.</small></p>
                 <p><small>data-options = '&#123;disabledList": ["{date1}", "{date2}", "{date3}", "{date4}"]&#125;'</small></p>
                 <DatePicker options={options1}></DatePicker>
                 <br/>
-                <p><small>Date picker with disabled quarter</small></p>
+                <p><small>Date picker with disabled quarter.</small></p>
                 <p><small>data-options = '&#123;disabledList": ["{Quarter}"]&#125;'</small></p>
                 <DatePicker options={options2}></DatePicker>
                 <br/>
-                <p><small>Date picker with disabled month</small></p>
+                <p><small>Date picker with disabled month.</small></p>
                 <p><small>data-options = '&#123;disabledList": ["{Month}"]&#125;'</small></p>
                 <DatePicker options={options3}></DatePicker>
                 <br/>
-                <p><small>Date picker with disabled year</small></p>
+                <p><small>Date picker with disabled year.</small></p>
                 <p><small>data-options = '&#123;disabledList": ["{Year}"]&#125;'</small></p>
                 <DatePicker options={options4}></DatePicker>
-            </div>
-            {/* <div>
-            <p><small>Date picker</small></p>
-                <p><small>data-options = '&#123;disabledList": ["{date1}", "{date2}", "{date3}", "{date4}"]&#125;'</small></p>
-                <DatePicker options={options}></DatePicker>
-            </div>
-            <div>
-            <p><small>Date picker</small></p>
-                <p><small>data-options = '&#123;disabledList": ["{date1}", "{date2}", "{date3}", "{date4}"]&#125;'</small></p>
-                <DatePicker options={options}></DatePicker>
-            </div> */}
-            
+            </div>         
          </div>
 }
   
@@ -254,7 +243,7 @@ export const indicatorList = () =>{
   return <div className="div-demo">
             <div>
               <h4>Indicator List</h4>
-              <p><small>Displays indicators for the given list</small></p>
+              <p><small>Displays indicators for the given dates.</small></p>
               <p><small>data-options = ' &#123;"indicatorList": [ &#123;"dates": ["{date1}"], "color": "red" },  &#123; "dates": ["{date2}"], "color": "blue" }] &#125;'</small></p>
 
               <DatePicker options={options}></DatePicker>

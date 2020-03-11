@@ -80,7 +80,7 @@ export default {
             return  <div className="div-demo">
                             <div>
                               <h4>Disabled List</h4>
-                              <p><small>Disabled dates for the given list</small></p>
+                              <p><small>Disabled dates for the given list.</small></p>
                               <p><small>data-options = &#123;"lowerLimit": "2000", "upperLimit": "2015", "showQuarters": true, "showWeeks": true,"height":"300" "disabledList":["01/01/2000","q4/2000","w1/05/2000", "08/01/2000", "2002","01/2001"] &#125;</small></p>
                              
                               <DateHierarchy options={options} ></DateHierarchy>
@@ -96,6 +96,7 @@ export default {
               return  <div className="div-demo">
                               <div>
                                 <h4>Show quarters</h4>
+                                <p><small>Show quarters.</small></p>
                                 <p><small>data-options = &#123; "showQuarters": true &#125;</small></p>
                                
                                 <DateHierarchy options={options} ></DateHierarchy>
@@ -110,7 +111,8 @@ export default {
               
                 return  <div className="div-demo">
                                 <div>
-                                  <h4>Show Quarters</h4>
+                                  <h4>Show weeks</h4>
+                                  <p><small>Show weeks.</small></p>
                                   <p><small>data-options = &#123; "showWeeks": true, "showQuarters":false &#125;</small></p>
                                  
                                   <DateHierarchy options={options} ></DateHierarchy>
@@ -124,7 +126,8 @@ export default {
                 
                   return  <div className="div-demo">
                                   <div>
-                                    <h4>Show Weeks</h4>
+                                    <h4>Show weeks and quarters</h4>
+                                    <p><small>Show weeks and quarters.</small></p>
                                     <p><small>data-options = &#123;"showQuarters": true, "showWeeks": true&#125;</small></p>
                                    
                                     <DateHierarchy options={options} ></DateHierarchy>
