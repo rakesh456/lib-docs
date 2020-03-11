@@ -157,14 +157,14 @@ export const withoutHierarchy = () => {
     export const showHelper = () => {
       function onFocusHandler() { }
       
-      let options = {"showHelper":true, "data": [{ "value": "Javascript", "key": "Javascript" }, { "value": "CSS", "key": "CSS" }, { "value": "JQuery", "key": "JQuery" }, { "value": "Angular", "key": "Angular" }, { "value": "MonogDB", "key": "MonogDB" },{ "value": "NodeJs", "key": "NodeJs" }]};
+      let options = {"showHelper":true, "data": [{ "value": "JS", "key": "Javascript" }, { "value": "CS", "key": "CSS" }, { "value": "JQ", "key": "JQuery" }, { "value": "ANG", "key": "Angular" }, { "value": "MDB", "key": "MonogDB" },{ "value": "NJs", "key": "NodeJs" }]};
       options     = (isUndefinedOrNull(options)) ? resetTagSelectorOptions({}) : resetTagSelectorOptions(options);
      
         return <div>
                   <div>
                     <h4>Show Helper</h4>
                     <p><small>Show helper text with each item.</small></p>
-                    <p><small>data-options = &#123; 'showHelper':true , "data": [&#123; "value": "JV", "key": "Javascript" &#125;, &#123;"value": "CSS", "key": "CSS" &#125;, &#123; "value": "JQuery", "key": "JQuery" &#125;, &#123; "value": "Angular", "key": "Angular" &#125;, &#123; "value": "MonogDB", "key": "MonogDB" &#125;,&#123; "value": "NodeJs", "key": "NodeJs" &#125;] &#125;</small></p>
+                    <p><small>{`data-options = {"showHelper":true, "data": [{ "value": "JS", "key": "Javascript" }, { "value": "CS", "key": "CSS" }, { "value": "JQ", "key": "JQuery" }, { "value": "ANG", "key": "Angular" }, { "value": "MDB", "key": "MonogDB" },{ "value": "NJs", "key": "NodeJs" }]}`}</small></p>
                    
                     <TagSelector  options={options} onFocus={onFocusHandler}></TagSelector>
       
