@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { datePicker } from '@storybook/react/demo';
 import DatePicker from '../../components/Datepicker/index';
+import {getSelectedValue} from '../../components/Datepicker/index';
 //import {getSelectedValue} from '../../components/Datepicker/datepickerrender';
 import '../../components/Datepicker/date-picker.scss';
 import {
@@ -75,14 +76,12 @@ export const Default = () =>{
   options         = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
   options         = formatOptions(options);
 
-
 return  <div className="div-demo">
           <div>
             <h4>Default Date Picker</h4>
             <p><small>Date picker.</small></p>
             <p><small>data-options = '&#123; &#125;'</small></p>
             <DatePicker options={options}></DatePicker>
-            <div id="s"></div>
           </div>
         </div> 
 }
