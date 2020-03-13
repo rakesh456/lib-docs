@@ -29,7 +29,10 @@ import {
     checkAllowedChars,
     isLeft,
     isRight,
-    currentFormatToYYYYMMDDNew,
+    checkDateInBetween,
+    getDefaultQQMMYYYYDateByFormat,
+    getNewUpdateValueByArrow,
+        currentFormatToYYYYMMDDNew,
     dateIsInDisabledList,
     DEFAULT_OPTIONS
 } from "../../utils/calendar";
@@ -39,7 +42,9 @@ import {
     ARROW_KEYS,
     ARROWS,
     isValidDate,
-    compareObjects
+    compareObjects,
+    dateToMMYYYY,
+    dateToYear
 } from "../../utils/utils";
 
 class DatePicker extends React.PureComponent {
@@ -150,32 +155,32 @@ class DatePicker extends React.PureComponent {
             _isValid = (_valid)? isValidOutsideRangeDate(_date, options) : _valid; 
             return (_isValid)? defaultDate : '';
         } else {
-            return '';
+            //return '';
 
-            // let _lowerDate = getProperFormattedDate(options.lowerLimit, options);
-            // let _upperLimit = getProperFormattedDate(options.upperLimit, options);
-            // let { displayFormat } = options;
-            // let _date = (_lowerDate >= new Date())? _lowerDate : new Date();
-            // _date = (_upperLimit <= new Date())? _lowerDate : _date;
+            let _lowerDate = getProperFormattedDate(options.lowerLimit, options);
+            let _upperLimit = getProperFormattedDate(options.upperLimit, options);
+            let { displayFormat } = options;
+            let _date = (_lowerDate >= new Date())? _lowerDate : new Date();
+            _date = (_upperLimit <= new Date())? _lowerDate : _date;
             
-            // if(!isValidDate(_lowerDate) && isValidDate(_upperLimit)){
-            //     _date = (_upperLimit <= new Date())? _upperLimit : _date;
-            // } else if(!isValidDate(_upperLimit) && isValidDate(_lowerDate)){
-            //     _date = (_lowerDate >= new Date())? _lowerDate : new Date();
-            // }
+            if(!isValidDate(_lowerDate) && isValidDate(_upperLimit)){
+                _date = (_upperLimit <= new Date())? _upperLimit : _date;
+            } else if(!isValidDate(_upperLimit) && isValidDate(_lowerDate)){
+                _date = (_lowerDate >= new Date())? _lowerDate : new Date();
+            }
             
-            // let _dateIn = checkDateInBetween(new Date(), isValidDate(_lowerDate)? _lowerDate : null, isValidDate(_upperLimit)? _upperLimit : null);
+            let _dateIn = checkDateInBetween(new Date(), isValidDate(_lowerDate)? _lowerDate : null, isValidDate(_upperLimit)? _upperLimit : null);
             
-            // let updatedDate = null;
-            // if(_dateIn){
-            //     updatedDate = (isValidOutsideRangeDate(_date, options))? _date : getNewUpdateDateByArrow(_date, true, options, displayFormat, _lowerDate, _upperLimit, ARROWS.right, false, false);
-            // } else {
-            //     let _dt = getNewUpdateDateByArrow(_date, true, options, displayFormat, _lowerDate, _upperLimit, ARROWS.right, false, false);
-            //     updatedDate = (isValidOutsideRangeDate(_date, options))? _date : _dt
-            // }
+            let updatedDate = null;
+            if(_dateIn){
+                updatedDate = (isValidOutsideRangeDate(_date, options))? _date : getNewUpdateDateByArrow(_date, true, options, displayFormat, _lowerDate, _upperLimit, ARROWS.right, false, false);
+            } else {
+                let _dt = getNewUpdateDateByArrow(_date, true, options, displayFormat, _lowerDate, _upperLimit, ARROWS.right, false, false);
+                updatedDate = (isValidOutsideRangeDate(_date, options))? _date : _dt
+            }
             
-            // let _valid = isValidOutsideRangeDate(updatedDate, options);
-            // return (_valid)? updatedDate : null;
+            let _valid = isValidOutsideRangeDate(updatedDate, options);
+            return (_valid)? updatedDate : null;
         }
             
     }
@@ -200,20 +205,20 @@ class DatePicker extends React.PureComponent {
             }
             return (_isValid)? defaultDate : '';
         } else {
-            return '';
-            // const options = (this.props.options)? this.props.options : {};
-            // let { displayFormat, lowerLimit, upperLimit, disabledList } = options;
-            // let _val = getDefaultQQMMYYYYDateByFormat(options);
-            // const updatedValue = getNewUpdateValueByArrow(_val, false, options, displayFormat, lowerLimit, upperLimit, ARROWS.right, false, false);
+           // return '';
+            const options = (this.props.options)? this.props.options : {};
+            let { displayFormat, lowerLimit, upperLimit, disabledList } = options;
+            let _val = getDefaultQQMMYYYYDateByFormat(options);
+            const updatedValue = getNewUpdateValueByArrow(_val, false, options, displayFormat, lowerLimit, upperLimit, ARROWS.right, false, false);
             
-            // let _valid = (displayFormat === 'MM/YYYY')? isValidOutsideRangeDateMonthYear(updatedValue, options) : (displayFormat === 'QQ/YYYY')? isValidOutsideRangeDateQQYear(updatedValue, options) : (displayFormat === 'YYYY')? isValidOutsideRangeDateYear(updatedValue, options)  : false;
+            let _valid = (displayFormat === 'MM/YYYY')? isValidOutsideRangeDateMonthYear(updatedValue, options) : (displayFormat === 'QQ/YYYY')? isValidOutsideRangeDateQQYear(updatedValue, options) : (displayFormat === 'YYYY')? isValidOutsideRangeDateYear(updatedValue, options)  : false;
     
-            // let _updatedUpperLimit = (displayFormat === 'MM/YYYY')? dateToMMYYYY(upperLimit) : (displayFormat === 'YYYY')? dateToYear(upperLimit) : (displayFormat === 'QQ/YYYY')? upperLimit : '';
+            let _updatedUpperLimit = (displayFormat === 'MM/YYYY')? dateToMMYYYY(upperLimit) : (displayFormat === 'YYYY')? dateToYear(upperLimit) : (displayFormat === 'QQ/YYYY')? upperLimit : '';
     
-            // let _returnValue = ((_valid)? updatedValue : _updatedUpperLimit).toString();
-            // let isInDisabledList = (disabledList && disabledList.indexOf(_returnValue) > -1);
+            let _returnValue = ((_valid)? updatedValue : _updatedUpperLimit).toString();
+            let isInDisabledList = (disabledList && disabledList.indexOf(_returnValue) > -1);
     
-            // return (isInDisabledList)? null : _returnValue;
+            return (isInDisabledList)? null : _returnValue;
         }
     }
     // Component explicit methods end
@@ -442,7 +447,7 @@ class DatePicker extends React.PureComponent {
                 }
             }
         }
-        this.setState({ shouldCalendarOpen: false});
+        //this.setState({ shouldCalendarOpen: false});
         this.props.onBlur();
     }
     
