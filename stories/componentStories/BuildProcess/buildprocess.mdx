@@ -1,4 +1,4 @@
-Steps to generate new build<br/>
+**Steps to generate new build for library**<br/>
 1. From command line on the folder where you extracted the zipped source code file, run:<br/>
  &nbsp;&nbsp;  a) **npm install**<br/>
  &nbsp;&nbsp;  b) **npm run build**<br/><br/>
@@ -6,3 +6,12 @@ Steps to generate new build<br/>
 /UI-Lib-release-root-folder/build folder.<br/><br/>
 3. Generating build will run test cases first. <br/><br/>
 4. To run components locally, you can use command: **npm run start**
+
+**Steps to generate new build for this documentation**<br/>
+1. From command line on the project folder, run:<br/>
+ &nbsp;&nbsp;  a) **npm install**<br/>
+ &nbsp;&nbsp;  b) **npm run build-storybook**<br/><br/>
+2. This should generate new build files in
+/documentation-root-folder/storybook-static/ folder.<br/><br/>
+3. You can deploy the build generated in step 2, as a static web app on your server.
+4. To run storybook app locally, you can use command: **npm run storybook**
