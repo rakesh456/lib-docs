@@ -86,9 +86,6 @@ return  <div className="div-demo">
         </div> 
 }
 
-function onBlurHandler(){}
-function onFocusHandler(){}
-
 export const selectQuarter = () =>{
   let options   = {'displayFormat': 'QQ/YYYY'};
   options       = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
@@ -99,7 +96,7 @@ return <div className="div-demo">
             <h4>Select Quarter</h4>
             <p><small>Quarter picker.</small></p>
             <p><small>data-options = '{"{\"displayFormat\": \"QQ/YYYY\"}"}'</small></p>
-            <DatePicker id="quarterDatepicker" options={options} onFocus={onFocusHandler} onBlur={onBlurHandler}></DatePicker>
+            <DatePicker id="quarterDatepicker" options={options}></DatePicker>
           </div>
       </div>
 }
@@ -109,16 +106,14 @@ export const selectMonth = () =>{
   let options   = {'displayFormat': 'MM/YYYY'};
   options       = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
   options       = formatOptions(options);
-  function onBlurHandler(){}
-  function onFocusHandler(){}
-
+ 
 return <div className="div-demo">
           <div>
             <h4>Select Month</h4>
             <p><small>Month picker.</small></p>
             <p><small>data-options = '{"{\"displayFormat\": \"MM/YYYY\"}"}'</small></p>
 
-            <DatePicker options={options} onFocus={onFocusHandler} onBlur={onBlurHandler}></DatePicker>
+            <DatePicker options={options}></DatePicker>
           </div>
        </div>
 }
