@@ -46,7 +46,7 @@ class WeekDaysView extends React.PureComponent {
         } else {
             return (
                 <div className="VS-WeekDayRow" key={'day' + weekDayIndex}>
-    
+                
                     <label className="VS-Checkbox-Container"><div className="VS-Tooltip">{day.date+" "}<span className="VS-WEEKDAY">{day.day}</span><span className="VS-TooltiptextWeekDay">{day.date+" "}{month.month+" "}{year.year}</span></div>
                         {
                             (day.state) ?
@@ -61,9 +61,9 @@ class WeekDaysView extends React.PureComponent {
     }
 
     renderWeeks = (week, month, quarter, year, weekIndex) => {
-        let { isFilterView } = this.props;
+        let { isFilterView, options } = this.props;
 
-        if (isFilterView === true && week.match === 0) {
+        if ((isFilterView === true && week.match === 0) || (options.showWeeks === true && week.days.length <= 0)) {
             return ("")
         } else {
             return (
@@ -100,6 +100,14 @@ class WeekDaysView extends React.PureComponent {
         }
     }
 
+    renderAllWeeks = (month, quarter, year) => {
+        let monthHtml = [];
+        month.weeks.forEach((week, weekIndex) => {
+            monthHtml.push(this.renderWeeks(week, month, quarter, year, weekIndex));
+        });
+        return monthHtml;
+    }
+
     render() {
         const { options } = this.props;
         let year = this.props.year;
@@ -108,6 +116,7 @@ class WeekDaysView extends React.PureComponent {
         if (this.props.options && this.props.options.showQuarters === true) {
             return (
                 <div options={options}>
+                    {/* {this.renderAllWeeks(month, quarter, year)} */}
                     {month.weeks.map((week, weekIndex) => this.renderWeeks(week, month, quarter, year, weekIndex))}
                 </div>
             )

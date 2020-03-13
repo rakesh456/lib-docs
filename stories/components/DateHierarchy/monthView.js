@@ -69,7 +69,7 @@ class MonthView extends React.PureComponent {
 
     renderMonth = (month, quarter, year, monthIndex) => {
         let { options, isFilterView } = this.props;
-        if (isFilterView === true && month.match === 0) {
+        if ((isFilterView === true && month.match === 0) || (options.showWeeks === true && month.weeks.length <= 0) || (options.showWeeks === false && month.days.length <= 0)) {
             return ("")
         } else {
             return (
@@ -98,10 +98,17 @@ class MonthView extends React.PureComponent {
                             <WeekDaysView options={options} isFilterView={isFilterView} years={this.props.years} year={year} quarter={quarter} month={month} onChangeWeek={this.onChangeWeek} onChangeWeekDay={this.onChangeWeekDay}></WeekDaysView> :
                             <div options={options}>{month.days.map((days, dayIndex) => this.renderDay(days, month, quarter, year, dayIndex))}</div> : ''
                     }
-
                 </div>
             )
         }
+    }
+    
+    renderAllMonths = (quarter, year) => {
+        let monthHtml = [];
+        quarter.months.forEach((month, monthIndex) => {
+            monthHtml.push(this.renderMonth(month, quarter, year, monthIndex));
+        });
+        return monthHtml;
     }
 
     render() {
@@ -111,11 +118,11 @@ class MonthView extends React.PureComponent {
             let quarter = this.props.quarter;
             return (
                 <div options={options}>
+                    {/* {this.renderAllMonths(quarter, year)} */}
                     {quarter.months.map((month, monthIndex) => this.renderMonth(month, quarter, year, monthIndex))}
                 </div>
             )
-        }
-        else {
+        } else {
             return (
                 <div>
                     {year.months.map((month, monthIndex) => this.renderMonth(month, -1, year, monthIndex))}
