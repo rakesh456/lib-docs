@@ -28,10 +28,10 @@ alert(element.getValue());
 </td>
 </tr>
 <tr>
-<td>4</td>
+<td>2</td>
 <td>refresh</td>
 <td> none </td>
-<td> none </td>
+<td> undefined </td>
 <td>Get the datepicker back to its initial form</td>
 <td>
 
@@ -42,9 +42,9 @@ var element = document.getElementById("idOfElement");element.refresh()
 </td>
 </tr>
 <tr>
-<td>5</td>
+<td>3</td>
 <td>setValue</td>
-<td>Date value<br/>Type: String</td>
+<td>Value to be set in displayFormat.<br/>Type: String</td>
 <td>undefined</td>
 <td>Set date in the datepicker</td>
 <td>
@@ -57,9 +57,9 @@ element.setValue('12/02/2019')
 </td>
 </tr>
 <tr>
-<td>5</td>
+<td>4</td>
 <td>setDataOptions</td>
-<td>Object containing data options</td>
+<td>Object containing data options<br/>Type:Object</td>
 <td>undefined</td>
 <td>Updates data options</td>
 <td>
@@ -74,8 +74,8 @@ element.setDataOptions({"lowerlimit","01/02/2015"})
 <tr>
 <td>5</td>
 <td>getDataOptions</td>
-<td>none</td>
-<td>Object containing data options<br/>Type:Oject</td>
+<td>Names of parameters.<br/> Type: String[]</td>
+<td>Object containing data options<br/>Type:Object</td>
 <td>Gets data option values</td>
 <td>
 
