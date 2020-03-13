@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { datePicker } from '@storybook/react/demo';
-import DatePicker from '../../components/Datepicker';
-import {getSelectedValue} from '../../components/Datepicker/datepickerrender';
+import DatePicker from '../../components/Datepicker/index';
+import {getSelectedValue} from '../../components/Datepicker/index';
+//import {getSelectedValue} from '../../components/Datepicker/datepickerrender';
 import '../../components/Datepicker/date-picker.scss';
 import {
   isUndefinedOrNull
@@ -75,31 +76,30 @@ export const Default = () =>{
   options         = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
   options         = formatOptions(options);
 
-
 return  <div className="div-demo">
           <div>
             <h4>Default Date Picker</h4>
             <p><small>Date picker.</small></p>
             <p><small>data-options = '&#123; &#125;'</small></p>
             <DatePicker options={options}></DatePicker>
-            <div id="s"></div>
           </div>
         </div> 
 }
 
+function onBlurHandler(){}
+function onFocusHandler(){}
 
 export const selectQuarter = () =>{
   let options   = {'displayFormat': 'QQ/YYYY'};
   options       = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
   options       = formatOptions(options);
- 
   
 return <div className="div-demo">
           <div>
             <h4>Select Quarter</h4>
             <p><small>Quarter picker.</small></p>
             <p><small>data-options = '{"{\"displayFormat\": \"QQ/YYYY\"}"}'</small></p>
-            <DatePicker id="quarterDatepicker" options={options}></DatePicker>
+            <DatePicker id="quarterDatepicker" options={options} onFocus={onFocusHandler} onBlur={onBlurHandler}></DatePicker>
           </div>
       </div>
 }
@@ -109,6 +109,8 @@ export const selectMonth = () =>{
   let options   = {'displayFormat': 'MM/YYYY'};
   options       = (isUndefinedOrNull(options))? resetOptions({}) : resetOptions(options);
   options       = formatOptions(options);
+  function onBlurHandler(){}
+  function onFocusHandler(){}
 
 return <div className="div-demo">
           <div>
@@ -116,7 +118,7 @@ return <div className="div-demo">
             <p><small>Month picker.</small></p>
             <p><small>data-options = '{"{\"displayFormat\": \"MM/YYYY\"}"}'</small></p>
 
-            <DatePicker options={options}></DatePicker>
+            <DatePicker options={options} onFocus={onFocusHandler} onBlur={onBlurHandler}></DatePicker>
           </div>
        </div>
 }

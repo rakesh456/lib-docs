@@ -1,4 +1,5 @@
 export const KEY_CODES = {
+    TAB_KEY:  9,
     ESCAPE:  27,
     SPACE:  32,
     COMMA:  44,
