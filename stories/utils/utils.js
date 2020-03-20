@@ -240,6 +240,9 @@ export const sortBy = fn => (a, b) => {
     return -(fa < fb) || +(fa > fb)
 }
 
+export const cloneData = (data) => {
+    return JSON.parse(JSON.stringify(data));
+}
 
 export const locales = [
     {
