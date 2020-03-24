@@ -8,7 +8,6 @@ import {
 	sortListingByType,
 	isValidJsonFormat
 } from "../../utils/tagselectorutils";
-import { CountryService } from "../../services/CountryService";
 
 class TagSelector extends React.PureComponent {
 	constructor(props) {
@@ -31,7 +30,6 @@ class TagSelector extends React.PureComponent {
 			canRemoveAll: (canRemoveAll === false) ? false : true,
 			searchValue: ''
 		};
-		this.countryservice = new CountryService();
 	}
 
 	updateDimensions() { }
@@ -149,6 +147,7 @@ class TagSelector extends React.PureComponent {
 			let obj = { key: value, value: value };
 			this.addItemAndUpdateList(obj);
 			this.onSelectHandler(obj);
+			this.inputEl.blur();
 			this.setState({
 				shouldListOpen: false,
 				searchValue: ''
@@ -294,25 +293,12 @@ class TagSelector extends React.PureComponent {
 
 	filterItemsList = e => {
 		let _val = (e && e.target) ? e.target.value : "";
-		// setTimeout(() =>{
-		this.updateFilterItems(_val);
-		if (_val && this.state.filteredlistItems.length <= 0) {
-			// this.props.onNotFound();
-			let _val = (e && e.target) ? e.target.value : '';
-			// setTimeout(() => {
+		//setTimeout(() => {
 			this.updateFilterItems(_val);
-			if (_val && this.state.filteredlistItems.length <= 0) {
-				// this.props.onNotFound();
-			}
-
 			this.setState({
 				searchValue: _val
-			})
-			// }, 250);
-			this.setState({
-				searchValue: e.target.value
-			})
-		}
+			});
+		//}, 250);
 	}
 
 
@@ -372,10 +358,10 @@ class TagSelector extends React.PureComponent {
 		});
 	};
 
-	// myfun
 	getFilteredList() {
 		return this.state.filteredlistItems;
 	}
+	
 	getListItem() {
 		return this.state.listItems;
 	}
@@ -431,8 +417,8 @@ class TagSelector extends React.PureComponent {
 		this.inputEl.focus();
 		// this.updateFilterItems("");
 
-		this.setState({searchValue : ""});
-		this.inputEl.focus();
+		this.setState({ searchValue: "" });
+		// this.inputEl.focus();
 		// this.updateFilterItems("");
 		// this.props.onSelect(item);
 	};
@@ -519,7 +505,7 @@ class TagSelector extends React.PureComponent {
 						selectedItems.map((item, index) => {
 							return (
 								<li key={index + "_data"}>
-									<span key={index + "_item"} className="VS-AutoCompleteItem">
+									<span key={index + "_item"} className="VS-AutoCompleteItem-New">
 										<span className="VS-AutoCompleteItem-Span">
 											{item.value}
 										</span>{" "}
@@ -530,7 +516,7 @@ class TagSelector extends React.PureComponent {
 						})
 					) : (
 							<li>
-								<span className="VS-AutoCompleteItem VS-ExtraWidth">
+								<span className="VS-AutoCompleteItem-New VS-ExtraWidth">
 									<span className="VS-AutoCompleteItem-Span">
 										{selectedItems.length} SELECTED
                 </span>
@@ -544,6 +530,7 @@ class TagSelector extends React.PureComponent {
 				<li>
 					<Input
 						ref={el => (this.inputEl = ReactDOM.findDOMNode(el))}
+						value={this.state.searchValue}
 						type="text"
 						className={`VS-Regular-UPPER-Case VS-TagSelector-Input`}
 						placeholder={this.getPlaceholder()}
