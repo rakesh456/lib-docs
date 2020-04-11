@@ -1,9 +1,9 @@
 export const KEY_CODES = {
-    TAB_KEY:  9,
     ESCAPE:  27,
+    TAB_KEY:  9,
     SPACE:  32,
     COMMA:  44,
-    NINE:  57,
+    NINE:  57
 }
 
 export const CLASSES = {
@@ -60,5 +60,25 @@ export const CLASSES = {
     VS_LABEL: 'vs-label',
     VS_TEXTBOX: 'vs-textbox',
     VS_DROPDOWN: 'vs-dropdown',
-    VS_BODY_REGULAR_PRIMARY: 'vs_body_regular_primary'
+    VS_BODY_REGULAR_PRIMARY: 'vs_body_regular_primary',
+    VS_RADIOBUTTON: 'vs-radiobutton',
+    VS_RADIO_DOT: 'vs-radio-dot',
+    VS_CHECK_MARK: 'vs-checkmark',
+    VS_TEXTAREA: 'vs-textarea',
+    VS_BUTTON: 'vs-button',
+    
+}
+
+export const FORM_GEN = { 
+ELEMENT_TYPE:{
+INPUT: 'input',
+SELECT: 'select',
+DATEPICKER: 'datepicker',
+TAGSELECTOR: 'tagselector',
+RADIO: 'radio',
+CHECKBOX: 'checkbox',
+DATEHIERARCHY: 'datehierarchy',
+TEXTAREA: 'textarea',
+BUTTON: 'button'
+}
 }

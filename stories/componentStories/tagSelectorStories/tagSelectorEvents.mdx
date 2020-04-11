@@ -121,5 +121,41 @@ function onKeyDownHandler(){
 
 </td>
 </tr>
+<tr>
+<td>7</td>
+<td>select</td>
+<td>script to be run when user selects an item.</td>
+<td>
+
+```javascript
+<script>
+function onSelectHandler(){
+    alert(' onSelectHandler called ');
+}
+</script>
+
+<tag-selector onSelect="onSelectHandler()"></tag-selector>
+```
+
+</td>
+</tr>
+<tr>
+<td>8</td>
+<td>deselect</td>
+<td>script to be run when user deselects an item.</td>
+<td>
+
+```javascript
+<script>
+function onDeselectHandler(){
+    alert(' onDeselectHandler called ');
+}
+</script>
+
+<tag-selector onDeselect="onDeselectHandler()"></tag-selector>
+```
+
+</td>
+</tr>
 </tbody>
 </table>

@@ -1,0 +1,73 @@
+<table>
+
+<tr>
+<th>Sr. No.</th>
+<th>Events</th>
+<th>Comments</th>
+<th width="450px">Examples</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>blur</td>
+<td>Script to be run when text box in the element loses focus.</td>
+<td>
+
+```javascript
+<script>
+function onBlurHandler(){
+    alert(' onBlurHandler called ');
+}
+</script>
+
+<form-gen id='formGen1' data-options='
+        {
+         "form":{
+            "props":{
+               "id":"form1",
+               "action":"https://www.fintellix.com",
+               "method":"get"
+            },
+            "eventHandlers":[
+               {
+                  "event":"submit",
+                  "handler":"SubmitForm"
+               }
+            ]
+         },
+         "rows":[
+            {
+               "rowElements":[
+                  {
+                     "elementType":"input",
+                     "props":{
+                        "type":"text",
+                        "id":"firstname",
+                        "className":"my-firstname-class",
+                        "title":"Firstname",
+                        "placeholder":"Your input",
+                        "required":"required"
+                     },
+                     "eventHandlers":[
+                        {
+                           "event":"blur",
+                           "handler":"onBlurHandler"
+                        }
+                     ]
+                  }
+               ],
+               "rowLabel":{
+                  "name":"Firstname",
+                  "props":{
+                     "className":"vs-body-regular-primary"
+                  }
+               }
+            }
+         ]
+        }'></form-gen>
+
+```
+</td>
+</tr>
+
+</table>
