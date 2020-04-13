@@ -13,7 +13,7 @@
 <tr>
 <td>1</td>
 <td>blur</td>
-<td>Script to be run when text box in the element loses focus</td>
+<td>Fired when an element loses focus.</td>
 <td>
 
 ```javascript
@@ -31,7 +31,7 @@ function onBlurHandler(){
 <tr>
 <td>2</td>
 <td>focus</td>
-<td>Script to be run when text box in the element gets focus</td>
+<td>Fired when an element receives focus.</td>
 <td>
 
 
@@ -50,7 +50,7 @@ function onFocusHandler(){
 <tr>
 <td>3</td>
 <td>input</td>
-<td>Script to be run when an element gets user input</td>
+<td>Fired when the value of an element has been changed.</td>
 <td>
 
 
@@ -68,19 +68,19 @@ function onInputHandler(){
 </tr>
 <tr>
 <td>4</td>
-<td>change</td>
-<td>Script to be run when change has occurred to the control</td>
+<td>valueChange</td>
+<td>>Fired when element value is changed.</td>
 <td>
 
 
 ```javascript
 <script>
-function onChangeHandler(){
-    alert(' onChangeHandler called ');
+function onValueChangeHandler(){
+    alert(' onValueChangeHandler called ');
 }
 </script>
 
-<tag-selector onChange="onChangeHandler()"></tag-selector>
+<tag-selector onValueChange="onValueChangeHandler()"></tag-selector>
 ```
 
 </td>
@@ -88,7 +88,7 @@ function onChangeHandler(){
 <tr>
 <td>5</td>
 <td>keyup</td>
-<td>script to be run when user releases a key</td>
+<td>Fired when a key is released.</td>
 <td>
 
 ```javascript
@@ -106,7 +106,7 @@ function onKeyUpHandler(){
 <tr>
 <td>6</td>
 <td>keydown</td>
-<td>script to be run when user presses a key</td>
+<td>Fired when a key is pressed.</td>
 <td>
 
 ```javascript
@@ -124,7 +124,7 @@ function onKeyDownHandler(){
 <tr>
 <td>7</td>
 <td>select</td>
-<td>script to be run when user selects an item.</td>
+<td>Fired when some text has been selected.</td>
 <td>
 
 ```javascript
@@ -142,7 +142,7 @@ function onSelectHandler(){
 <tr>
 <td>8</td>
 <td>deselect</td>
-<td>script to be run when user deselects an item.</td>
+<td>Fired when some text has been de-selected.</td>
 <td>
 
 ```javascript
