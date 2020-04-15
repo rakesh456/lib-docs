@@ -1,0 +1,9 @@
+|Sr. No.   |  Name | Purpose   | Possible Values  |Mandatory|
+|---|---|---|---|---|
+| 1  |dataUrl | Provide Url to load data|For example:<br/> "https://demos.telerik.com/kendo-ui/service-v4/odata/Products?$count=true&"|Yes|
+| 2 |dataState|Set values to sort or group columns |dataState.skip : Start of the page<br/>Default:0<br/><br/>dataState.take : Number of elements in the page<br/>Default:5<br/><br/>dataState.sort: Array of field names to sort data<br/><br/>dataState.group:Array of field names to group data |No|
+| 3 |otherGridOptions |Set values for grid options like sortable,loadonce etc. |otherGridOptions.sortable: Set true to display sortable list<br/>allowed values:true, false<br/>Default:true<br/><br/>otherGridOptions.loadOnce : Take action on load<br/>Allowed values:true, false<br/>Default:false |No|
+| 4 |pageable | Set values for pagination|pageable.buttonCount : Set number of buttons to be displayed for pagination.<br/> For Example:"pageable":{"buttonCount":3}<br/>Default:3<br/><br/>pageable.type : Specify the type<br/>For Example:"pageable":{"type":"numeric"}<br/>Default:numeric |No|
+| 5 |primaryKey| Set primary key for a column|For Example:<br/> "primaryKey":"ProductID" |Yes|
+| 6 |style| Set style to bkey searcher|Style.height : Set height of bkey searcher<br/>Default:400px<br/><br/>style.width: Set width of bkey searcher<br/>Default:400px<br/><br/>style.plusColor: Set color of plus icon<br/>Default:#00ff00<br/><br/>style.crossColor: Set color of cross icon<br/>Default:#ff0000|No|
+| 7 |showcolumns|Display column names |"showColumns": [<br/>{<br/> "field": "ProductID",<br/>"title": "ProductID",<br/>"filter": "numeric"<br/> },<br/>{<br/>"field": "ProductName",<br/>"title": "Product Name",<br/> "filter": "text"<br/>}<br/>] |Yes|

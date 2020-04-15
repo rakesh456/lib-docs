@@ -1,40 +1,25 @@
-export const DEFAULT_COLUMNS_OPTIONS = { "reorderable": false, "resizable": false, "groupable": false, "lockedColumns":[] };
-
-export const DEFAULT_ROWS_OPTIONS = { "rowInEditMode": false,  "allowNewRow": false, "selectedRowPrimaryKey": -1 };
-
-export const DEFAULT_GROUPING_OPTIONS = { "expandField": true, "defaultColumns": [] };
-
-export const DEFAULT_FILTER_OPTIONS = { "filterable": false, "filterMode": "menu", "multiValue": false };
+export const DEFAULT_OPTIONS = { "sortable": true, "loadOnce": false };
 
 export const DEFAULT_EXPORT_OPTIONS = { "toExcel": false, "toPDF": false, "allPages": false };
 
 export const DEFAULT_DATA_STATE = {
     "skip": 0,
-    "take": 10,
+    "take": 5,
     "sort": [],
     "group": []
 };
-export const DEFAULT_CELL_OPTIONS = {"showToolTip": false}
 
-export const DEFAULT_PAGEABLE = null
+export const DEFAULT_PAGEABLE = { "buttonCount": 3, "type": "numeric" };
 
 export const DEFAULT_INFINITESCROLL = {
     "infiniteScroll": true
 };
 
-export const DEFAULT_EDITING_OPTIONS = {
-    "allEditable": false,
-    "externalForm": false
-};
-
-export const DEFAULT_SORTABLE = {
-    "allowed": false, "mode": "multiple", "allowUnsort": true
-};
-
 export const DEFAULT_STYLE = {
-    "gridStyle": {"height": "700px"},
-    "customizedRow": null,
-    "stripedPattern": true
+    "height": "400px",
+    "width": "400px",
+    "plusColor": "#00ff00",
+    "crossColor": "#ff0000"
 };
 
 export const DEFAULT_FILTER_OPERATORS = {
@@ -90,42 +75,8 @@ export const isShowModeUnselected = (mode) => {
 }
 
 // Function to reset options with default options
-export const resetColumnsOptions = (options) => {
-    return { ...DEFAULT_COLUMNS_OPTIONS, ...options };
-}
-
-// Function to reset options with default options
-export const resetRowsOptions = (options) => {
-    return { ...DEFAULT_ROWS_OPTIONS, ...options };
-}
-
-// Function to reset options with default options
-export const resetGroupingOptions = (options) => {
-    return { ...DEFAULT_GROUPING_OPTIONS, ...options };
-}
-
-export const resetCellOptions = (options) => {
-    return { ...DEFAULT_CELL_OPTIONS, ...options };
-}
-
-// Function to reset options with default editing options
-export const resetEditingOptions = (options) => {
-    return { ...DEFAULT_EDITING_OPTIONS, ...options };
-}
-
-// Function to reset filter options with default options
-export const resetFilterOptions = (options) => {
-    return { ...DEFAULT_FILTER_OPTIONS, ...options };
-}
-
-// Function to reset export options with default options
-export const resetExportOptions = (options) => {
-    return { ...DEFAULT_EXPORT_OPTIONS, ...options };
-}
-
-// Function to reset data state with default data state
-export const resetDataState = (options) => {
-    return { ...DEFAULT_DATA_STATE, ...options };
+export const resetGridOptions = (options) => {
+    return { ...DEFAULT_OPTIONS, ...options };
 }
 
 // Function to reset pageable with default pageable
@@ -133,9 +84,9 @@ export const resetPageable = (options) => {
     return { ...DEFAULT_PAGEABLE, ...options };
 }
 
-// Function to reset sortable with default pageable
-export const resetSortable = (options) => {
-    return { ...DEFAULT_SORTABLE, ...options };
+// Function to reset data state with default data state
+export const resetDataState = (options) => {
+    return { ...DEFAULT_DATA_STATE, ...options };
 }
 
 // Function to reset style with default style
@@ -145,16 +96,4 @@ export const resetStyle = (options) => {
 
 export const cloneData = (data) => {
     return JSON.parse(JSON.stringify(data));
-}
-
-export const getShowFromColumn = (columns) => {
-    return (columns && columns.show)? columns.show : [];
-}
-
-export const reSetColumns = (columns, newShow) => {
-    let newColumns = cloneData(columns);
-    if(newShow && newShow.length > 0){
-        newColumns['show'] = newShow;
-    }
-    return {...newColumns};
 }
