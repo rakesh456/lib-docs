@@ -62,7 +62,9 @@ export default {
 export const Default = () => {
 
 function onFocusHandler() { }
-
+function onSelectHandler() { }
+function onValueChangeHandler() { }
+function onDeSelectHandler() { }
 
 let options = {};
 options     = (isUndefinedOrNull(options)) ? resetTagSelectorOptions({}) : resetTagSelectorOptions(options); 
@@ -72,7 +74,7 @@ options     = (isUndefinedOrNull(options)) ? resetTagSelectorOptions({}) : reset
               <h4>Default</h4>
               <p><small>data-options =  &#123;  &#125;</small></p>
               <p><small></small></p>
-              <TagSelector options={options} onFocus={onFocusHandler}></TagSelector>
+              <TagSelector options={options} onFocus={onFocusHandler} onSelect={onSelectHandler} onValueChange={onValueChangeHandler} onDeSelect={onDeSelectHandler}></TagSelector>
             </div>
         </div>
 }
@@ -80,6 +82,9 @@ options     = (isUndefinedOrNull(options)) ? resetTagSelectorOptions({}) : reset
 export const withoutHierarchy = () => {
   
   function onFocusHandler() { }
+  function onSelectHandler() { }
+  function onValueChangeHandler() { }
+  function onDeSelectHandler() { }
   
   let options = {"showHierarchy": false,"readOnly":false,"canRemoveAll":true, "data": [{ "value": "Javascript", "key": "Javascript" }, { "value": "CSS", "key": "CSS" }, { "value": "JQuery", "key": "JQuery" }, { "value": "Angular", "key": "Angular" }, { "value": "MonogDB", "key": "MonogDB" },{ "value": "NodeJs", "key": "NodeJs" }]};
   options     = (isUndefinedOrNull(options)) ? resetTagSelectorOptions({}) : resetTagSelectorOptions(options);
@@ -90,7 +95,7 @@ export const withoutHierarchy = () => {
                 <p><small>Displays data without hierarchy.</small></p>
                 <p><small>data-options = &#123; 'showHierarchy':false , "data": [&#123; "value": "Javascript", "key": "Javascript" &#125;, &#123;"value": "CSS", "key": "CSS" &#125;, &#123; "value": "JQuery", "key": "JQuery" &#125;, &#123; "value": "Angular", "key": "Angular" &#125;, &#123; "value": "MonogDB", "key": "MonogDB" &#125;,&#123; "value": "NodeJs", "key": "NodeJs" &#125;] &#125;</small></p>
                
-                <TagSelector  options={options} onFocus={onFocusHandler}></TagSelector>
+                <TagSelector  options={options} onFocus={onFocusHandler} onSelect={onSelectHandler} onValueChange={onValueChangeHandler} onDeSelect={onDeSelectHandler}></TagSelector>
   
             </div>
           </div>
@@ -99,7 +104,9 @@ export const withoutHierarchy = () => {
   export const withHierarchy = () => {
     
     function onFocusHandler() { }
-    
+    function onSelectHandler() { }
+    function onValueChangeHandler() { }
+    function onDeSelectHandler() { }
     
     let options = { 'data':[{ "Bihar": [{ "key": "Arwal", "value": "Arwal" },{ "key": "Nawada", "value": "Nawada" },{ "key": "Gopalganj", "value": "Gopalganj" }] }, { "Andhra Pradesh": [{ "key": "Adoni", "value": "Adoni" },{ "key": "Bapatla", "value": "Bapatla" }, { "key": "Anantapur", "value": "Anantapur" } ]}, ], 'showHierarchy': true};
     options     = (isUndefinedOrNull(options)) ? resetTagSelectorOptions({}) : resetTagSelectorOptions(options);
@@ -110,7 +117,7 @@ export const withoutHierarchy = () => {
                   <p><small>Displays hierarchical data.</small></p>
                   <p><small>{`data-options =  {'data':[{ "Bihar": [{ "key": "Arwal", "value": "Arwal" },{ "key": "Nawada", "value": "Nawada" },{ "key": "Gopalganj", "value": "Gopalganj" }] }, { "Andhra Pradesh": [{ "key": "Adoni", "value": "Adoni" },{ "key": "Bapatla", "value": "Bapatla" }, { "key": "Anantapur", "value": "Anantapur" } ]}, ], 'showHierarchy': true}`}</small></p>
                   
-                   <TagSelector options={options} onFocus={onFocusHandler}></TagSelector>
+                   <TagSelector options={options} onFocus={onFocusHandler} onSelect={onSelectHandler} onValueChange={onValueChangeHandler} onDeSelect={onDeSelectHandler}></TagSelector>
     
               </div>
             </div>
@@ -118,7 +125,9 @@ export const withoutHierarchy = () => {
     
     export const maxItemCounter = () => {
       function onFocusHandler() { }
-      
+      function onSelectHandler() { }
+      function onValueChangeHandler() { }
+      function onDeSelectHandler() { }
       
       let options = {"maxItemCounter":3,"canRemoveAll":true, "data": [{ "value": "Javascript", "key": "Javascript" }, { "value": "CSS", "key": "CSS" }, { "value": "JQuery", "key": "JQuery" }, { "value": "Angular", "key": "Angular" }, { "value": "MonogDB", "key": "MonogDB" },{ "value": "NodeJs", "key": "NodeJs" }]};
       options     = (isUndefinedOrNull(options)) ? resetTagSelectorOptions({}) : resetTagSelectorOptions(options);
@@ -130,7 +139,7 @@ export const withoutHierarchy = () => {
                     <p><small>data-options = &#123; 
                       "maxItemCounter":3 , "data": [&#123; "value": "Javascript", "key": "Javascript" &#125;, &#123;"value": "CSS", "key": "CSS" &#125;, &#123; "value": "JQuery", "key": "JQuery" &#125;, &#123; "value": "Angular", "key": "Angular" &#125;, &#123; "value": "MonogDB", "key": "MonogDB" &#125;,&#123; "value": "NodeJs", "key": "NodeJs" &#125;] &#125;</small></p>
                    
-                    <TagSelector  options={options} onFocus={onFocusHandler}></TagSelector>
+                    <TagSelector  options={options} onFocus={onFocusHandler} onSelect={onSelectHandler} onValueChange={onValueChangeHandler} onDeSelect={onDeSelectHandler}></TagSelector>
       
                 </div>
               </div>
@@ -138,7 +147,10 @@ export const withoutHierarchy = () => {
 
     export const allowNewValue = () => {
       function onFocusHandler() { }
-      
+      function onSelectHandler() { }
+      function onValueChangeHandler() { }
+      function onDeSelectHandler() { }
+
       let options = {"allowNewValue":true, "data": [{ "value": "Javascript", "key": "Javascript" }, { "value": "CSS", "key": "CSS" }, { "value": "JQuery", "key": "JQuery" }, { "value": "Angular", "key": "Angular" }, { "value": "MonogDB", "key": "MonogDB" },{ "value": "NodeJs", "key": "NodeJs" }]};
       options     = (isUndefinedOrNull(options)) ? resetTagSelectorOptions({}) : resetTagSelectorOptions(options);
      
@@ -148,7 +160,7 @@ export const withoutHierarchy = () => {
                     <p><small>Allow user to add new value.</small></p>
                     <p><small>data-options = &#123; "allowNewValue":true , "data": [&#123; "value": "Javascript", "key": "Javascript" &#125;, &#123;"value": "CSS", "key": "CSS" &#125;, &#123; "value": "JQuery", "key": "JQuery" &#125;, &#123; "value": "Angular", "key": "Angular" &#125;, &#123; "value": "MonogDB", "key": "MonogDB" &#125;,&#123; "value": "NodeJs", "key": "NodeJs" &#125;] &#125;</small></p>
                    
-                    <TagSelector  options={options} onFocus={onFocusHandler}></TagSelector>
+                    <TagSelector  options={options} onFocus={onFocusHandler} onSelect={onSelectHandler} onValueChange={onValueChangeHandler} onDeSelect={onDeSelectHandler}></TagSelector>
       
                 </div>
               </div>
@@ -157,7 +169,10 @@ export const withoutHierarchy = () => {
     
     export const showHelper = () => {
       function onFocusHandler() { }
-      
+      function onSelectHandler() { }
+      function onValueChangeHandler() { }
+      function onDeSelectHandler() { }
+
       let options = {"showHelper":true, "searchWithHelper":true, "data": [{ "value": "JS", "key": "Javascript" }, { "value": "CS", "key": "CSS" }, { "value": "JQ", "key": "JQuery" }, { "value": "ANG", "key": "Angular" }, { "value": "MDB", "key": "MongoDB" },{ "value": "NJs", "key": "NodeJs" }]};
       options     = (isUndefinedOrNull(options)) ? resetTagSelectorOptions({}) : resetTagSelectorOptions(options);
      
@@ -167,7 +182,7 @@ export const withoutHierarchy = () => {
                     <p><small>Show "key" as helper text with each item. Set "searchWithHelper" as true to search in helper text also.</small></p>
                     <p><small>{`data-options = {"showHelper":true, "searchWithHelper":true, "data": [{ "value": "JS", "key": "Javascript" }, { "value": "CS", "key": "CSS" }, { "value": "JQ", "key": "JQuery" }, { "value": "ANG", "key": "Angular" }, { "value": "MDB", "key": "MongoDB" },{ "value": "NJs", "key": "NodeJs" }]}`}</small></p>
                    
-                    <TagSelector  options={options} onFocus={onFocusHandler}></TagSelector>
+                    <TagSelector  options={options} onFocus={onFocusHandler} onSelect={onSelectHandler} onValueChange={onValueChangeHandler} onDeSelect={onDeSelectHandler}></TagSelector>
       
                 </div>
               </div>
@@ -175,8 +190,9 @@ export const withoutHierarchy = () => {
 
     export const examples = () =>{
       function onFocusHandler() { }
-     
-      
+      function onSelectHandler() { }
+      function onValueChangeHandler() { }
+      function onDeSelectHandler() { }
       let options_1 = {"placeholder":"Select countries", "data": [ {"key": "Afghanistan", "value": "AF"},  {"key": "Albania", "value": "AL"},  {"key": "Algeria", "value": "DZ"}, {"key": "Bahamas", "value": "BS"},{"key": "United Kingdom", "value": "GB"},  {"key": "United States", "value": "US"},{"key": "Vanuatu", "value": "VU"}, {"key": "Yemen", "value": "YE"},  {"key": "Zimbabwe", "value": "ZW"}],"showHelper":true,"maxItemCounter": 8, "searchWithHelper": true, "canRemoveAll": true, "allowNewValue": true, "showHierarchy": false};
       options_1    = (isUndefinedOrNull(options_1)) ? resetTagSelectorOptions({}) : resetTagSelectorOptions(options_1);
 
@@ -212,14 +228,14 @@ export const withoutHierarchy = () => {
                     <h4>Select Countries</h4>
                     <p><small>{`data-options ={"placeholder":"Select countries", "data": [ {"key": "Afghanistan", "value": "AF"}, {"key": "Albania", "value": "AL"}, {"key": "Algeria", "value": "DZ"}, {"key": "Bahamas", "value": "BS"},{"key": "United Kingdom", "value": "GB"}, {"key": "United States", "value": "US"},{"key": "Vanuatu", "value": "VU"}, {"key": "Yemen", "value": "YE"},  {"key": "Zimbabwe", "value": "ZW"}],"showHelper":true,"maxItemCounter": 3, "searchWithHelper": true, "canRemoveAll": true, "allowNewValue": true, "showHierarchy": false}`}</small></p>
                    
-                    <TagSelector  options={options_1} onFocus={onFocusHandler}></TagSelector>
+                    <TagSelector  options={options_1} onFocus={onFocusHandler} onSelect={onSelectHandler} onValueChange={onValueChangeHandler}></TagSelector>
       
                 </div>
                 <div>
                     <h4>Select Skills</h4>
                     <p><small>data-options = &#123; "maxItemCounter": 4, "searchWithHelper": true, "canRemoveAll": true, "allowNewValue": true, "showHierarchy": false, "data": [&#123; "value": "JV", "key": "Javascript" &#125;, &#123;"value": "CSS", "key": "CSS" &#125;, &#123; "value": "JQuery", "key": "JQuery" &#125;, &#123; "value": "Angular", "key": "Angular" &#125;, &#123; "value": "MonogDB", "key": "MonogDB" &#125;,&#123; "value": "NodeJs", "key": "NodeJs" &#125; &#125;</small></p>
                    
-                    <TagSelector  options={options_2} onFocus={onFocusHandler}></TagSelector>
+                    <TagSelector  options={options_2} onFocus={onFocusHandler} onSelect={onSelectHandler} onValueChange={onValueChangeHandler}></TagSelector>
       
                 </div>
                 <div>
@@ -246,7 +262,7 @@ export const withoutHierarchy = () => {
                           ]
                       }]}`}</small></p>
                    
-                    <TagSelector  options={options_3} onFocus={onFocusHandler}></TagSelector>
+                    <TagSelector  options={options_3} onFocus={onFocusHandler} onSelect={onSelectHandler} onValueChange={onValueChangeHandler} onDeSelect={onDeSelectHandler}></TagSelector>
       
                 </div>
              </div>

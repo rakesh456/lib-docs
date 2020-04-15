@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import TagSelector from "./tag-selector";
 import {
-    isUndefinedOrNull
+    isUndefinedOrNull,
+    preventOnInputCallWhileFocus,
+    tempFunction
 } from "../../utils/utils";
 
 import {
@@ -22,22 +24,24 @@ function tagSelectorRender(el) {
 
     options = (isUndefinedOrNull(options)) ? resetTagSelectorOptions({}) : resetTagSelectorOptions(options);
 
+    function onValueChangeHandler() {
+        let ev = new CustomEvent("change");
+        trigger(el, 'onValueChange', ev);
+    }
+
     function callOnSelectedEvent(selectedItem, el) {
         let ev = new CustomEvent("change", { 'detail': { 'item': selectedItem } });
         trigger(el, 'onSelect', ev);
-        el.dispatchEvent(ev);
     }
 
     function callOnDeSelectedEvent(selectedItem, el) {
         let ev = new CustomEvent("change", { 'detail': { 'item': selectedItem } });
         trigger(el, 'onDeSelect', ev);
-        el.dispatchEvent(ev);
     }
 
     function callOnNotFoundEvent(el) {
         let ev = new CustomEvent("change");
         trigger(el, 'onNotFound', ev);
-        el.dispatchEvent(ev);
     }
 
     function onFocusHandler() {
@@ -63,7 +67,7 @@ function tagSelectorRender(el) {
         callOnDeSelectedEvent(selectedItem, el);
     }
 
-    function onNotFoundHandler(selectedItem) {
+    function onNotFoundHandler() {
         callOnNotFoundEvent(el);
     }
 
@@ -99,7 +103,9 @@ function tagSelectorRender(el) {
         tagComponentInstance.refresh();
     }
 
-    let tagComponentElement = <TagSelector options={options} onFocus={onFocusHandler} onBlur={onBlurHandler} onKeyDown={onKeyDownHandler} onSelect={onSelectHandler} onDeSelect={onDeSelectHandler} onNotFound={onNotFoundHandler} />;
+    el.addEventListener("input", preventOnInputCallWhileFocus(tempFunction), true);
+
+    let tagComponentElement = <TagSelector options={options} onFocus={onFocusHandler} onBlur={onBlurHandler} onKeyDown={onKeyDownHandler} onSelect={onSelectHandler} onDeSelect={onDeSelectHandler} onNotFound={onNotFoundHandler} onValueChange={onValueChangeHandler} />;
 
     let tagComponentInstance = ReactDOM.render(
         tagComponentElement,

@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import DatehierarchyView from './datehierarchyView';
 import {
-    isUndefinedOrNull
+    isUndefinedOrNull,
+    preventOnInputCallWhileFocus,
+    tempFunction
 } from "../../utils/utils";
 
 import {
@@ -10,6 +12,12 @@ import {
 } from "../../utils/datehierarchyutils";
 
 import './date-hierarchy.scss';
+
+function trigger(elem, name, e) {
+    // eslint-disable-next-line
+   let func = new Function('e', 'with(document) { with(this) {' + elem.getAttribute(name) + '} }');
+   func.call(elem, e);
+}
 
 function dateHierarchyRender(el) {
     let options = JSON.parse(el.getAttribute('data-options'));
@@ -23,10 +31,11 @@ function dateHierarchyRender(el) {
         let ev = new CustomEvent('focus');
         el.dispatchEvent(ev);
     }
-
-    function onChangeHandler() {
+    
+    function onValueChangeHandler() {
         let ev = new CustomEvent("change");
-        el.dispatchEvent(ev);
+        trigger(el, 'onValueChange', ev);
+        // el.dispatchEvent(ev);
     }
 
     function onBlurHandler() {
@@ -34,20 +43,24 @@ function dateHierarchyRender(el) {
         el.dispatchEvent(ev);
     }
 
-    function onInputHandler() {
+    function onCustomInputHandler() {
         let ev = new CustomEvent("input");
-        el.dispatchEvent(ev);
+        trigger(el, 'onInput', ev);
+        // el.dispatchEvent(ev);
     }
 
     el.getDates = function () {
         return HierarchyComponentInstance.getDates();
     }
-    // fun
+    
     el.refresh = function () {
         return HierarchyComponentInstance.refresh();
     }
 
-    var HierarchyComponentElement = <DatehierarchyView options={options} onFocus={onFocusHandler} onChange={onChangeHandler} onBlur={onBlurHandler} onInput={onInputHandler} />
+    el.addEventListener("input", preventOnInputCallWhileFocus(tempFunction), true);
+    
+    var HierarchyComponentElement = <DatehierarchyView options={options} onFocus={onFocusHandler} onBlur={onBlurHandler} onCustomInput={onCustomInputHandler} onValueChange={onValueChangeHandler} />
+
     el.setValues = function (json) {
         HierarchyComponentInstance.setValues(json);
     }
